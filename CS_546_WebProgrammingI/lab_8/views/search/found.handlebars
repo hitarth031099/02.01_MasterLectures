@@ -1,0 +1,19 @@
+{{#if haserror}}
+    <p class = "error">{{error}}</p>
+
+    {{else}}
+    <h1>{{{title}}}</h1>
+    <h2>{{searchTerm}}</h2>
+
+    <main>
+    
+    <ul>
+        {{#each posts}}
+            <li>
+                <a href="/characters/{{id}}">{{name}}</a>
+            </li>
+        {{/each}}
+    </ul>
+
+</main>
+{{/if}}

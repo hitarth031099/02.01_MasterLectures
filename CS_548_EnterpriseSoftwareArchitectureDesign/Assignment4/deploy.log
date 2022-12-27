@@ -1,0 +1,659 @@
+[#|2022-10-17T22:35:12.564+0000|INFO|Payara 5.2022.3|org.glassfish.admingui|_ThreadID=104;_ThreadName=admin-thread-pool::admin-listener(1);_TimeMillis=1666046112564;_LevelValue=800;|
+  GUI deployment: uploadToTempfile|#]
+
+[#|2022-10-17T22:35:12.564+0000|INFO|Payara 5.2022.3|org.glassfish.admingui|_ThreadID=104;_ThreadName=admin-thread-pool::admin-listener(1);_TimeMillis=1666046112564;_LevelValue=800;|
+  uploadFileName=clinic-init0-1.0.0-jar-with-dependencies.jar|#]
+
+[#|2022-10-17T22:35:12.566+0000|INFO|Payara 5.2022.3||_ThreadID=104;_ThreadName=admin-thread-pool::admin-listener(1);_TimeMillis=1666046112566;_LevelValue=800;|
+  ================== availabilityEnabled  skipped |#]
+
+[#|2022-10-17T22:35:12.674+0000|WARNING|Payara 5.2022.3|javax.enterprise.system.tools.deployment.dol|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112674;_LevelValue=900;_MessageID=AS-DEPLOYMENT-00015;|
+  Unsupported deployment descriptors element schemalocation value http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd.|#]
+
+[#|2022-10-17T22:35:12.693+0000|FINE|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.server|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112693;_LevelValue=500;|
+  Configured server platform: org.eclipse.persistence.platform.server.glassfish.GlassfishPlatform|#]
+
+[#|2022-10-17T22:35:12.699+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112699;_LevelValue=700;|
+  The access type for the persistent class [class edu.stevens.cs548.clinic.domain.Treatment] is set to [FIELD].|#]
+
+[#|2022-10-17T22:35:12.700+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112700;_LevelValue=700;|
+  The target entity (reference) class for the many to one mapping element [field provider] is being defaulted to: class edu.stevens.cs548.clinic.domain.Provider.|#]
+
+[#|2022-10-17T22:35:12.700+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112700;_LevelValue=700;|
+  The target entity (reference) class for the many to one mapping element [field patient] is being defaulted to: class edu.stevens.cs548.clinic.domain.Patient.|#]
+
+[#|2022-10-17T22:35:12.700+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112700;_LevelValue=700;|
+  The target entity (reference) class for the one to many mapping element [field followupTreatments] is being defaulted to: class edu.stevens.cs548.clinic.domain.Treatment.|#]
+
+[#|2022-10-17T22:35:12.701+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112701;_LevelValue=700;|
+  The access type for the persistent class [class edu.stevens.cs548.clinic.domain.DrugTreatment] is set to [FIELD].|#]
+
+[#|2022-10-17T22:35:12.702+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112702;_LevelValue=700;|
+  The access type for the persistent class [class edu.stevens.cs548.clinic.domain.SurgeryTreatment] is set to [FIELD].|#]
+
+[#|2022-10-17T22:35:12.702+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112702;_LevelValue=700;|
+  The access type for the persistent class [class edu.stevens.cs548.clinic.domain.Provider] is set to [FIELD].|#]
+
+[#|2022-10-17T22:35:12.702+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112702;_LevelValue=700;|
+  The access type for the persistent class [class edu.stevens.cs548.clinic.domain.PhysiotherapyTreatment] is set to [FIELD].|#]
+
+[#|2022-10-17T22:35:12.703+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112703;_LevelValue=700;|
+  The target class (reference) class for the element collection mapping element [field treatmentDates] is being defaulted to: class java.util.Date.|#]
+
+[#|2022-10-17T22:35:12.705+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112705;_LevelValue=700;|
+  The access type for the persistent class [class edu.stevens.cs548.clinic.domain.Patient] is set to [FIELD].|#]
+
+[#|2022-10-17T22:35:12.706+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112706;_LevelValue=700;|
+  The access type for the persistent class [class edu.stevens.cs548.clinic.domain.RadiologyTreatment] is set to [FIELD].|#]
+
+[#|2022-10-17T22:35:12.706+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112706;_LevelValue=700;|
+  The target class (reference) class for the element collection mapping element [field treatmentDates] is being defaulted to: class java.util.Date.|#]
+
+[#|2022-10-17T22:35:12.707+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112707;_LevelValue=700;|
+  The alias name for the entity class [class edu.stevens.cs548.clinic.domain.DrugTreatment] is being defaulted to: DrugTreatment.|#]
+
+[#|2022-10-17T22:35:12.707+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112707;_LevelValue=700;|
+  The alias name for the entity class [class edu.stevens.cs548.clinic.domain.Treatment] is being defaulted to: Treatment.|#]
+
+[#|2022-10-17T22:35:12.707+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112707;_LevelValue=700;|
+  The column name for element [diagnosis] is being defaulted to: DIAGNOSIS.|#]
+
+[#|2022-10-17T22:35:12.708+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112708;_LevelValue=700;|
+  The column name for element [id] is being defaulted to: ID.|#]
+
+[#|2022-10-17T22:35:12.708+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112708;_LevelValue=700;|
+  The column name for element [treatmentId] is being defaulted to: TREATMENTID.|#]
+
+[#|2022-10-17T22:35:12.708+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112708;_LevelValue=700;|
+  Ignoring default serialization on element [field treatmentId] within entity class [class edu.stevens.cs548.clinic.domain.Treatment] since EclipseLink convert metadata is specified.|#]
+
+[#|2022-10-17T22:35:12.709+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112709;_LevelValue=700;|
+  The column name for element [dosage] is being defaulted to: DOSAGE.|#]
+
+[#|2022-10-17T22:35:12.709+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112709;_LevelValue=700;|
+  The column name for element [endDate] is being defaulted to: ENDDATE.|#]
+
+[#|2022-10-17T22:35:12.709+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112709;_LevelValue=700;|
+  The column name for element [startDate] is being defaulted to: STARTDATE.|#]
+
+[#|2022-10-17T22:35:12.710+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112710;_LevelValue=700;|
+  The column name for element [drug] is being defaulted to: DRUG.|#]
+
+[#|2022-10-17T22:35:12.710+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112710;_LevelValue=700;|
+  The column name for element [frequency] is being defaulted to: FREQUENCY.|#]
+
+[#|2022-10-17T22:35:12.710+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112710;_LevelValue=700;|
+  The alias name for the entity class [class edu.stevens.cs548.clinic.domain.SurgeryTreatment] is being defaulted to: SurgeryTreatment.|#]
+
+[#|2022-10-17T22:35:12.711+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112711;_LevelValue=700;|
+  The column name for element [surgeryDate] is being defaulted to: SURGERYDATE.|#]
+
+[#|2022-10-17T22:35:12.711+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112711;_LevelValue=700;|
+  The column name for element [dischargeInstructions] is being defaulted to: DISCHARGEINSTRUCTIONS.|#]
+
+[#|2022-10-17T22:35:12.711+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112711;_LevelValue=700;|
+  The alias name for the entity class [class edu.stevens.cs548.clinic.domain.Provider] is being defaulted to: Provider.|#]
+
+[#|2022-10-17T22:35:12.711+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112711;_LevelValue=700;|
+  The table name for entity [class edu.stevens.cs548.clinic.domain.Provider] is being defaulted to: PROVIDER.|#]
+
+[#|2022-10-17T22:35:12.712+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112712;_LevelValue=700;|
+  The column name for element [providerId] is being defaulted to: PROVIDERID.|#]
+
+[#|2022-10-17T22:35:12.712+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112712;_LevelValue=700;|
+  Ignoring default serialization on element [field providerId] within entity class [class edu.stevens.cs548.clinic.domain.Provider] since EclipseLink convert metadata is specified.|#]
+
+[#|2022-10-17T22:35:12.712+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112712;_LevelValue=700;|
+  The column name for element [npi] is being defaulted to: NPI.|#]
+
+[#|2022-10-17T22:35:12.713+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112713;_LevelValue=700;|
+  The column name for element [name] is being defaulted to: NAME.|#]
+
+[#|2022-10-17T22:35:12.713+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112713;_LevelValue=700;|
+  The column name for element [id] is being defaulted to: ID.|#]
+
+[#|2022-10-17T22:35:12.713+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112713;_LevelValue=700;|
+  The alias name for the entity class [class edu.stevens.cs548.clinic.domain.PhysiotherapyTreatment] is being defaulted to: PhysiotherapyTreatment.|#]
+
+[#|2022-10-17T22:35:12.713+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112713;_LevelValue=700;|
+  The alias name for the entity class [class edu.stevens.cs548.clinic.domain.Patient] is being defaulted to: Patient.|#]
+
+[#|2022-10-17T22:35:12.713+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112713;_LevelValue=700;|
+  The table name for entity [class edu.stevens.cs548.clinic.domain.Patient] is being defaulted to: PATIENT.|#]
+
+[#|2022-10-17T22:35:12.714+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112714;_LevelValue=700;|
+  The column name for element [patientId] is being defaulted to: PATIENTID.|#]
+
+[#|2022-10-17T22:35:12.714+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112714;_LevelValue=700;|
+  Ignoring default serialization on element [field patientId] within entity class [class edu.stevens.cs548.clinic.domain.Patient] since EclipseLink convert metadata is specified.|#]
+
+[#|2022-10-17T22:35:12.714+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112714;_LevelValue=700;|
+  The column name for element [dob] is being defaulted to: DOB.|#]
+
+[#|2022-10-17T22:35:12.714+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112714;_LevelValue=700;|
+  The column name for element [name] is being defaulted to: NAME.|#]
+
+[#|2022-10-17T22:35:12.714+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112714;_LevelValue=700;|
+  The column name for element [id] is being defaulted to: ID.|#]
+
+[#|2022-10-17T22:35:12.714+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112714;_LevelValue=700;|
+  The alias name for the entity class [class edu.stevens.cs548.clinic.domain.RadiologyTreatment] is being defaulted to: RadiologyTreatment.|#]
+
+[#|2022-10-17T22:35:12.715+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112715;_LevelValue=700;|
+  The collection table name for the basic collection/map mapping [field treatmentDates] is being defaulted to: PhysiotherapyTreatment_TREATMENTDATES.|#]
+
+[#|2022-10-17T22:35:12.715+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112715;_LevelValue=700;|
+  The primary key column name for the mapping element [field treatmentDates] is being defaulted to: ID.|#]
+
+[#|2022-10-17T22:35:12.715+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112715;_LevelValue=700;|
+  The foreign key column name for the mapping element [treatmentDates] is being defaulted to: PhysiotherapyTreatment_ID.|#]
+
+[#|2022-10-17T22:35:12.715+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112715;_LevelValue=700;|
+  The value column name for the basic collection/map mapping element mapping element [treatmentDates] is being defaulted to: TREATMENTDATES.|#]
+
+[#|2022-10-17T22:35:12.715+0000|FINE|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112715;_LevelValue=500;|
+  java.lang.ClassNotFoundException: java.util.Listjava.util.Date
+at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+at org.apache.felix.framework.BundleWiringImpl.findClassOrResourceByDelegation(BundleWiringImpl.java:1452)
+at org.apache.felix.framework.BundleWiringImpl.access$300(BundleWiringImpl.java:79)
+at org.apache.felix.framework.BundleWiringImpl$BundleClassLoader.loadClass(BundleWiringImpl.java:1970)
+at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+at java.base/java.lang.Class.forName0(Native Method)
+at java.base/java.lang.Class.forName(Class.java:375)
+at org.eclipse.persistence.internal.jpa.metadata.accessors.objects.MetadataAsmFactory.getVirtualMetadataClass(MetadataAsmFactory.java:543)
+at org.eclipse.persistence.internal.jpa.metadata.accessors.objects.MetadataAsmFactory.buildClassMetadata(MetadataAsmFactory.java:144)
+at org.eclipse.persistence.internal.jpa.metadata.accessors.objects.MetadataAsmFactory.getMetadataClass(MetadataAsmFactory.java:178)
+at org.eclipse.persistence.internal.jpa.metadata.accessors.objects.MetadataAccessibleObject.getMetadataClass(MetadataAccessibleObject.java:73)
+at org.eclipse.persistence.internal.jpa.metadata.accessors.objects.MetadataAnnotatedElement.getRawClassWithGenerics(MetadataAnnotatedElement.java:395)
+at org.eclipse.persistence.internal.jpa.metadata.accessors.mappings.MappingAccessor.getRawClassWithGenerics(MappingAccessor.java:965)
+at org.eclipse.persistence.internal.jpa.metadata.accessors.mappings.MappingAccessor.getReferenceClassWithGenerics(MappingAccessor.java:996)
+at org.eclipse.persistence.internal.jpa.metadata.accessors.mappings.DirectCollectionAccessor.processDirectCollectionMapping(DirectCollectionAccessor.java:463)
+at org.eclipse.persistence.internal.jpa.metadata.accessors.mappings.ElementCollectionAccessor.process(ElementCollectionAccessor.java:875)
+at org.eclipse.persistence.internal.jpa.metadata.MetadataProject.processDirectCollectionAccessors(MetadataProject.java:1622)
+at org.eclipse.persistence.internal.jpa.metadata.MetadataProject.processStage3(MetadataProject.java:1911)
+at org.eclipse.persistence.internal.jpa.metadata.MetadataProcessor.processORMMetadata(MetadataProcessor.java:584)
+at org.eclipse.persistence.internal.jpa.deployment.PersistenceUnitProcessor.processORMetadata(PersistenceUnitProcessor.java:629)
+at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.predeploy(EntityManagerSetupImpl.java:2009)
+at org.eclipse.persistence.jpa.PersistenceProvider.createContainerEntityManagerFactoryImpl(PersistenceProvider.java:350)
+at org.eclipse.persistence.jpa.PersistenceProvider.createContainerEntityManagerFactory(PersistenceProvider.java:316)
+at org.glassfish.persistence.jpa.PersistenceUnitLoader.loadPU(PersistenceUnitLoader.java:207)
+at org.glassfish.persistence.jpa.PersistenceUnitLoader.<init>(PersistenceUnitLoader.java:114)
+at org.glassfish.persistence.jpa.JPADeployer$1.visitPUD(JPADeployer.java:267)
+at org.glassfish.persistence.jpa.JPADeployer$PersistenceUnitDescriptorIterator.iteratePUDs(JPADeployer.java:571)
+at org.glassfish.persistence.jpa.JPADeployer.createEMFs(JPADeployer.java:286)
+at org.glassfish.persistence.jpa.JPADeployer.prepare(JPADeployer.java:183)
+at com.sun.enterprise.v3.server.ApplicationLifecycle.prepareModule(ApplicationLifecycle.java:1131)
+at com.sun.enterprise.v3.server.ApplicationLifecycle.prepare(ApplicationLifecycle.java:504)
+at org.glassfish.deployment.admin.DeployCommand.execute(DeployCommand.java:593)
+at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:556)
+at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:552)
+at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+at java.base/javax.security.auth.Subject.doAs(Subject.java:376)
+at com.sun.enterprise.v3.admin.CommandRunnerImpl$2.execute(CommandRunnerImpl.java:551)
+at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:582)
+at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:574)
+at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+at java.base/javax.security.auth.Subject.doAs(Subject.java:376)
+at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:573)
+at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:1497)
+at com.sun.enterprise.v3.admin.CommandRunnerImpl.access$1300(CommandRunnerImpl.java:120)
+at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1879)
+at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1755)
+at org.glassfish.admin.rest.utils.ResourceUtil.runCommand(ResourceUtil.java:272)
+at org.glassfish.admin.rest.utils.ResourceUtil.runCommand(ResourceUtil.java:240)
+at org.glassfish.admin.rest.utils.ResourceUtil.runCommand(ResourceUtil.java:294)
+at org.glassfish.admin.rest.resources.TemplateListOfResource.createResource(TemplateListOfResource.java:136)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory.lambda$static$0(ResourceMethodInvocationHandlerFactory.java:52)
+at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:124)
+at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:167)
+at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:176)
+at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:79)
+at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:475)
+at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:397)
+at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:81)
+at org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:255)
+at org.glassfish.jersey.internal.Errors$1.call(Errors.java:248)
+at org.glassfish.jersey.internal.Errors$1.call(Errors.java:244)
+at org.glassfish.jersey.internal.Errors.process(Errors.java:292)
+at org.glassfish.jersey.internal.Errors.process(Errors.java:274)
+at org.glassfish.jersey.internal.Errors.process(Errors.java:244)
+at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:265)
+at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:234)
+at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:680)
+at org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpContainer.service(GrizzlyHttpContainer.java:356)
+at org.glassfish.admin.rest.adapter.RestAdapter$2.service(RestAdapter.java:335)
+at org.glassfish.admin.rest.adapter.RestAdapter.service(RestAdapter.java:189)
+at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:520)
+at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:217)
+at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:182)
+at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:156)
+at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:201)
+at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:95)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:260)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:177)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:109)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:88)
+at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:53)
+at org.glassfish.grizzly.portunif.PUFilter.handleRead(PUFilter.java:208)
+at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:95)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:260)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:177)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:109)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:88)
+at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:53)
+at org.glassfish.grizzly.portunif.PUFilter.handleRead(PUFilter.java:208)
+at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:95)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:260)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:177)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:109)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:88)
+at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:53)
+at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:524)
+at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:89)
+at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:94)
+at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.access$100(WorkerThreadIOStrategy.java:33)
+at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:114)
+at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:569)
+at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:549)
+at java.base/java.lang.Thread.run(Thread.java:833)
+|#]
+
+[#|2022-10-17T22:35:12.716+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112716;_LevelValue=700;|
+  The collection table name for the basic collection/map mapping [field treatmentDates] is being defaulted to: RadiologyTreatment_TREATMENTDATES.|#]
+
+[#|2022-10-17T22:35:12.717+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112717;_LevelValue=700;|
+  The primary key column name for the mapping element [field treatmentDates] is being defaulted to: ID.|#]
+
+[#|2022-10-17T22:35:12.717+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112717;_LevelValue=700;|
+  The foreign key column name for the mapping element [treatmentDates] is being defaulted to: RadiologyTreatment_ID.|#]
+
+[#|2022-10-17T22:35:12.717+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112717;_LevelValue=700;|
+  The value column name for the basic collection/map mapping element mapping element [treatmentDates] is being defaulted to: TREATMENTDATES.|#]
+
+[#|2022-10-17T22:35:12.717+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112717;_LevelValue=700;|
+  The primary key column name for the mapping element [field provider] is being defaulted to: ID.|#]
+
+[#|2022-10-17T22:35:12.717+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112717;_LevelValue=700;|
+  The foreign key column name for the mapping element [provider] is being defaulted to: PROVIDER_ID.|#]
+
+[#|2022-10-17T22:35:12.717+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112717;_LevelValue=700;|
+  The primary key column name for the mapping element [field patient] is being defaulted to: ID.|#]
+
+[#|2022-10-17T22:35:12.717+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112717;_LevelValue=700;|
+  The foreign key column name for the mapping element [patient] is being defaulted to: PATIENT_ID.|#]
+
+[#|2022-10-17T22:35:12.718+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112718;_LevelValue=700;|
+  The source primary key column name for the many to many mapping [field followupTreatments] is being defaulted to: ID.|#]
+
+[#|2022-10-17T22:35:12.718+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112718;_LevelValue=700;|
+  The source foreign key column name for the many to many mapping [followupTreatments] is being defaulted to: Treatment_ID.|#]
+
+[#|2022-10-17T22:35:12.718+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112718;_LevelValue=700;|
+  The target primary key column name for the many to many mapping [field followupTreatments] is being defaulted to: ID.|#]
+
+[#|2022-10-17T22:35:12.718+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112718;_LevelValue=700;|
+  The target foreign key column name for the many to many mapping [followupTreatments] is being defaulted to: followupTreatments_ID.|#]
+
+[#|2022-10-17T22:35:12.718+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112718;_LevelValue=700;|
+  The join table name for the many to many mapping [field treatments] is being defaulted to: PROVIDER_Treatment.|#]
+
+[#|2022-10-17T22:35:12.718+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112718;_LevelValue=700;|
+  The source primary key column name for the many to many mapping [field treatments] is being defaulted to: ID.|#]
+
+[#|2022-10-17T22:35:12.718+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112718;_LevelValue=700;|
+  The source foreign key column name for the many to many mapping [treatments] is being defaulted to: Provider_ID.|#]
+
+[#|2022-10-17T22:35:12.718+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112718;_LevelValue=700;|
+  The target primary key column name for the many to many mapping [field treatments] is being defaulted to: ID.|#]
+
+[#|2022-10-17T22:35:12.718+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112718;_LevelValue=700;|
+  The target foreign key column name for the many to many mapping [treatments] is being defaulted to: treatments_ID.|#]
+
+[#|2022-10-17T22:35:12.719+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112719;_LevelValue=700;|
+  The join table name for the many to many mapping [field treatments] is being defaulted to: PATIENT_Treatment.|#]
+
+[#|2022-10-17T22:35:12.719+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112719;_LevelValue=700;|
+  The source primary key column name for the many to many mapping [field treatments] is being defaulted to: ID.|#]
+
+[#|2022-10-17T22:35:12.719+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112719;_LevelValue=700;|
+  The source foreign key column name for the many to many mapping [treatments] is being defaulted to: Patient_ID.|#]
+
+[#|2022-10-17T22:35:12.719+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112719;_LevelValue=700;|
+  The target primary key column name for the many to many mapping [field treatments] is being defaulted to: ID.|#]
+
+[#|2022-10-17T22:35:12.719+0000|CONFIG|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.metadata|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112719;_LevelValue=700;|
+  The target foreign key column name for the many to many mapping [treatments] is being defaulted to: treatments_ID.|#]
+
+[#|2022-10-17T22:35:12.725+0000|INFO|Payara 5.2022.3|javax.enterprise.system.util|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112725;_LevelValue=800;_MessageID=NCLS-COMUTIL-00017;|
+  edu.stevens.cs548.clinic.domain.DrugTreatment actually got transformed|#]
+
+[#|2022-10-17T22:35:12.727+0000|INFO|Payara 5.2022.3|javax.enterprise.system.util|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112727;_LevelValue=800;_MessageID=NCLS-COMUTIL-00017;|
+  edu.stevens.cs548.clinic.domain.Treatment actually got transformed|#]
+
+[#|2022-10-17T22:35:12.730+0000|INFO|Payara 5.2022.3|javax.enterprise.system.util|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112730;_LevelValue=800;_MessageID=NCLS-COMUTIL-00017;|
+  edu.stevens.cs548.clinic.domain.SurgeryTreatment actually got transformed|#]
+
+[#|2022-10-17T22:35:12.733+0000|INFO|Payara 5.2022.3|javax.enterprise.system.util|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112733;_LevelValue=800;_MessageID=NCLS-COMUTIL-00017;|
+  edu.stevens.cs548.clinic.domain.Provider actually got transformed|#]
+
+[#|2022-10-17T22:35:12.735+0000|INFO|Payara 5.2022.3|javax.enterprise.system.util|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112735;_LevelValue=800;_MessageID=NCLS-COMUTIL-00017;|
+  edu.stevens.cs548.clinic.domain.Patient actually got transformed|#]
+
+[#|2022-10-17T22:35:12.737+0000|INFO|Payara 5.2022.3|javax.enterprise.system.util|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112737;_LevelValue=800;_MessageID=NCLS-COMUTIL-00017;|
+  edu.stevens.cs548.clinic.domain.PhysiotherapyTreatment actually got transformed|#]
+
+[#|2022-10-17T22:35:12.739+0000|INFO|Payara 5.2022.3|javax.enterprise.system.util|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112739;_LevelValue=800;_MessageID=NCLS-COMUTIL-00017;|
+  edu.stevens.cs548.clinic.domain.RadiologyTreatment actually got transformed|#]
+
+[#|2022-10-17T22:35:12.744+0000|INFO|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112744;_LevelValue=800;|
+  EclipseLink, version: Eclipse Persistence Services - 2.7.9.payara-p2|#]
+
+[#|2022-10-17T22:35:12.744+0000|FINE|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.connection|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112744;_LevelValue=500;|
+  connecting(DatabaseLogin(
+platform=>PostgreSQLPlatform
+user name=> ""
+connector=>JNDIConnector datasource name=>null
+))|#]
+
+[#|2022-10-17T22:35:12.746+0000|WARNING|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.connection|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112746;_LevelValue=900;|
+  Connected: unknown (JDBC Driver does not support meta data.)|#]
+
+[#|2022-10-17T22:35:12.746+0000|FINE|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.connection|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112746;_LevelValue=500;|
+  connecting(DatabaseLogin(
+platform=>PostgreSQLPlatform
+user name=> ""
+connector=>JNDIConnector datasource name=>null
+))|#]
+
+[#|2022-10-17T22:35:12.747+0000|WARNING|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.connection|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112747;_LevelValue=900;|
+  Connected: unknown (JDBC Driver does not support meta data.)|#]
+
+[#|2022-10-17T22:35:12.753+0000|FINE|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.connection|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046112753;_LevelValue=500;|
+  /file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain login successful|#]
+
+[#|2022-10-17T22:35:22.760+0000|FINE|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.sql|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046122760;_LevelValue=500;|
+  CREATE TABLE PATIENT (ID BIGINT NOT NULL, DOB DATE, NAME VARCHAR(255), PATIENTID UUID, PRIMARY KEY (ID))|#]
+
+[#|2022-10-17T22:35:22.761+0000|FINE|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.sql|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046122761;_LevelValue=500;|
+  SELECT 1|#]
+
+[#|2022-10-17T22:35:22.761+0000|WARNING|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046122761;_LevelValue=900;|
+  Local Exception Stack: 
+Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.9.payara-p2): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: java.lang.reflect.UndeclaredThrowableException
+Error Code: 0
+Call: CREATE TABLE PATIENT (ID BIGINT NOT NULL, DOB DATE, NAME VARCHAR(255), PATIENTID UUID, PRIMARY KEY (ID))
+Query: DataModifyQuery(sql="CREATE TABLE PATIENT (ID BIGINT NOT NULL, DOB DATE, NAME VARCHAR(255), PATIENTID UUID, PRIMARY KEY (ID))")
+at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:342)
+at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.processExceptionForCommError(DatabaseAccessor.java:1655)
+at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:683)
+at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:567)
+at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:2105)
+at org.eclipse.persistence.sessions.server.ServerSession.executeCall(ServerSession.java:603)
+at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:277)
+at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:263)
+at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeNoSelectCall(DatasourceCallQueryMechanism.java:306)
+at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeNoSelect(DatasourceCallQueryMechanism.java:286)
+at org.eclipse.persistence.queries.DataModifyQuery.executeDatabaseQuery(DataModifyQuery.java:87)
+at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:911)
+at org.eclipse.persistence.internal.sessions.AbstractSession.internalExecuteQuery(AbstractSession.java:3367)
+at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1898)
+at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1880)
+at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1830)
+at org.eclipse.persistence.internal.sessions.AbstractSession.priviledgedExecuteNonSelectingCall(AbstractSession.java:5234)
+at org.eclipse.persistence.tools.schemaframework.DatabaseObjectDefinition.createOnDatabase(DatabaseObjectDefinition.java:204)
+at org.eclipse.persistence.tools.schemaframework.SchemaManager.createObject(SchemaManager.java:223)
+at org.eclipse.persistence.tools.schemaframework.TableCreator.extendTables(TableCreator.java:446)
+at org.eclipse.persistence.tools.schemaframework.TableCreator.extendTablesAndConstraints(TableCreator.java:420)
+at org.eclipse.persistence.tools.schemaframework.TableCreator.extendTables(TableCreator.java:411)
+at org.eclipse.persistence.tools.schemaframework.SchemaManager.extendDefaultTables(SchemaManager.java:1187)
+at org.eclipse.persistence.internal.jpa.EntityManagerFactoryProvider.generateDefaultTables(EntityManagerFactoryProvider.java:119)
+at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.writeDDLToDatabase(EntityManagerSetupImpl.java:4695)
+at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.writeDDL(EntityManagerSetupImpl.java:4623)
+at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.writeDDL(EntityManagerSetupImpl.java:4523)
+at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.deploy(EntityManagerSetupImpl.java:820)
+at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.getAbstractSession(EntityManagerFactoryDelegate.java:222)
+at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.createEntityManagerImpl(EntityManagerFactoryDelegate.java:330)
+at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.createEntityManagerImpl(EntityManagerFactoryImpl.java:350)
+at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.createEntityManager(EntityManagerFactoryImpl.java:313)
+at org.glassfish.persistence.jpa.JPADeployer$2.visitPUD(JPADeployer.java:507)
+at org.glassfish.persistence.jpa.JPADeployer$PersistenceUnitDescriptorIterator.iteratePUDs(JPADeployer.java:571)
+at org.glassfish.persistence.jpa.JPADeployer.iterateInitializedPUsAtApplicationPrepare(JPADeployer.java:553)
+at org.glassfish.persistence.jpa.JPADeployer.event(JPADeployer.java:454)
+at org.glassfish.kernel.event.EventsImpl.send(EventsImpl.java:131)
+at com.sun.enterprise.v3.server.ApplicationLifecycle.prepare(ApplicationLifecycle.java:564)
+at org.glassfish.deployment.admin.DeployCommand.execute(DeployCommand.java:593)
+at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:556)
+at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:552)
+at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+at java.base/javax.security.auth.Subject.doAs(Subject.java:376)
+at com.sun.enterprise.v3.admin.CommandRunnerImpl$2.execute(CommandRunnerImpl.java:551)
+at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:582)
+at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:574)
+at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+at java.base/javax.security.auth.Subject.doAs(Subject.java:376)
+at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:573)
+at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:1497)
+at com.sun.enterprise.v3.admin.CommandRunnerImpl.access$1300(CommandRunnerImpl.java:120)
+at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1879)
+at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1755)
+at org.glassfish.admin.rest.utils.ResourceUtil.runCommand(ResourceUtil.java:272)
+at org.glassfish.admin.rest.utils.ResourceUtil.runCommand(ResourceUtil.java:240)
+at org.glassfish.admin.rest.utils.ResourceUtil.runCommand(ResourceUtil.java:294)
+at org.glassfish.admin.rest.resources.TemplateListOfResource.createResource(TemplateListOfResource.java:136)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory.lambda$static$0(ResourceMethodInvocationHandlerFactory.java:52)
+at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:124)
+at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:167)
+at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:176)
+at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:79)
+at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:475)
+at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:397)
+at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:81)
+at org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:255)
+at org.glassfish.jersey.internal.Errors$1.call(Errors.java:248)
+at org.glassfish.jersey.internal.Errors$1.call(Errors.java:244)
+at org.glassfish.jersey.internal.Errors.process(Errors.java:292)
+at org.glassfish.jersey.internal.Errors.process(Errors.java:274)
+at org.glassfish.jersey.internal.Errors.process(Errors.java:244)
+at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:265)
+at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:234)
+at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:680)
+at org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpContainer.service(GrizzlyHttpContainer.java:356)
+at org.glassfish.admin.rest.adapter.RestAdapter$2.service(RestAdapter.java:335)
+at org.glassfish.admin.rest.adapter.RestAdapter.service(RestAdapter.java:189)
+at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:520)
+at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:217)
+at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:182)
+at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:156)
+at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:201)
+at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:95)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:260)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:177)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:109)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:88)
+at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:53)
+at org.glassfish.grizzly.portunif.PUFilter.handleRead(PUFilter.java:208)
+at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:95)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:260)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:177)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:109)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:88)
+at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:53)
+at org.glassfish.grizzly.portunif.PUFilter.handleRead(PUFilter.java:208)
+at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:95)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:260)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:177)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:109)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:88)
+at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:53)
+at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:524)
+at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:89)
+at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:94)
+at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.access$100(WorkerThreadIOStrategy.java:33)
+at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:114)
+at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:569)
+at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:549)
+at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLException: java.lang.reflect.UndeclaredThrowableException
+at com.sun.gjc.spi.jdbc40.ProfiledConnectionWrapper40.prepareStatement(ProfiledConnectionWrapper40.java:256)
+at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.prepareStatement(DatabaseAccessor.java:1600)
+at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.prepareStatement(DatabaseAccessor.java:1549)
+at org.eclipse.persistence.internal.databaseaccess.DatabaseCall.prepareStatement(DatabaseCall.java:806)
+at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:628)
+... 111 more
+Caused by: java.lang.reflect.UndeclaredThrowableException
+at jdk.proxy79/jdk.proxy79.$Proxy322.prepareStatement(Unknown Source)
+at com.sun.gjc.spi.base.ConnectionHolder.prepareStatement(ConnectionHolder.java:609)
+at com.sun.gjc.spi.jdbc40.ProfiledConnectionWrapper40.prepareCachedStatement(ProfiledConnectionWrapper40.java:386)
+at com.sun.gjc.spi.jdbc40.ProfiledConnectionWrapper40.prepareCachedStatement(ProfiledConnectionWrapper40.java:67)
+at com.sun.gjc.spi.ManagedConnectionImpl.prepareCachedStatement(ManagedConnectionImpl.java:1080)
+at com.sun.gjc.spi.jdbc40.ProfiledConnectionWrapper40.prepareStatement(ProfiledConnectionWrapper40.java:252)
+... 115 more
+Caused by: java.lang.reflect.InvocationTargetException
+at jdk.internal.reflect.GeneratedMethodAccessor383.invoke(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at com.sun.gjc.spi.JdbcObjectsFactory$1.invoke(JdbcObjectsFactory.java:143)
+... 121 more
+Caused by: org.postgresql.util.PSQLException: Connection has been closed.
+at org.postgresql.ds.PGPooledConnection$ConnectionHandler.invoke(PGPooledConnection.java:326)
+at jdk.proxy79/jdk.proxy79.$Proxy321.prepareStatement(Unknown Source)
+... 125 more
+|#]
+
+[#|2022-10-17T22:35:22.763+0000|SEVERE|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.ejb|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046122763;_LevelValue=1000;|
+  java.lang.reflect.UndeclaredThrowableException
+at jdk.proxy79/jdk.proxy79.$Proxy322.getMetaData(Unknown Source)
+at com.sun.gjc.spi.base.ConnectionHolder.getMetaData(ConnectionHolder.java:367)
+at com.sun.gjc.spi.jdbc40.ProfiledConnectionWrapper40.getMetaData(ProfiledConnectionWrapper40.java:160)
+at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.getConnectionMetaData(DatabaseAccessor.java:1254)
+at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.getColumnInfo(DatabaseAccessor.java:1180)
+at org.eclipse.persistence.tools.schemaframework.TableCreator.extendTables(TableCreator.java:463)
+at org.eclipse.persistence.tools.schemaframework.TableCreator.extendTablesAndConstraints(TableCreator.java:420)
+at org.eclipse.persistence.tools.schemaframework.TableCreator.extendTables(TableCreator.java:411)
+at org.eclipse.persistence.tools.schemaframework.SchemaManager.extendDefaultTables(SchemaManager.java:1187)
+at org.eclipse.persistence.internal.jpa.EntityManagerFactoryProvider.generateDefaultTables(EntityManagerFactoryProvider.java:119)
+at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.writeDDLToDatabase(EntityManagerSetupImpl.java:4695)
+at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.writeDDL(EntityManagerSetupImpl.java:4623)
+at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.writeDDL(EntityManagerSetupImpl.java:4523)
+at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.deploy(EntityManagerSetupImpl.java:820)
+at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.getAbstractSession(EntityManagerFactoryDelegate.java:222)
+at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.createEntityManagerImpl(EntityManagerFactoryDelegate.java:330)
+at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.createEntityManagerImpl(EntityManagerFactoryImpl.java:350)
+at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.createEntityManager(EntityManagerFactoryImpl.java:313)
+at org.glassfish.persistence.jpa.JPADeployer$2.visitPUD(JPADeployer.java:507)
+at org.glassfish.persistence.jpa.JPADeployer$PersistenceUnitDescriptorIterator.iteratePUDs(JPADeployer.java:571)
+at org.glassfish.persistence.jpa.JPADeployer.iterateInitializedPUsAtApplicationPrepare(JPADeployer.java:553)
+at org.glassfish.persistence.jpa.JPADeployer.event(JPADeployer.java:454)
+at org.glassfish.kernel.event.EventsImpl.send(EventsImpl.java:131)
+at com.sun.enterprise.v3.server.ApplicationLifecycle.prepare(ApplicationLifecycle.java:564)
+at org.glassfish.deployment.admin.DeployCommand.execute(DeployCommand.java:593)
+at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:556)
+at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:552)
+at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+at java.base/javax.security.auth.Subject.doAs(Subject.java:376)
+at com.sun.enterprise.v3.admin.CommandRunnerImpl$2.execute(CommandRunnerImpl.java:551)
+at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:582)
+at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:574)
+at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+at java.base/javax.security.auth.Subject.doAs(Subject.java:376)
+at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:573)
+at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:1497)
+at com.sun.enterprise.v3.admin.CommandRunnerImpl.access$1300(CommandRunnerImpl.java:120)
+at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1879)
+at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1755)
+at org.glassfish.admin.rest.utils.ResourceUtil.runCommand(ResourceUtil.java:272)
+at org.glassfish.admin.rest.utils.ResourceUtil.runCommand(ResourceUtil.java:240)
+at org.glassfish.admin.rest.utils.ResourceUtil.runCommand(ResourceUtil.java:294)
+at org.glassfish.admin.rest.resources.TemplateListOfResource.createResource(TemplateListOfResource.java:136)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory.lambda$static$0(ResourceMethodInvocationHandlerFactory.java:52)
+at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:124)
+at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:167)
+at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:176)
+at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:79)
+at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:475)
+at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:397)
+at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:81)
+at org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:255)
+at org.glassfish.jersey.internal.Errors$1.call(Errors.java:248)
+at org.glassfish.jersey.internal.Errors$1.call(Errors.java:244)
+at org.glassfish.jersey.internal.Errors.process(Errors.java:292)
+at org.glassfish.jersey.internal.Errors.process(Errors.java:274)
+at org.glassfish.jersey.internal.Errors.process(Errors.java:244)
+at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:265)
+at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:234)
+at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:680)
+at org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpContainer.service(GrizzlyHttpContainer.java:356)
+at org.glassfish.admin.rest.adapter.RestAdapter$2.service(RestAdapter.java:335)
+at org.glassfish.admin.rest.adapter.RestAdapter.service(RestAdapter.java:189)
+at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:520)
+at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:217)
+at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:182)
+at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:156)
+at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:201)
+at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:95)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:260)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:177)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:109)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:88)
+at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:53)
+at org.glassfish.grizzly.portunif.PUFilter.handleRead(PUFilter.java:208)
+at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:95)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:260)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:177)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:109)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:88)
+at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:53)
+at org.glassfish.grizzly.portunif.PUFilter.handleRead(PUFilter.java:208)
+at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:95)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:260)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:177)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:109)
+at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:88)
+at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:53)
+at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:524)
+at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:89)
+at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:94)
+at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.access$100(WorkerThreadIOStrategy.java:33)
+at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:114)
+at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:569)
+at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:549)
+at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.reflect.InvocationTargetException
+at jdk.internal.reflect.GeneratedMethodAccessor550.invoke(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at com.sun.gjc.spi.JdbcObjectsFactory$1.invoke(JdbcObjectsFactory.java:143)
+... 100 more
+Caused by: org.postgresql.util.PSQLException: Connection has been closed.
+at org.postgresql.ds.PGPooledConnection$ConnectionHandler.invoke(PGPooledConnection.java:326)
+at jdk.proxy79/jdk.proxy79.$Proxy321.getMetaData(Unknown Source)
+... 104 more
+|#]
+
+[#|2022-10-17T22:35:22.765+0000|FINE|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.connection|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046122765;_LevelValue=500;|
+  disconnect|#]
+
+[#|2022-10-17T22:35:22.765+0000|FINE|Payara 5.2022.3|org.eclipse.persistence.session./file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain.connection|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046122765;_LevelValue=500;|
+  /file:/opt/payara/appserver/glassfish/domains/domain1/applications/clinic-init0-1.0.0-jar-with-dependencies/_clinic-domain logout successful|#]
+
+[#|2022-10-17T22:35:22.765+0000|SEVERE|Payara 5.2022.3|javax.enterprise.system.core|_ThreadID=198;_ThreadName=admin-thread-pool::admin-listener(5);_TimeMillis=1666046122765;_LevelValue=1000;|
+  java.lang.reflect.UndeclaredThrowableException|#]
+
+[#|2022-10-17T22:35:22.775+0000|INFO|Payara 5.2022.3|org.glassfish.admingui|_ThreadID=104;_ThreadName=admin-thread-pool::admin-listener(1);_TimeMillis=1666046122775;_LevelValue=800;|
+  Exception Occurred :Error occurred during deployment: java.lang.reflect.UndeclaredThrowableException. Please see server.log for more details. |#]
+

@@ -1,0 +1,2 @@
+DROP DATABASE cs548 WITH (FORCE);
+create database cs548 with owner cs548user;

@@ -1,0 +1,201 @@
+Commands are:
+  load filename: load database from a file
+  save filename: save database to a file
+  addpatient: add a patient
+  addprovider: add a provider
+  addtreatment: add a treatment
+  list: display database content
+  quit: exit the app
+
+list
+load ..\load.json
+save ..\save.json
+
+addpatient
+patient2
+01/01/2100
+list
+
+addprovider
+npi2
+provider2
+list
+
+addtreatment
+D
+0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc
+1aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc
+diagonosis2
+drugs2
+10
+01/01/2100
+01/10/2100
+2
+list
+
+addtreatment
+S
+0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc
+1aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc
+diagonosis2
+01/01/2100
+Surgery Discharge Instruction
+2aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc
+list
+
+addtreatment
+R
+0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc
+1aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc
+diagonosis2
+01/01/2100 01/02/2100 01/03/2100 01/04/2100 01/05/2100
+0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc 1aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc
+list
+
+addtreatment
+P
+0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc
+1aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc
+diagonosis2
+01/01/2100 01/02/2100 01/03/2100 01/04/2100 01/05/2100
+list
+
+
+cd C:\Users\liaoy\OneDrive\Desktop\Master\Lectures\CS_548_EnterpriseSoftwareArchitectureDesign\Assignment2\Assignment2-Code
+
+
+java -jar ./clinic-json-schema/target/clinic-json-schema-1.0.0-jar-with-dependencies.jar patient validation.json
+{
+    "id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+    "name": "patient",
+    "dob": "2000-01-01"
+}
+{
+    "id": "cc",
+    "name": 1,
+    "dob": "2000-01-0",
+	"otherProperty":null
+}
+
+java -jar ./clinic-json-schema/target/clinic-json-schema-1.0.0-jar-with-dependencies.jar provider validation.json
+{
+	"id": "1aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+	"npi": "npi",
+	"name": "provider"
+}
+{
+	"id": "aa",
+	"npi": 11,
+	"name": 22,
+	"otherProperty":null
+}
+
+java -jar ./clinic-json-schema/target/clinic-json-schema-1.0.0-jar-with-dependencies.jar treatment validation.json
+{
+	"type-tag": "DRUGTREATMENT",
+	"id": "2aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+	"patient-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+	"provider-id": "1aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+	"diagnosis": "diagonosis",
+	"start-date": "2000-01-01",
+	"end-date": "2000-01-01",
+	"drug": "drugs",
+	"dosage": 2.4,
+	"frequency": 2
+}
+{
+	"type-tag": "DRUGTREATMENT",
+	"id": "2c",
+	"patient-id": "0c",
+	"provider-id": "1c",
+	"diagnosis": "diagonosis",
+	"start-date": "2000-01-01",
+	"end-date": "2000-01-01",
+	"drug": "drugs",
+	"dosage": 2.4,
+	"frequency": 2
+}
+
+{
+	"type-tag": "SURGERY",
+	"id": "3aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+	"patient-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+	"provider-id": "1aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+	"diagnosis": "diagonosis",
+	"surgery-date": "2000-01-01",
+	"dischargeInstruction": "discharge Instruction",
+	"followups": [
+		"2aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc"
+	]
+}
+{
+	"type-tag": "SURGERY",
+	"id": "3c",
+	"patient-id": "0c",
+	"provider-id": "1c",
+	"diagnosis": "diagonosis",
+	"surgery-date": "2000-01-01",
+	"dischargeInstruction": "discharge Instruction",
+	"followups": "2aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc"
+	
+}
+
+{
+	"type-tag": "RADIOLOGY",
+	"id": "5aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+	"patient-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+	"provider-id": "1aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+	"diagnosis": "diagonosis",
+	"treatmentDateList": [
+		"2000-01-01",
+		"2000-01-02",
+		"2000-01-03",
+		"2000-01-04"
+	],
+	"followups": [
+		"2aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc"
+	]
+}
+{
+	"type-tag": "RADIOLOGY",
+	"id": "5c",
+	"patient-id": "0c",
+	"provider-id": "1c",
+	"diagnosis": "diagonosis",
+	"treatmentDateList": [
+		"2000-01-0",
+		"2000-01-02",
+		"2000-01-03",
+		"2000-01-04"
+	],
+	"followups": [
+		"2"
+	]
+}
+
+{
+	"type-tag": "PHYSIOTHERAPY",
+	"id": "6aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+	"patient-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+	"provider-id": "1aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+	"diagnosis": "diagonosis",
+	"treatmentDateList": [
+		"2000-01-01",
+		"2000-01-02",
+		"2000-01-03",
+		"2000-01-04"
+	]
+}
+{
+	"type-tag": "PHYSIOTHERAPY",
+	"id": "6c",
+	"patient-id": "0c",
+	"provider-id": "1c",
+	"diagnosis": "diagonosis",
+	"treatmentDateList": [
+		"2000",
+		"2000-01-02",
+		"2000-01-03",
+		"2000-01-04"
+	]
+}

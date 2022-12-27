@@ -1,0 +1,69 @@
+create view v1 as
+select prod, month,avg(quant) as avg_q
+from sales
+where year=1995
+group by prod,month
+
+
+select v1.prod, v1.month, v1.avg_q, v2.avg_q, v3.avg_q
+from v1, v1 as v2, v1 as v3
+where v1.prod=v2.prod and v2.prod=v3. prod and v2.month=v1.month-1 and v3.month=v1.month+1
+_____________________________________________________________________________
+_____________________________________________________________________________
+
+create view v1 as
+select cust, avg(quant) as NY_AVG_Q
+from sales
+where year=1997 and state='NY'
+group by cust
+
+create view v2 as
+select cust, avg(quant) as CT_AVG_Q
+from sales
+where year=1997 and state='CT'
+group by cust
+
+create view v1 as
+select cust, avg(quant) as NJ_AVG_Q
+from sales
+where year=1997 and state='NJ'
+group by cust
+
+select v1.cust, v1.NY_AVG_Q, v2.CT_AVG_Q, v3.NJ_AVG_Q
+from v1, v2, v3
+where v1.cust=v2.cust and v2.cust=v3.cust and v1. NY_AVG_Q>v2. CT_AVG_Q and v1. NY_AVG_Q>v3. NJ_AVG_Q
+_____________________________________________________________________________
+_____________________________________________________________________________
+µÚÁùÌâ´ð°¸£º
+create view v1 as
+select product,month, avg(quant) as avg_q
+from sales
+where year=1995
+group by product, month
+
+create view v2 as
+select v1.product as product, v1.month as month, count(sales.quant) as PREVIOUS_TOT
+from sales,v1
+where sales.year=1995 and sales.product=v1.product and sales.month=v1.month-1 and sales.quant>v1.avg_q
+group by v1.product ,v1.month
+
+create view v3 as
+select v1.product as product, v1.month as month, count(sales.quant) as FOLLOWING_TOT
+from sales,v1
+where sales.year=1995 and sales.product=v1.product and sales.month=v1.month+1 and sales.quant>v1.avg_q
+group by v1.product ,v1.month
+
+select v2.product, v2.month,v2.PREVIOUS_TOT,v3.FOLLOWING_TOT
+from v2,v3
+where v2.product=v3.product and v2.month=v3.month 
+
+
+
+1. A->BC and B->D,
+   so A->CD,
+   and CD->E,
+  so A->E.
+
+2. A->BC so A->B, so A->D,
+  and A->A AND A->BC AND A->E and A->D,
+so A->ABCDE

@@ -1,0 +1,88 @@
+{
+  "patients": [
+    {
+      "name": "patient upload 01",
+      "dob": "2000-01-01",
+      "treatments": []
+    },
+    {
+      "name": "patient2 upload 02",
+      "dob": "2100-01-01",
+      "treatments": []
+    }
+  ],
+  "providers": [
+    {
+      "npi": "npi",
+      "name": "provider  01",
+      "treatments": []
+    },
+    {
+      "npi": "npi",
+      "name": "provider upload  02",
+      "treatments": []
+    }
+  ],
+  "treatments": [
+    {
+      "type-tag": "DRUG",
+      "drug": "drugs upload",
+      "dosage": 4.0,
+      "start-date": "2000-01-01",
+      "end-date": "2000-01-01",
+      "frequency": 2,
+      "patient-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "provider-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "diagnosis": "diagonosis",
+      "followupTreatments": []
+    },
+    {
+      "type-tag": "SURGERY",
+      "surgery-date": "2000-01-01",
+      "dischargeInstruction": "discharge Instruction",
+      "patient-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "provider-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "diagnosis": "diagonosis",
+      "followupTreatments": []
+    },
+    {
+      "type-tag": "RADIOLOGY",
+      "treatmentDateList": [
+        "2000-01-01",
+        "2000-01-02",
+        "2000-01-03",
+        "2000-01-04"
+      ],
+      "patient-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "provider-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "diagnosis": "diagonosis",
+      "followupTreatments": []
+    },
+    {
+      "type-tag": "PHYSIOTHERAPY",
+      "treatmentDateList": [
+        "2000-01-01",
+        "2000-01-02",
+        "2000-01-03",
+        "2000-01-04"
+      ],
+      "patient-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "provider-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "diagnosis": "diagonosis surgery with follow",
+      "followupTreatments": [
+        {
+          "type-tag": "DRUG",
+          "drug": "drugs upload",
+          "dosage": 4.0,
+          "start-date": "2000-01-01",
+          "end-date": "2000-01-01",
+          "frequency": 2,
+          "patient-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+          "provider-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+          "diagnosis": "diagonosis with followup",
+          "followupTreatments": []
+        }
+      ]
+    }
+  ]
+}

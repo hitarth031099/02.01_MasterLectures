@@ -1,0 +1,38 @@
+h1{
+    color: red;
+    text-align: center;
+}
+
+h2{
+    color: green;
+    text-align: center;
+}
+
+
+p {
+    color: blue;
+    font-weight: bold;
+}
+
+.search-form{
+    display: flex;
+    width: 60%;
+    margin: .5rem;
+}
+
+label{
+    margin: .5rem;
+}
+
+input{
+    color:red;
+}
+
+li {
+	background-color: grey;
+	color: white;
+}
+
+a:visited {
+	color: sienna;
+}

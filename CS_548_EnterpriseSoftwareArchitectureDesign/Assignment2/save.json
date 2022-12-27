@@ -1,0 +1,137 @@
+{
+  "patients": [
+    {
+      "id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "name": "patient",
+      "dob": "2000-01-01"
+    },
+    {
+      "id": "7129b282-7387-412a-83ce-ae1b9e5830f3",
+      "name": "patient2",
+      "dob": "2100-01-01"
+    }
+  ],
+  "providers": [
+    {
+      "id": "1aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "npi": "npi",
+      "name": "provider"
+    },
+    {
+      "id": "9e2f5614-4fdb-42a6-8db0-a8c3f82a3630",
+      "npi": "npi2",
+      "name": "provider2"
+    }
+  ],
+  "treatments": [
+    {
+      "drug": "drugs",
+      "dosage": 2.4,
+      "start-date": "2000-01-01",
+      "end-date": "2000-01-01",
+      "frequency": 2,
+      "type-tag": "DRUGTREATMENT",
+      "id": "2aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "patient-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "provider-id": "1aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "diagnosis": "diagonosis"
+    },
+    {
+      "surgery-date": "2000-01-01",
+      "dischargeInstruction": "discharge Instruction",
+      "followups": [
+        "2aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc"
+      ],
+      "type-tag": "SURGERY",
+      "id": "3aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "patient-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "provider-id": "1aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "diagnosis": "diagonosis"
+    },
+    {
+      "treatmentDateList": [
+        "2000-01-01",
+        "2000-01-02",
+        "2000-01-03",
+        "2000-01-04"
+      ],
+      "followups": [
+        "2aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc"
+      ],
+      "type-tag": "RADIOLOGY",
+      "id": "5aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "patient-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "provider-id": "1aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "diagnosis": "diagonosis"
+    },
+    {
+      "treatmentDateList": [
+        "2000-01-01",
+        "2000-01-02",
+        "2000-01-03",
+        "2000-01-04"
+      ],
+      "type-tag": "PHYSIOTHERAPY",
+      "id": "6aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "patient-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "provider-id": "1aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "diagnosis": "diagonosis"
+    },
+    {
+      "drug": "drugs2",
+      "dosage": 10.0,
+      "start-date": "2100-01-01",
+      "end-date": "2100-01-10",
+      "frequency": 2,
+      "type-tag": "DRUGTREATMENT",
+      "id": "efd677be-cfe7-4f0b-afb1-334a77b76294",
+      "patient-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "provider-id": "1aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "diagnosis": "diagonosis2"
+    },
+    {
+      "surgery-date": "2100-01-01",
+      "dischargeInstruction": "Surgery Discharge Instruction",
+      "followups": [
+        "2aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc"
+      ],
+      "type-tag": "SURGERY",
+      "id": "b4122b60-3606-4690-b5dc-df7e64107f0b",
+      "patient-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "provider-id": "1aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "diagnosis": "diagonosis2"
+    },
+    {
+      "treatmentDateList": [
+        "2100-01-01",
+        "2100-01-02",
+        "2100-01-03",
+        "2100-01-04",
+        "2100-01-05"
+      ],
+      "followups": [
+        "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+        "1aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc"
+      ],
+      "type-tag": "RADIOLOGY",
+      "id": "60923851-0ebd-46bb-9b2d-8d73eaf3a4e5",
+      "patient-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "provider-id": "1aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "diagnosis": "diagonosis2"
+    },
+    {
+      "treatmentDateList": [
+        "2100-01-01",
+        "2100-01-02",
+        "2100-01-03",
+        "2100-01-04",
+        "2100-01-05"
+      ],
+      "type-tag": "PHYSIOTHERAPY",
+      "id": "75d1cf52-b55c-4380-9969-38b64a6baca9",
+      "patient-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "provider-id": "1aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "diagnosis": "diagonosis2"
+    }
+  ]
+}

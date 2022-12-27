@@ -1,0 +1,429 @@
+<h1 id="-center-cs-521-note-center-"><center>CS 521 Note</center></h1>
+<h2 id="-chapter-1-"><strong>Chapter 1</strong></h2>
+<ul>
+<li><p><strong>What&#39;s In Internet</strong> (nuts and bolts view)<br>hardware</p>
+<ul>
+<li><strong>hosts/end systems</strong>: connected computing devices, running network apps</li>
+<li><strong>communication links</strong>: fiber,copper,radio,satelite. transmission rate(bandwidth) bits/second</li>
+<li><strong>packet switches</strong>: routers(core) &amp; switches(access networks)</li>
+</ul>
+<p>software(core)</p>
+<ul>
+<li><strong>internet</strong>: network of networks, interconnected ISPs(Internet Service Providers)</li>
+<li><strong>protocols</strong>: control sending, receiving of messages. TCP/IP :two most important protocols.(Transmission Control Protocol/Internet Protocol)</li>
+<li><strong>internet standards</strong>: RFC(request for comments), IETF(internet engineering task force)</li>
+</ul>
+</li>
+<li><p><strong>Access Technologies</strong></p>
+<ul>
+<li><p><strong>DSL(digital subscriber line)</strong></p>
+<ul>
+<li>Using telephone line(copper wire) for short distance within 5 to 10 miles of the central office.<br>Voice, data transmitted at different frequencies over dedicated line to central office in existing telephone line.<br>The splitter split them, so data over DSL phone line goes to internet, voice over DSL phone line oges to telephone net</li>
+<li>&lt;2.5 Mbps upstream, &lt;24 Mbps downstream which means <strong>asymmetric</strong><br><img src="1_1_DSL.png" alt=""></li>
+</ul>
+</li>
+<li><p><strong>Cable network</strong></p>
+<ul>
+<li>Using television infrastructure, which means duplicated share a cable line</li>
+<li>HFC: hybrid fiber coax, using both fiber and coaxial cable</li>
+<li>frequency division multiplexing: different channels transmitted in different frequency bands</li>
+<li>30 Mbps downstream, 2 Mbps upstream which is <strong>asymmetric</strong><br><img src="1_2_cableNetwork.png" alt=""></li>
+</ul>
+</li>
+<li><p><strong>FTTH(fiber to the home)</strong></p>
+<ul>
+<li>provide an optical fiber path from the CO directly to the home</li>
+<li>AONs(active optical networks)</li>
+<li>PONs(passive optical networks), used by Verizon&#39;s FIOS service.<br>Using OLT(optical line terminator) to provide conversion between optical and electrical singnals</li>
+</ul>
+</li>
+<li><p><strong>Wireless</strong></p>
+<ul>
+<li>LAN(local area network): within building(100 ft.) 11,54,450 Mbps</li>
+<li>wide-area wireless access: cellular 10&#39;s km </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>two ways of network link</strong></p>
+<ul>
+<li><strong>circuit switching</strong><ul>
+<li>a path is reserved during communication between end systems</li>
+<li>usually use in traditional telephone networks</li>
+<li><strong>FDM</strong> Frequency-division multiplexing</li>
+<li><strong>TDM</strong> Time-division multiplexing</li>
+</ul>
+</li>
+<li><strong>packet switching</strong><ul>
+<li>this allow more users to use net work than circuit switching</li>
+<li>great for bursty data</li>
+<li>excessive congestion possible</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>packet switching delay</strong></p>
+<ul>
+<li><strong>nodal processing delay</strong><ul>
+<li>check bit errors, determine output link</li>
+<li>usually &lt;msec</li>
+</ul>
+</li>
+<li><strong>queueing delay</strong><ul>
+<li>waiting for transmission</li>
+<li>depend on congestion level of router</li>
+<li><strong>La/R</strong>: traffic intensity</li>
+<li>R: link bandwidth(bps); L: packet length(bits); a: average packet arrival rate</li>
+<li>if packet arrive in full buffer(finite capacity), packet will loss</li>
+</ul>
+</li>
+<li><strong>transmission delay</strong>  <ul>
+<li><strong>L/R</strong>   L:packet length(bits); R: link bandwidth(bps)</li>
+</ul>
+</li>
+<li><strong>propagation delay</strong><ul>
+<li><strong>d/s</strong>   d: length of physical link; s: propagation speed(~2*10^8 m/sec)</li>
+<li><strong>throughput</strong>: limited by bottlenect link(min)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>protocol</strong>: define format, order of message sent and received among network entities, and actions taken on message transmission, receipt</p>
+</li>
+<li><p><strong>internet protocol stack</strong> (5 layers)</p>
+<ul>
+<li><strong>application</strong><ul>
+<li>supporting network application</li>
+<li>FTP(file), SMTP(email), HTTP(web)</li>
+<li><strong>message</strong></li>
+</ul>
+</li>
+<li><strong>transport</strong><ul>
+<li>process-process data transfer</li>
+<li>TCP(connection oriented, guaranted), UDP(connectionless)</li>
+<li><strong>segment</strong></li>
+</ul>
+</li>
+<li><strong>network</strong><ul>
+<li>routing of datagrams from source to destination</li>
+<li>IP(only), routing protocols(various)</li>
+<li><strong>datagram</strong></li>
+</ul>
+</li>
+<li><strong>link</strong><ul>
+<li>data transfer between neighboring, network elements</li>
+<li>ethernet, 802.111(wifi), PPP</li>
+<li><strong>frame</strong></li>
+</ul>
+</li>
+<li><strong>physical</strong><ul>
+<li>bits &quot;on the wire&quot;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="-chapter-2-"><strong>Chapter 2</strong></h2>
+<ul>
+<li><p><strong>application architectures</strong></p>
+<ul>
+<li><strong>client-server</strong><ul>
+<li>server: permanent IP address</li>
+<li>clients: may have dynamic IP addresses</li>
+</ul>
+</li>
+<li><strong>peer-to-peer(P2P)</strong><ul>
+<li>no always-on server</li>
+<li>arbitrary end systems directly communicate</li>
+<li>peers request service from other peers</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>process</strong></p>
+<ul>
+<li>program running within a host</li>
+<li>process(program running within a host) send/receive messages to/from its <strong>socket</strong></li>
+<li>process have identifier(32-bit IP address &amp;&amp; port numbers)</li>
+<li>requirements:<ul>
+<li><strong>data integrity</strong>: file transfer require no loss data</li>
+<li><strong>timing</strong>: internet require low delay to be &quot;effective&quot;</li>
+<li><strong>throughput</strong>: multimedia require minimum throughput to be &quot;effective&quot;</li>
+<li><strong>security</strong>: encryption, data integrity</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>transport layer protocols services</strong></p>
+<ul>
+<li><strong>TCP</strong><ul>
+<li>reliable transport</li>
+<li>flow control</li>
+<li>congestion control</li>
+<li>does not provide: timing, minimum throughput, guarantee security</li>
+<li>connection-oriented</li>
+</ul>
+</li>
+<li><strong>UDP</strong><ul>
+<li>unreliable data transfer</li>
+<li>does not provide: reliability, flow control, congestion control, timing, throughput guarantee, security, or connection setup.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>SSL(Secure Sockets Layer)</strong></p>
+<ul>
+<li>application layer</li>
+<li>provides:<ul>
+<li>encrypted TCP connection</li>
+<li>data integrity</li>
+<li>end-point authentication</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>HTTP(hypertext transfer protocol)</strong></p>
+<ul>
+<li>Web&#39;s application layer protocal, <strong>stateless</strong> protocol</li>
+<li>client/server model</li>
+<li>use <strong>TCP</strong>: client initiates TCP connection to server port 80, which is also known as <strong>hand shake</strong></li>
+<li>non-persistent/persistent HTTP, depends on the number of objects sent over one TCP connection</li>
+<li><strong>RTT(round-trip time)</strong>: time for a small packet to travel <strong>from client to server and back</strong> </li>
+<li><strong>HTTP response time</strong><ul>
+<li>one RTT to initiate TCP connection</li>
+<li>one RTT for HTTP request and first few bytes of HTTP response to return</li>
+<li>file transmission time</li>
+<li>non-persistent HTTP response time = 2RTT + file transmission time</li>
+</ul>
+</li>
+<li><strong>HTTP requst format</strong><br>cr: carriage return character<br>lf: line-feed character<br>cr if at the start of line indicates end of header lines
+<img src="2_1_requestFormat.png" alt=""></li>
+<li><strong>HTTP response message</strong><br>status line: &quot;protocol_status status_code status_phrase&quot;<br>header lines: description<br>data: requested HTML files  </li>
+</ul>
+</li>
+<li><p><strong>cookies</strong></p>
+<ul>
+<li><strong>components</strong><ul>
+<li>cookie header line of HTTP response message</li>
+<li>cookie headre line in next HTTP request message</li>
+<li>cookie file kept on user&#39;s host, managed by user&#39;s browser</li>
+<li>back-end database at web site</li>
+</ul>
+</li>
+<li><strong>usage</strong><ul>
+<li>authorization</li>
+<li>shopping carts</li>
+<li>recommendtions</li>
+<li>user session state(web email)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Web caches(proxy server)</strong></p>
+<ul>
+<li>goal: satify client request without involving origin server</li>
+<li>browser sends all HTTP request to cache<ul>
+<li>if object in cache: cache returns object</li>
+<li>else cache requests object from origin server, then return object to client</li>
+</ul>
+</li>
+<li>typically cache is installed by ISP</li>
+<li>why need cache<ul>
+<li>reduce response time for client request</li>
+<li>reduce traffic on an institution’s access link</li>
+<li>Internet dense with cache: enables “poor” content providers to effectively deliver content (so too does P2P file sharing)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>conditional GET</strong></p>
+<ul>
+<li>goal: don&#39;t send object if cache has up-to-date cached version</li>
+<li>&quot;if-modified-since: \<date>&quot;</li>
+</ul>
+</li>
+<li><p><strong>utilization</strong> </p>
+<ul>
+<li>description<ul>
+<li>a: average request rate</li>
+<li>L: average object size</li>
+<li>R: link rate</li>
+<li>p: cache hit rate</li>
+</ul>
+</li>
+<li>(no cache) = aL/R %</li>
+<li>(cache) = paL/R %</li>
+</ul>
+</li>
+<li><p><strong>SMTP(simple mail transfer protocol)</strong></p>
+<ul>
+<li>application layer protocol, delivery/storage to receive&#39;s server</li>
+<li>three major components: user agents, mail servers, simple mail transfer protocol</li>
+<li>using <strong>TCP</strong></li>
+<li>message: 7-bit ASCII</li>
+</ul>
+</li>
+<li><p><strong>Mail acceess protocols</strong></p>
+<ul>
+<li><strong>POP</strong>: post office protocol. user can&#39;t reread email if client changed</li>
+<li><strong>IMAP</strong>: internet mail access protocol.</li>
+<li><strong>HTTP</strong>: </li>
+</ul>
+</li>
+<li><p><strong>DNS(domain name system)</strong></p>
+<ul>
+<li>application layer protocol, distributed database, hosts and name servers communicate to resolve names, port 53</li>
+<li>goal: map between IP and website name</li>
+<li><strong>TLD</strong>: top-level domain servers; <strong>authoritative DNS servers</strong>: organization&#39;s own DNS servers, providing hostname to IP mapping for organization&#39;s names hosts</li>
+<li>resolution(two query)<ul>
+<li><strong>iterated query</strong>: ask with local dns server for root, TLD, authoritative</li>
+<li><strong>recursive query</strong>: ask within one hierachy line, heavy load at upper level</li>
+</ul>
+</li>
+<li><strong>RR</strong>(DNS resource records)<ul>
+<li>disbributed database storing resource records</li>
+<li>format: (name, value, type, ttl), <strong>ttl</strong>: time of live of the resource record</li>
+<li>e.g.<ul>
+<li>(hostname,IP,A,?)</li>
+<li>(domain,hostname,NS,?)</li>
+<li>(alias,canonical,CNAME,?)</li>
+<li>(mail server,mail name,MX,?)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>DDoS(bandwidth-flooding attack)</strong></li>
+</ul>
+</li>
+<li><p><strong>P2P</strong></p>
+<ul>
+<li>file distribution(BitTorrent), Streaming(KanKan), VoIP(Skype)</li>
+<li><strong>file distribution time</strong></li>
+<li>N: number of peers; F: file size; us: server upload capacity; ui: peer i upload capacity; di: peer i download capacity<ul>
+<li>CS: D(c-s) &gt;= max { NF/us, F/dmin}</li>
+<li>P2P: D(p2p) &gt;= max {F/us,F/dmain, NF/(us+Eui)}</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>CDN(content distribution network)</strong></p>
+</li>
+<li><p><strong>socket programming</strong></p>
+<ul>
+<li><strong>UDP</strong><ul>
+<li>no handshake</li>
+<li>data may be lost or received our of order</li>
+</ul>
+</li>
+<li><strong>TCP</strong><ul>
+<li>server process must run first</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="-chapter-3-"><strong>Chapter 3</strong>:</h2>
+<ul>
+<li><p><strong>transport services and protocols</strong></p>
+<ul>
+<li>logical end-end transport communication between processes</li>
+<li>break app messages to <strong>segments</strong></li>
+<li><strong>TCP</strong>: reliable; in-order delivery; congestion control; connection setup</li>
+<li><strong>UDP</strong>: unreliable; unordered delivery; no-frills extension of IP</li>
+<li><strong>not provided</strong>: delay guarantees; bandwidth guarantees</li>
+</ul>
+</li>
+<li><p><strong>Multiplexing/demultiplexing</strong></p>
+<ul>
+<li>multiplexing at sender: handle data from multiple sockets, add transport header</li>
+<li>demultiplexing at receiver: use header info to deliver received segments to correct socket</li>
+</ul>
+</li>
+<li><p><strong>Connection-oriented demux</strong></p>
+<ul>
+<li>TCP identification(4-tuple): source IP address; source port number; dest IP address; dest port number</li>
+</ul>
+</li>
+<li><p><strong>UDP(User Datagram Protocol)</strong></p>
+<ul>
+<li>use: streaming multimedia app, DNS, SNMP</li>
+<li>advantage: no connection; small header size(no other header fiels like TCP); no congestion control(blast away as fast as desired)</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><strong>rdt 2.0(reliable data transfer): FSM(finite state machines)</strong>: how to recover from errors</p>
+<ul>
+<li>error detection</li>
+<li>feedback: control msgs (ACK,NAK) from receiver to sender<ul>
+<li><strong>acknowledgements(ACKs)</strong>: receiver explicitly tells sender that pkt received OK</li>
+<li><strong>negative acknowledgements(NAKs)</strong>: receiver explicitly tells sender that pkt had errors</li>
+<li>sender retransmits pkt on receipt of NAK
+<img src="2_2_rdt2.0.PNG" alt=""></li>
+</ul>
+</li>
+<li><strong>fatal flaw</strong>: what if ACK/NAK corrupted, rdt2.0 will retransmit possible duplicate. </li>
+</ul>
+</li>
+<li><p><strong>rdt 2.1 (handles garbled ACK/NAK)</strong></p>
+<ul>
+<li>goal: stop and wait; sender sends one packet then waits for receiver response</li>
+<li><strong>sender</strong>: add <strong>seq(0,1)</strong> to pkt; check control msgs before check is NAK</li>
+<li><strong>receiver</strong>: check packet is duplicate(receivr not know whether control msg received at sender)</li>
+</ul>
+</li>
+<li><p><strong>rdt 2.2 (free NAK protocol)</strong></p>
+<ul>
+<li>only use ACK</li>
+<li>receiver sends ACK for last pkt received OK, and explicitly includes seq</li>
+<li>duplicate ACK at sender results in same action as NAK, retransmit current pkt</li>
+</ul>
+</li>
+<li><p><strong>rdt 3.0</strong> assum: underlying channel can also lose packets (data, ACKs)</p>
+<ul>
+<li>sender waits &quot;reasonable&quot; amount of time for ACK</li>
+<li>retransmits if no ACK received in this time</li>
+<li>4 event(no loss; packets loss; ACK loss; ACK delay)
+<img src="2_3_rdt3.0.PNG" alt="">
+<img src="2_4_rdt3.0.PNG" alt=""></li>
+<li>flaw:<ul>
+<li>R: 1 Gbps link, RTT: 30 msec = 2 * 15 ms prop. delay; L: 8000 bit packet</li>
+<li>U(sender) = L/R/(RTT + L/R) = 0.00027</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>pipeline</strong>: GO-bask-N; multiple packets
+<img src="2_5_pipline.png" alt=""></p>
+</li>
+<li><p><strong>TCP</strong></p>
+<ul>
+<li>point-to-point; reliable, in-order byte stream; pipelined; full duplex data; connection-oriented; flow controlled</li>
+<li>sequence numbers: byte stream &quot;number&quot; of first byte in segment&#39;s data</li>
+<li>cumulative ACK</li>
+<li>TCP timeout value: <ul>
+<li><strong>sampleRTT</strong>: measured time from segment transmission until ACK receipt</li>
+</ul>
+</li>
+<li>TCP fast retransmit(<strong>triple duplicate ACKs</strong>): if sender receives 3 ACKs from same data, resend unacked segemnt with smallest seq #</li>
+<li><strong>flow control</strong>: sender limits amount of unacked data to receiver&#39;s <strong>rwnd(receive window)</strong> value </li>
+<li><strong>rcvBuffer</strong>: set via socket options(4096), it will announce when the TCP connection established(3-way handshake).</li>
+<li>create a connection: <strong>3-way handshake</strong></li>
+<li>close a connection: (1)send TCP segment with FIN bit =1; (2) respond to received FIN with ACK, ACK combined with own FIN; (3) simultaneous FIN exchange can be handled</li>
+<li><strong>congestion control</strong><ul>
+<li>manifestation: lost packet (buffer overflow at routers); long delays (queueing in router buffers)</li>
+<li>approach: sender increases transmission rate (window size), probing for usable bandwidth, until loss occurs <strong>cwnd(congestion window)</strong><ul>
+<li>additive increase: increase cwnd if acked</li>
+<li>multiplicative decrease: if loss, cut half of cwnd</li>
+</ul>
+</li>
+<li>formula: LastByteSent - LastByteAcked &lt;= cwnd</li>
+<li>rate ~ cwnd / RTT bytes/sec</li>
+</ul>
+</li>
+<li><strong>slow start</strong>: cwnd = 1; cwnd*2 / RTT; </li>
+<li><strong>congestion Avoidance</strong>: if loss, cwnd = 1; if loss 3 duplicate ACKs, cwnd/2</li>
+<li><strong>fast recovery</strong></li>
+</ul>
+</li>
+</ul>

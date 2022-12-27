@@ -1,0 +1,59 @@
+abstraction 抽象
+allocate 分配
+allocation 分配
+anonymous 匿名的
+assemble language 汇编语言
+assigned 分配
+asynchronous 异步
+atomicity assumption 原子性假设
+block scope 块作用域
+bundled with 捆绑在一起
+conditional critical regions 条件临界区
+critical reference 关键参考
+critical section and mutual exclusion 临界区和互斥
+critical section 临界区
+critique 批判
+denominator 分母
+discourse 话语
+dispatch 调度
+error detection 错误检测
+etiquette 礼仪
+execution 执行
+fall recess 秋季休会
+fetch 取
+foster 促进
+implement 实施
+instruction 指令
+intended 故意的
+inter-process 进程间
+interleaving 交错
+interpolation 插值
+interprocess  进程间
+interrity 正直
+interrupts 中断
+isolate 隔离
+jeopardize 危害
+kernel 内核
+metaphore 隐喻
+minority 少数民族
+monitors 监视器
+multithreaded 多线程
+mutex 互斥体
+omite 省略
+parameter 范围
+procedures 程序
+process queues 进程队列
+puppet 木偶
+reasoning about concurrency 关于并发的论证
+resource allocation 资源分配
+return from interrupt (rti) 从中断返回 (rti)
+scheduling 调度
+semaphores 信号量
+slang 俚语
+synchronization 同步
+syntax 句法
+termination 终止
+tolerant 宽容
+transition systems 过渡系统
+turnstile 转门
+vernacular 白话

@@ -1,0 +1,74 @@
+{
+  "providers": [
+    {
+      "name": "provider  01",
+      "npi": "npi"
+    },
+    {
+      "name": "provider upload  02",
+      "npi": "npi"
+    }
+  ],
+  "patients": [
+    {
+      "name": "patient upload 01",
+      "dob": "2000-01-01"
+    },
+    {
+      "name": "patient2 upload 02",
+      "dob": "2100-01-01"
+    }
+  ],
+  "treatments": [
+    {
+      "type-tag": "DRUG",
+      "diagnosis": "diagonosis",
+      "patient-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "provider-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "drug": "drugs upload",
+      "dosage": 4,
+      "start-date": "2000-01-01",
+      "end-date": "2000-01-01",
+      "frequency": 2,
+      "followupTreatments": []
+    },
+    {
+      "type-tag": "SURGERY",
+      "diagnosis": "diagonosis",
+      "patient-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "provider-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "surgery-date": "2000-01-01",
+      "dischargeInstruction": "discharge Instruction",
+      "followupTreatments": []
+    },
+    {
+      "type-tag": "RADIOLOGY",
+      "diagnosis": "diagonosis",
+      "patient-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "provider-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "treatmentDateList": [ "2000-01-01", "2000-01-02", "2000-01-03", "2000-01-04"],
+      "followupTreatments": []
+    },
+    {
+      "type-tag": "PHYSIOTHERAPY",
+      "patient-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "provider-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+      "diagnosis": "diagonosis surgery with follow",
+      "treatmentDateList": ["2000-01-01", "2000-01-02", "2000-01-03", "2000-01-04"],
+      "followupTreatments": [
+        {
+          "type-tag": "DRUG",
+          "diagnosis": "diagonosis with followup",
+          "drug": "drugs upload",
+          "dosage": 4,
+          "start-date": "2000-01-01",
+          "end-date": "2000-01-01",
+          "frequency": 2,
+          "patient-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+          "provider-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+          "followupTreatments": []
+        }
+      ]
+    }
+  ]
+}

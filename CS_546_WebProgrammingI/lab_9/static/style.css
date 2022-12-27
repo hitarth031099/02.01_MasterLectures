@@ -1,0 +1,45 @@
+h1 {
+    color: red;
+    text-align: center;
+}
+
+button{
+    color:red;
+}
+
+#myForm{
+    background-color: lightgrey;
+    width: 320px;
+    margin-left: 10px;
+}
+
+.name{
+    color: pink;
+}
+
+#attempts{
+    background-color:lightgrey;
+    text-align: left;
+}
+
+footer{
+    text-align: left;
+    margin-left: 10px;
+}
+
+.stevensID{
+    color: blue;
+}
+
+.is-palindrome{
+    color: blue;
+}
+
+.not-palindrome{
+    color: red;
+}
+
+.error {
+	color: red;
+	font-weight: bold;
+}

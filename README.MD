@@ -1,0 +1,1 @@
+This repo contains all lectures for Stevens Institute of Technology, hope this will help you.

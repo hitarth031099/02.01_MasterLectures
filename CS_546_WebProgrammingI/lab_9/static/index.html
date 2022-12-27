@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palidroms Check</title>
+
+    <link rel='stylesheet' href='style.css'>
+
+</head>
+
+<body>
+    
+    <header>
+        <h1 class='title'>Online Palidroms Check</h1>
+    </header>
+
+    <form method="POST" id="myForm">
+        <label id="formLabel">
+            Enter Text:
+            <input type="text" id="text_input" />
+        </label>
+        <button type="submit">Check</button>
+    </form>
+
+    <div id="error" class="error" hidden>I'm an error</div>
+
+    <ol id='attempts'></ol>
+
+    <footer>
+        <P class="name">Yufu Liao</P>
+        <p class="stevensID">10478967</p>
+    </footer>
+
+    <script src="palidroms.js"></script>
+
+</body>
+
+</html>

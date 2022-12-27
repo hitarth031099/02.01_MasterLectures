@@ -1,0 +1,60 @@
+{
+  "name": "stevensmarketplace_cs_546_group16_finalproject",
+  "version": "1.0.0",
+  "description": "hello github, and all members",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "seed": "node tasks/seed.js",
+    "test": "node tasks/testCase.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liaoyufu-leo/StevensMarketPlace_CS_546_Group16_FinalProject.git"
+  },
+  "contributors": [
+    {
+      "name": "Yufu Liao",
+      "github name": "liaoyufu-leo",
+      "email": "liaoyufu.leo@gmail.com"
+    },
+    {
+      "name": "Yash Gandhi",
+      "github name": "gandhiyaash",
+      "email": "yashgandhi.2408@gmail.com"
+    },
+    {
+      "name": "Aditya Jayadevan Menon",
+      "github name": "adityajayadevan",
+      "email": "adityajayadevan@gmail.com"
+    },
+    {
+      "name": "Kongara Balakishore",
+      "github name": "Balakishore18",
+      "email": "balakishorekongara@gmail.com"
+    },
+    {
+      "name": "kusumurthy venkat sai",
+      "github name": "venkatsaik",
+      "email": "venkatsaik101@gmail.com"
+    }
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liaoyufu-leo/StevensMarketPlace_CS_546_Group16_FinalProject/issues"
+  },
+  "homepage": "https://github.com/liaoyufu-leo/StevensMarketPlace_CS_546_Group16_FinalProject#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "blueimp-md5": "^2.19.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "express-handlebars": "^6.0.1",
+    "express-session": "^1.17.2",
+    "mongodb": "^4.1.4",
+    "nodemon": "^2.0.15",
+    "socket.io": "^4.4.0",
+    "xss": "^1.0.10"
+  }
+}

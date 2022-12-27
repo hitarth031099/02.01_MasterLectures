@@ -1,0 +1,431 @@
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.server
+FINE: Configured server platform: org.eclipse.persistence.platform.server.NoServerPlatform
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The access type for the persistent class [class edu.stevens.cs548.clinic.data.Patient] is set to [FIELD].
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The access type for the persistent class [class edu.stevens.cs548.clinic.data.Treatment] is set to [FIELD].
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The target entity (reference) class for the many to one mapping element [field provider] is being defaulted to: class edu.stevens.cs548.clinic.data.Provider.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The target entity (reference) class for the many to one mapping element [field patient] is being defaulted to: class edu.stevens.cs548.clinic.data.Patient.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The access type for the persistent class [class edu.stevens.cs548.clinic.data.RadiologyTreatment] is set to [FIELD].
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The target entity (reference) class for the one to many mapping element [field followupTreatments] is being defaulted to: class edu.stevens.cs548.clinic.data.Treatment.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The target class (reference) class for the element collection mapping element [field treatmentDates] is being defaulted to: class java.util.Date.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The access type for the persistent class [class edu.stevens.cs548.clinic.data.Provider] is set to [FIELD].
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The access type for the persistent class [class edu.stevens.cs548.clinic.data.DrugTreatment] is set to [FIELD].
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The access type for the persistent class [class edu.stevens.cs548.clinic.data.SurgeryTreatment] is set to [FIELD].
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The target entity (reference) class for the one to many mapping element [field followupTreatments] is being defaulted to: class edu.stevens.cs548.clinic.data.Treatment.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The access type for the persistent class [class edu.stevens.cs548.clinic.data.PhysiotherapyTreatment] is set to [FIELD].
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The target class (reference) class for the element collection mapping element [field treatmentDates] is being defaulted to: class java.util.Date.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The alias name for the entity class [class edu.stevens.cs548.clinic.data.Patient] is being defaulted to: Patient.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The column name for element [patientId] is being defaulted to: PATIENTID.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: Ignoring default serialization on element [field patientId] within entity class [class edu.stevens.cs548.clinic.data.Patient] since EclipseLink convert metadata is specified.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The column name for element [dob] is being defaulted to: DOB.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The column name for element [name] is being defaulted to: NAME.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The column name for element [id] is being defaulted to: ID.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The alias name for the entity class [class edu.stevens.cs548.clinic.data.RadiologyTreatment] is being defaulted to: RadiologyTreatment.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The alias name for the entity class [class edu.stevens.cs548.clinic.data.Treatment] is being defaulted to: Treatment.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The column name for element [diagnosis] is being defaulted to: DIAGNOSIS.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The column name for element [id] is being defaulted to: ID.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The column name for element [treatmentId] is being defaulted to: TREATMENTID.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: Ignoring default serialization on element [field treatmentId] within entity class [class edu.stevens.cs548.clinic.data.Treatment] since EclipseLink convert metadata is specified.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The alias name for the entity class [class edu.stevens.cs548.clinic.data.Provider] is being defaulted to: Provider.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The column name for element [providerId] is being defaulted to: PROVIDERID.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: Ignoring default serialization on element [field providerId] within entity class [class edu.stevens.cs548.clinic.data.Provider] since EclipseLink convert metadata is specified.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The column name for element [npi] is being defaulted to: NPI.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The column name for element [name] is being defaulted to: NAME.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The column name for element [id] is being defaulted to: ID.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The alias name for the entity class [class edu.stevens.cs548.clinic.data.DrugTreatment] is being defaulted to: DrugTreatment.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The column name for element [dosage] is being defaulted to: DOSAGE.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The column name for element [endDate] is being defaulted to: ENDDATE.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The column name for element [startDate] is being defaulted to: STARTDATE.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The column name for element [drug] is being defaulted to: DRUG.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The column name for element [frequency] is being defaulted to: FREQUENCY.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The alias name for the entity class [class edu.stevens.cs548.clinic.data.SurgeryTreatment] is being defaulted to: SurgeryTreatment.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The column name for element [surgeryDate] is being defaulted to: SURGERYDATE.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The column name for element [dischargeInstructions] is being defaulted to: DISCHARGEINSTRUCTIONS.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The alias name for the entity class [class edu.stevens.cs548.clinic.data.PhysiotherapyTreatment] is being defaulted to: PhysiotherapyTreatment.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The collection table name for the basic collection/map mapping [field treatmentDates] is being defaulted to: RadiologyTreatment_TREATMENTDATES.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The primary key column name for the mapping element [field treatmentDates] is being defaulted to: ID.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The foreign key column name for the mapping element [treatmentDates] is being defaulted to: RadiologyTreatment_ID.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The value column name for the basic collection/map mapping element mapping element [treatmentDates] is being defaulted to: TREATMENTDATES.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+FINE: 
+java.lang.ClassNotFoundException: java.util.Collectionjava.util.Date
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:636)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:182)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:519)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:375)
+	at org.eclipse.persistence.internal.jpa.metadata.accessors.objects.MetadataAsmFactory.getVirtualMetadataClass(MetadataAsmFactory.java:547)
+	at org.eclipse.persistence.internal.jpa.metadata.accessors.objects.MetadataAsmFactory.buildClassMetadata(MetadataAsmFactory.java:148)
+	at org.eclipse.persistence.internal.jpa.metadata.accessors.objects.MetadataAsmFactory.getMetadataClass(MetadataAsmFactory.java:182)
+	at org.eclipse.persistence.internal.jpa.metadata.accessors.objects.MetadataAccessibleObject.getMetadataClass(MetadataAccessibleObject.java:73)
+	at org.eclipse.persistence.internal.jpa.metadata.accessors.objects.MetadataAnnotatedElement.getRawClassWithGenerics(MetadataAnnotatedElement.java:395)
+	at org.eclipse.persistence.internal.jpa.metadata.accessors.mappings.MappingAccessor.getRawClassWithGenerics(MappingAccessor.java:965)
+	at org.eclipse.persistence.internal.jpa.metadata.accessors.mappings.MappingAccessor.getReferenceClassWithGenerics(MappingAccessor.java:996)
+	at org.eclipse.persistence.internal.jpa.metadata.accessors.mappings.DirectCollectionAccessor.processDirectCollectionMapping(DirectCollectionAccessor.java:463)
+	at org.eclipse.persistence.internal.jpa.metadata.accessors.mappings.ElementCollectionAccessor.process(ElementCollectionAccessor.java:875)
+	at org.eclipse.persistence.internal.jpa.metadata.MetadataProject.processDirectCollectionAccessors(MetadataProject.java:1622)
+	at org.eclipse.persistence.internal.jpa.metadata.MetadataProject.processStage3(MetadataProject.java:1911)
+	at org.eclipse.persistence.internal.jpa.metadata.MetadataProcessor.processORMMetadata(MetadataProcessor.java:584)
+	at org.eclipse.persistence.internal.jpa.deployment.PersistenceUnitProcessor.processORMetadata(PersistenceUnitProcessor.java:629)
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.predeploy(EntityManagerSetupImpl.java:2005)
+	at org.eclipse.persistence.internal.jpa.deployment.JPAInitializer.callPredeploy(JPAInitializer.java:104)
+	at org.eclipse.persistence.jpa.PersistenceProvider.createEntityManagerFactoryImpl(PersistenceProvider.java:107)
+	at org.eclipse.persistence.jpa.PersistenceProvider.createEntityManagerFactory(PersistenceProvider.java:191)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:80)
+	at edu.stevens.cs548.clinic.data.main.App.connectToDatabase(App.java:240)
+	at edu.stevens.cs548.clinic.data.main.App.<init>(App.java:189)
+	at edu.stevens.cs548.clinic.data.main.App.main(App.java:147)
+
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The collection table name for the basic collection/map mapping [field treatmentDates] is being defaulted to: PhysiotherapyTreatment_TREATMENTDATES.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The primary key column name for the mapping element [field treatmentDates] is being defaulted to: ID.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The foreign key column name for the mapping element [treatmentDates] is being defaulted to: PhysiotherapyTreatment_ID.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The value column name for the basic collection/map mapping element mapping element [treatmentDates] is being defaulted to: TREATMENTDATES.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The join table name for the many to many mapping [field treatments] is being defaulted to: Patient_Treatment.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The source primary key column name for the many to many mapping [field treatments] is being defaulted to: ID.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The source foreign key column name for the many to many mapping [treatments] is being defaulted to: Patient_ID.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The target primary key column name for the many to many mapping [field treatments] is being defaulted to: ID.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The target foreign key column name for the many to many mapping [treatments] is being defaulted to: treatments_ID.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The primary key column name for the mapping element [field provider] is being defaulted to: ID.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The foreign key column name for the mapping element [provider] is being defaulted to: PROVIDER_ID.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The primary key column name for the mapping element [field patient] is being defaulted to: ID.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The foreign key column name for the mapping element [patient] is being defaulted to: PATIENT_ID.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The source primary key column name for the many to many mapping [field followupTreatments] is being defaulted to: ID.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The source foreign key column name for the many to many mapping [followupTreatments] is being defaulted to: RadiologyTreatment_ID.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The target primary key column name for the many to many mapping [field followupTreatments] is being defaulted to: ID.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The target foreign key column name for the many to many mapping [followupTreatments] is being defaulted to: followupTreatments_ID.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The join table name for the many to many mapping [field treatments] is being defaulted to: Provider_Treatment.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The source primary key column name for the many to many mapping [field treatments] is being defaulted to: ID.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The source foreign key column name for the many to many mapping [treatments] is being defaulted to: Provider_ID.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The target primary key column name for the many to many mapping [field treatments] is being defaulted to: ID.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The target foreign key column name for the many to many mapping [treatments] is being defaulted to: treatments_ID.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The source primary key column name for the many to many mapping [field followupTreatments] is being defaulted to: ID.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The source foreign key column name for the many to many mapping [followupTreatments] is being defaulted to: SurgeryTreatment_ID.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The target primary key column name for the many to many mapping [field followupTreatments] is being defaulted to: ID.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.metadata
+CONFIG: The target foreign key column name for the many to many mapping [followupTreatments] is being defaulted to: followupTreatments_ID.
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user
+INFO: EclipseLink, version: Eclipse Persistence Services - 2.7.11.v20220804-52dea2a3c0
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.connection
+FINE: connecting(DatabaseLogin(
+	platform=>PostgreSQLPlatform
+	user name=> "cs548user"
+	datasource URL=> "jdbc:postgresql://localhost:5432/cs548"
+))
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.connection
+CONFIG: Connected: jdbc:postgresql://localhost:5432/cs548
+	User: cs548user
+	Database: PostgreSQL  Version: 14.4
+	Driver: PostgreSQL JDBC Driver  Version: 42.5.0
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.connection
+FINE: /file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user login successful
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: CREATE TABLE Patient (ID BIGINT NOT NULL, DOB DATE, NAME VARCHAR(255), PATIENTID UUID, PRIMARY KEY (ID))
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: CREATE INDEX INDEX_Patient_patientId ON Patient (patientId)
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: CREATE TABLE Provider (ID BIGINT NOT NULL, NAME VARCHAR(255), NPI VARCHAR(255), PROVIDERID UUID, PRIMARY KEY (ID))
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: CREATE INDEX INDEX_Provider_providerId ON Provider (providerId)
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: CREATE TABLE Treatment (ID BIGINT NOT NULL, Type VARCHAR(31), DIAGNOSIS VARCHAR(255), TREATMENTID UUID, PATIENT_ID BIGINT, PROVIDER_ID BIGINT, DOSAGE FLOAT, DRUG VARCHAR(255), ENDDATE DATE, FREQUENCY INTEGER, STARTDATE DATE, DISCHARGEINSTRUCTIONS VARCHAR(255), SURGERYDATE DATE, PRIMARY KEY (ID))
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: CREATE INDEX INDEX_Treatment_treatmentId ON Treatment (treatmentId)
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: CREATE TABLE Patient_Treatment (Patient_ID BIGINT NOT NULL, treatments_ID BIGINT NOT NULL, PRIMARY KEY (Patient_ID, treatments_ID))
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: CREATE TABLE Provider_Treatment (Provider_ID BIGINT NOT NULL, treatments_ID BIGINT NOT NULL, PRIMARY KEY (Provider_ID, treatments_ID))
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: CREATE TABLE SurgeryTreatmentFollowup (SurgeryTreatment_ID BIGINT NOT NULL, followupTreatments_ID BIGINT NOT NULL, PRIMARY KEY (SurgeryTreatment_ID, followupTreatments_ID))
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: CREATE TABLE RadiologyTreatment_TREATMENTDATES (RadiologyTreatment_ID BIGINT, TREATMENTDATES TIMESTAMP)
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: CREATE TABLE RadiologyTreatmentFollowup (RadiologyTreatment_ID BIGINT NOT NULL, followupTreatments_ID BIGINT NOT NULL, PRIMARY KEY (RadiologyTreatment_ID, followupTreatments_ID))
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: CREATE TABLE PhysiotherapyTreatment_TREATMENTDATES (PhysiotherapyTreatment_ID BIGINT, TREATMENTDATES TIMESTAMP)
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: ALTER TABLE Treatment ADD CONSTRAINT FK_Treatment_PROVIDER_ID FOREIGN KEY (PROVIDER_ID) REFERENCES Provider (ID)
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: ALTER TABLE Treatment ADD CONSTRAINT FK_Treatment_PATIENT_ID FOREIGN KEY (PATIENT_ID) REFERENCES Patient (ID)
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: ALTER TABLE Patient_Treatment ADD CONSTRAINT FK_Patient_Treatment_treatments_ID FOREIGN KEY (treatments_ID) REFERENCES Treatment (ID)
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: ALTER TABLE Patient_Treatment ADD CONSTRAINT FK_Patient_Treatment_Patient_ID FOREIGN KEY (Patient_ID) REFERENCES Patient (ID)
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: ALTER TABLE Provider_Treatment ADD CONSTRAINT FK_Provider_Treatment_treatments_ID FOREIGN KEY (treatments_ID) REFERENCES Treatment (ID)
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: ALTER TABLE Provider_Treatment ADD CONSTRAINT FK_Provider_Treatment_Provider_ID FOREIGN KEY (Provider_ID) REFERENCES Provider (ID)
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: ALTER TABLE SurgeryTreatmentFollowup ADD CONSTRAINT FK_SurgeryTreatmentFollowup_followupTreatments_ID FOREIGN KEY (followupTreatments_ID) REFERENCES Treatment (ID)
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: ALTER TABLE SurgeryTreatmentFollowup ADD CONSTRAINT FK_SurgeryTreatmentFollowup_SurgeryTreatment_ID FOREIGN KEY (SurgeryTreatment_ID) REFERENCES Treatment (ID)
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: ALTER TABLE RadiologyTreatment_TREATMENTDATES ADD CONSTRAINT FK_RadiologyTreatment_TREATMENTDATES_RadiologyTreatment_ID FOREIGN KEY (RadiologyTreatment_ID) REFERENCES Treatment (ID)
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: ALTER TABLE RadiologyTreatmentFollowup ADD CONSTRAINT FK_RadiologyTreatmentFollowup_followupTreatments_ID FOREIGN KEY (followupTreatments_ID) REFERENCES Treatment (ID)
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: ALTER TABLE RadiologyTreatmentFollowup ADD CONSTRAINT FK_RadiologyTreatmentFollowup_RadiologyTreatment_ID FOREIGN KEY (RadiologyTreatment_ID) REFERENCES Treatment (ID)
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: ALTER TABLE PhysiotherapyTreatment_TREATMENTDATES ADD CONSTRAINT PhysiotherapyTreatment_TREATMENTDATES_PhysiotherapyTreatment_ID FOREIGN KEY (PhysiotherapyTreatment_ID) REFERENCES Treatment (ID)
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: CREATE TABLE SEQUENCE (SEQ_NAME VARCHAR(50) NOT NULL, SEQ_COUNT DECIMAL(38), PRIMARY KEY (SEQ_NAME))
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: SELECT * FROM SEQUENCE WHERE SEQ_NAME = 'SEQ_GEN'
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO SEQUENCE(SEQ_NAME, SEQ_COUNT) values ('SEQ_GEN', 0)
+Oct 10, 2022 2:10:21 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: SELECT * FROM SEQUENCE WHERE SEQ_NAME = 'SEQ_GEN'
+Oct 10, 2022 2:11:13 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: UPDATE SEQUENCE SET SEQ_COUNT = SEQ_COUNT + ? WHERE SEQ_NAME = ?
+	bind => [2 parameters bound]
+Oct 10, 2022 2:11:13 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: SELECT SEQ_COUNT FROM SEQUENCE WHERE SEQ_NAME = ?
+	bind => [1 parameter bound]
+Oct 10, 2022 2:11:13 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO Patient (ID, DOB, NAME, PATIENTID) VALUES (?, ?, ?, ?)
+	bind => [4 parameters bound]
+Oct 10, 2022 2:11:27 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO Provider (ID, NAME, NPI, PROVIDERID) VALUES (?, ?, ?, ?)
+	bind => [4 parameters bound]
+Oct 10, 2022 2:11:43 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: SELECT ID, DOB, NAME, PATIENTID FROM Patient WHERE (PATIENTID = ?)
+	bind => [1 parameter bound]
+Oct 10, 2022 2:11:43 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: SELECT t1.ID, t1.Type, t1.DIAGNOSIS, t1.TREATMENTID, t1.PATIENT_ID, t1.PROVIDER_ID, t1.DOSAGE, t1.DRUG, t1.ENDDATE, t1.FREQUENCY, t1.STARTDATE, t1.DISCHARGEINSTRUCTIONS, t1.SURGERYDATE FROM Patient_Treatment t0, Treatment t1 WHERE ((t0.Patient_ID = ?) AND (t1.ID = t0.treatments_ID))
+	bind => [1 parameter bound]
+Oct 10, 2022 2:11:43 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: SELECT ID, NAME, NPI, PROVIDERID FROM Provider WHERE (ID = ?)
+	bind => [1 parameter bound]
+Oct 10, 2022 2:11:43 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: SELECT ID, NAME, NPI, PROVIDERID FROM Provider WHERE (PROVIDERID = ?)
+	bind => [1 parameter bound]
+Oct 10, 2022 2:11:43 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: SELECT t1.ID, t1.Type, t1.DIAGNOSIS, t1.TREATMENTID, t1.PATIENT_ID, t1.PROVIDER_ID, t1.DOSAGE, t1.DRUG, t1.ENDDATE, t1.FREQUENCY, t1.STARTDATE, t1.DISCHARGEINSTRUCTIONS, t1.SURGERYDATE FROM Provider_Treatment t0, Treatment t1 WHERE ((t0.Provider_ID = ?) AND (t1.ID = t0.treatments_ID))
+	bind => [1 parameter bound]
+Oct 10, 2022 2:11:45 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO Treatment (ID, DIAGNOSIS, DOSAGE, DRUG, ENDDATE, FREQUENCY, STARTDATE, TREATMENTID, PATIENT_ID, PROVIDER_ID, Type) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [11 parameters bound]
+Oct 10, 2022 2:11:45 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO Patient_Treatment (treatments_ID, Patient_ID) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:11:45 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO Provider_Treatment (treatments_ID, Provider_ID) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:12:06 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: SELECT ID, DOB, NAME, PATIENTID FROM Patient WHERE (PATIENTID = ?)
+	bind => [1 parameter bound]
+Oct 10, 2022 2:12:06 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: SELECT ID, NAME, NPI, PROVIDERID FROM Provider WHERE (PROVIDERID = ?)
+	bind => [1 parameter bound]
+Oct 10, 2022 2:12:07 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: SELECT ID, Type, DIAGNOSIS, TREATMENTID, PATIENT_ID, PROVIDER_ID, DOSAGE, DRUG, ENDDATE, FREQUENCY, STARTDATE, DISCHARGEINSTRUCTIONS, SURGERYDATE FROM Treatment WHERE (TREATMENTID IN (?))
+	bind => [1 parameter bound]
+Oct 10, 2022 2:12:07 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO Treatment (ID, DIAGNOSIS, DISCHARGEINSTRUCTIONS, SURGERYDATE, TREATMENTID, PATIENT_ID, PROVIDER_ID, Type) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [8 parameters bound]
+Oct 10, 2022 2:12:07 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO Patient_Treatment (treatments_ID, Patient_ID) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:12:07 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO Provider_Treatment (treatments_ID, Provider_ID) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:12:07 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO SurgeryTreatmentFollowup (followupTreatments_ID, SurgeryTreatment_ID) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:12:43 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: SELECT ID, DOB, NAME, PATIENTID FROM Patient WHERE (PATIENTID = ?)
+	bind => [1 parameter bound]
+Oct 10, 2022 2:12:43 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: SELECT ID, NAME, NPI, PROVIDERID FROM Provider WHERE (PROVIDERID = ?)
+	bind => [1 parameter bound]
+Oct 10, 2022 2:12:46 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: SELECT ID, Type, DIAGNOSIS, TREATMENTID, PATIENT_ID, PROVIDER_ID, DOSAGE, DRUG, ENDDATE, FREQUENCY, STARTDATE, DISCHARGEINSTRUCTIONS, SURGERYDATE FROM Treatment WHERE (TREATMENTID IN (?,?))
+	bind => [2 parameters bound]
+Oct 10, 2022 2:12:46 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO Treatment (ID, DIAGNOSIS, DISCHARGEINSTRUCTIONS, SURGERYDATE, TREATMENTID, PATIENT_ID, PROVIDER_ID, Type) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [8 parameters bound]
+Oct 10, 2022 2:12:46 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO Patient_Treatment (treatments_ID, Patient_ID) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:12:46 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO Provider_Treatment (treatments_ID, Provider_ID) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:12:46 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO SurgeryTreatmentFollowup (followupTreatments_ID, SurgeryTreatment_ID) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:12:46 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO SurgeryTreatmentFollowup (followupTreatments_ID, SurgeryTreatment_ID) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:13:22 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: SELECT ID, DOB, NAME, PATIENTID FROM Patient WHERE (PATIENTID = ?)
+	bind => [1 parameter bound]
+Oct 10, 2022 2:13:22 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: SELECT ID, NAME, NPI, PROVIDERID FROM Provider WHERE (PROVIDERID = ?)
+	bind => [1 parameter bound]
+Oct 10, 2022 2:13:23 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: SELECT ID, Type, DIAGNOSIS, TREATMENTID, PATIENT_ID, PROVIDER_ID, DOSAGE, DRUG, ENDDATE, FREQUENCY, STARTDATE, DISCHARGEINSTRUCTIONS, SURGERYDATE FROM Treatment WHERE (TREATMENTID IN (?))
+	bind => [1 parameter bound]
+Oct 10, 2022 2:13:23 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO Treatment (ID, DIAGNOSIS, TREATMENTID, PATIENT_ID, PROVIDER_ID, Type) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [6 parameters bound]
+Oct 10, 2022 2:13:23 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO Patient_Treatment (treatments_ID, Patient_ID) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:13:23 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO Provider_Treatment (treatments_ID, Provider_ID) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:13:23 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO RadiologyTreatment_TREATMENTDATES (RadiologyTreatment_ID, TREATMENTDATES) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:13:23 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO RadiologyTreatment_TREATMENTDATES (RadiologyTreatment_ID, TREATMENTDATES) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:13:23 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO RadiologyTreatment_TREATMENTDATES (RadiologyTreatment_ID, TREATMENTDATES) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:13:23 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO RadiologyTreatment_TREATMENTDATES (RadiologyTreatment_ID, TREATMENTDATES) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:13:23 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO RadiologyTreatment_TREATMENTDATES (RadiologyTreatment_ID, TREATMENTDATES) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:13:23 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO RadiologyTreatmentFollowup (followupTreatments_ID, RadiologyTreatment_ID) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:14:03 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: SELECT ID, DOB, NAME, PATIENTID FROM Patient WHERE (PATIENTID = ?)
+	bind => [1 parameter bound]
+Oct 10, 2022 2:14:03 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: SELECT ID, NAME, NPI, PROVIDERID FROM Provider WHERE (PROVIDERID = ?)
+	bind => [1 parameter bound]
+Oct 10, 2022 2:14:04 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: SELECT ID, Type, DIAGNOSIS, TREATMENTID, PATIENT_ID, PROVIDER_ID, DOSAGE, DRUG, ENDDATE, FREQUENCY, STARTDATE, DISCHARGEINSTRUCTIONS, SURGERYDATE FROM Treatment WHERE (TREATMENTID IN (?,?))
+	bind => [2 parameters bound]
+Oct 10, 2022 2:14:04 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO Treatment (ID, DIAGNOSIS, TREATMENTID, PATIENT_ID, PROVIDER_ID, Type) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [6 parameters bound]
+Oct 10, 2022 2:14:04 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO Patient_Treatment (treatments_ID, Patient_ID) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:14:04 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO Provider_Treatment (treatments_ID, Provider_ID) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:14:04 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO RadiologyTreatment_TREATMENTDATES (RadiologyTreatment_ID, TREATMENTDATES) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:14:04 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO RadiologyTreatment_TREATMENTDATES (RadiologyTreatment_ID, TREATMENTDATES) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:14:04 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO RadiologyTreatment_TREATMENTDATES (RadiologyTreatment_ID, TREATMENTDATES) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:14:04 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO RadiologyTreatment_TREATMENTDATES (RadiologyTreatment_ID, TREATMENTDATES) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:14:04 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO RadiologyTreatment_TREATMENTDATES (RadiologyTreatment_ID, TREATMENTDATES) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:14:04 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO RadiologyTreatmentFollowup (followupTreatments_ID, RadiologyTreatment_ID) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:14:04 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO RadiologyTreatmentFollowup (followupTreatments_ID, RadiologyTreatment_ID) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:14:39 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: SELECT ID, DOB, NAME, PATIENTID FROM Patient WHERE (PATIENTID = ?)
+	bind => [1 parameter bound]
+Oct 10, 2022 2:14:39 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: SELECT ID, NAME, NPI, PROVIDERID FROM Provider WHERE (PROVIDERID = ?)
+	bind => [1 parameter bound]
+Oct 10, 2022 2:14:41 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO Treatment (ID, DIAGNOSIS, TREATMENTID, PATIENT_ID, PROVIDER_ID, Type) VALUES (?, ?, ?, ?, ?, ?)
+	bind => [6 parameters bound]
+Oct 10, 2022 2:14:41 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO Patient_Treatment (treatments_ID, Patient_ID) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:14:41 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO Provider_Treatment (treatments_ID, Provider_ID) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:14:41 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO PhysiotherapyTreatment_TREATMENTDATES (PhysiotherapyTreatment_ID, TREATMENTDATES) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:14:41 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO PhysiotherapyTreatment_TREATMENTDATES (PhysiotherapyTreatment_ID, TREATMENTDATES) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:14:41 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO PhysiotherapyTreatment_TREATMENTDATES (PhysiotherapyTreatment_ID, TREATMENTDATES) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:14:41 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO PhysiotherapyTreatment_TREATMENTDATES (PhysiotherapyTreatment_ID, TREATMENTDATES) VALUES (?, ?)
+	bind => [2 parameters bound]
+Oct 10, 2022 2:14:41 AM org.eclipse.persistence.session./file:/C:/Users/liaoy/OneDrive/Desktop/Master/Lectures/CS_548_EnterpriseSoftwareArchitectureDesign/Assignment3/Assignment3-Code/clinic-data-model/target/classes/_clinic-domain_url=jdbc:postgresql://localhost:5432/cs548_user=cs548user.sql
+FINE: INSERT INTO PhysiotherapyTreatment_TREATMENTDATES (PhysiotherapyTreatment_ID, TREATMENTDATES) VALUES (?, ?)
+	bind => [2 parameters bound]

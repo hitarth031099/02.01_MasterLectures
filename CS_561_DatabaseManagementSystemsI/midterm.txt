@@ -1,0 +1,24 @@
+Class:
+
+As discussed, we will have the midterm exam next Monday (8/8/2022). It will be a 120-minute exam.
+
+The midterm exam will have around 7-10 questions, and the types of questions you can expect on the midterm are (they will cover topics from Ch. 1, 6, 2, 3 & 4 as well as SQL HW #1):
+
+*. Standard SQL queries (for these types of queries, you're only allowed to use standard SQL syntax covered in class, and 5 standard aggregate functions, i.e., sum(), count(), avg(), max(), min()).
+*. Relational Algebraic Expressions
+*. Given an SQL query, convert it to a relational expression, and vice versa.
+*. Given an SQL query in one format, convert it to a different format (e.g., Nested Sub-Query to non-Nested Sub-Query, etc.).
+*. Given a relational expression, write a more efficient relational expression that is equivalent to the given expression.
+*. Questions about key concepts -- these are not necessarily complex questions, but I'm looking for answers "in your own words".
+
+Some of the topics include (but not limited to):
+-- Set vs. Multi-Set
+-- Entity sets, Relationship sets
+-- Keys: Super keys, Candidate keys, Primary keys, Foreign keys
+-- Relation, Domain, Atomic Domain
+-- Cartesian Product vs. Joins
+-- Various Join types
+-- Derived Relations/Tables
+-- WITH, VIEWS
+-- Nested Sub-Queries
+-- DDLs (table creation, domain definition, etc.).

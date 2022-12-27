@@ -1,0 +1,25 @@
+.App h1 {
+	text-align: center;
+}
+.App .todos-wrapper {
+	margin-left: 30px;
+}
+.App .todos-wrapper .todo-wrapper {
+	display: flex;
+	align-items: center;
+}
+.App .todos-wrapper .todo-wrapper button {
+	margin-left: 20px;
+}
+.App .todos-wrapper .add {
+	display: flex;
+	align-items: flex-end;
+}
+.App .todos-wrapper .add .input-section {
+	margin-right: 20px;
+}
+
+tr,
+td {
+	padding: 10px;
+}

@@ -1,0 +1,15 @@
+{
+  "name": "cs-546-lab-4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "YuFu Liao 10478967",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^4.1.3"
+  }
+}

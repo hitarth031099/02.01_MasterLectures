@@ -1,0 +1,15 @@
+B2B: business to business
+B2C: business to consumers
+legacy application: mainframe application
+RPC: Remote Procedure Call
+IDL: interface definition language, a generic term for a language that lets a program or object written in one language communicate with another program written in an unknown language.
+Robustness Diagram: 稳健性图
+Layered architecture: 分层架构
+Aggregate: 总计的
+Bounded Context: 限界上下文 Bounded Contexts guide you toward thinking of software as a portfolio of models. 
+Modules: help you organize a larger single model into smaller chunks
+Context Map: 上下文映射
+Shared Kernel: 共享内核
+Anticorruption Layer: 反腐败层
+Customer-Supplier: 客户供应商
+Continuous Integration: 持续集成

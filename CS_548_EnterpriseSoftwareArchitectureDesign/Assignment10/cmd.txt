@@ -1,0 +1,7 @@
+java -jar owl.jar
+namespace http://www.cs.stevens.edu/cs548#
+schema Assignment10-Schema.owl
+props Joe
+elems RadiologyPatient
+isa Joe Provider
+isa Joe Internist

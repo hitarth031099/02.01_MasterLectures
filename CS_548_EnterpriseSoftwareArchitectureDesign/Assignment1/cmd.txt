@@ -1,0 +1,20 @@
+docker network create --driver bridge cs548-network
+docker pull postgres
+docker run -d --name cs548db --network cs548-network -p 5432:5432 -v /data:/var/lib/postgresql/data -e POSTGRES_PASSWORD=XXXX -e PGDATA=/var/lib/postgresql/data/pgdata postgres
+docker run -it --rm --network cs548-network postgres /bin/bash
+docker build -t cs548/server .
+docker run -d --name payara3 --network cs548-network -p 4848:4848 -p 8080:8080 -p 8181:8181 cs548/server
+
+cs548Pool
+javax.sql.ConnectionPoolDataSource
+PostgreSQL
+DatabaseName=cs548
+Password=YYYY (see above)
+ServerName=cs548db
+PortNumber=5432
+User=cs548user
+URL=jdbc:postgresql://cs548db:5432/cs548
+
+
+JNDI Name: jdbc/cs548
+Connection pool: cs548Pool

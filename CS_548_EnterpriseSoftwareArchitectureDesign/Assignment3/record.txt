@@ -1,0 +1,56 @@
+DROP DATABASE cs548 WITH (FORCE);
+create database cs548 with owner cs548user;
+
+
+INSERT INTO "public"."patient" ("id", "dob", "name", "patientid") VALUES (1000, '2000-01-01', 'default patient', '10000000-0000-0000-0000-000000000000');
+INSERT INTO "public"."provider" ("id", "name", "npi", "providerid") VALUES (1000, 'default provider', '0001', '20000000-0000-0000-0000-000000000000');
+INSERT INTO "public"."treatment" ("id", "type", "diagnosis", "treatmentid", "patient_id", "provider_id", "dosage", "drug", "enddate", "frequency", "startdate", "dischargeinstructions", "surgerydate") VALUES (1000, 'DrugTreatment', 'default diagnosis', '30000000-0000-0000-0000-000000000000', 1000, 1000, '1', 'default Drug', '2000-01-02', 1, '2000-01-01', NULL, NULL);
+INSERT INTO "public"."patient_treatment" ("patient_id", "treatments_id") VALUES (1000, 1000);
+INSERT INTO "public"."provider_treatment" ("provider_id", "treatments_id") VALUES (1000, 1000);
+
+
+
+addpatient
+testpatient
+01/01/2000
+
+
+addprovider
+0001
+testprovider
+
+
+addtreatment
+D
+10000000-0000-0000-0000-000000000000
+20000000-0000-0000-0000-000000000000
+Diagnosis2
+Drug
+1
+01/01/2000
+01/02/2000
+1
+
+addtreatment
+S
+10000000-0000-0000-0000-000000000000
+20000000-0000-0000-0000-000000000000
+Diagnosis2
+Surgery Discharge Instruction
+01/01/2000
+30000000-0000-0000-0000-000000000000 18036d1c-66a1-4cd6-ae1b-ed3126071c28
+
+addtreatment
+R
+10000000-0000-0000-0000-000000000000
+20000000-0000-0000-0000-000000000000
+Diagnosis2
+01/01/2000 01/01/2000 01/01/2000 01/01/2000 01/01/2000
+30000000-0000-0000-0000-000000000000 18036d1c-66a1-4cd6-ae1b-ed3126071c28
+
+addtreatment
+P
+10000000-0000-0000-0000-000000000000
+20000000-0000-0000-0000-000000000000
+Diagnosis2
+01/01/2000 01/01/2000 01/01/2000 01/01/2000 01/01/2000

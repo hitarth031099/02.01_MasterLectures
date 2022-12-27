@@ -1,0 +1,165 @@
+{
+	"$id": "https://cs548.stevens.edu/clinic/treatment",
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"description": "JSON Schema for treatments",
+	"oneOf": [
+		{
+			"$ref": "#/$defs/drug-treatment"
+		},
+		{
+			"$ref": "#/$defs/surgery-treatment"
+		},
+		{
+			"$ref": "#/$defs/radiology-treatment"
+		},
+		{
+			"$ref": "#/$defs/physiotherapy-treatment"
+		}
+	],
+	"$defs": {
+		"base": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "string",
+					"format": "uuid"
+				},
+				"type-tag": {
+					"enum": [
+						"SURGERY",
+						"DRUGTREATMENT",
+						"RADIOLOGY",
+						"PHYSIOTHERAPY"
+					]
+				},
+				"patient-id": {
+					"type": "string",
+					"format": "uuid"
+				},
+				"provider-id": {
+					"type": "string",
+					"format": "uuid"
+				},
+				"diagnosis": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"id",
+				"type-tag",
+				"patient-id",
+				"provider-id",
+				"diagnosis"
+			]
+		},
+		"drug-treatment": {
+			"allOf": [
+				{
+					"$ref": "#/$defs/base"
+				}
+			],
+			"properties": {
+				"drug": {
+					"type": "string"
+				},
+				"dosage": {
+					"type": "number"
+				},
+				"start-date": {
+					"type": "string",
+					"format": "date"
+				},
+				"end-date": {
+					"type": "string",
+					"format": "date"
+				},
+				"frequency": "integer"
+			},
+			"required": [
+				"drug",
+				"dosage",
+				"start-date",
+				"end-date",
+				"frequency"
+			],
+			"unevaluatedProperties": false
+		},
+		"surgery-treatment": {
+			"allOf": [
+				{
+					"$ref": "#/$defs/base"
+				}
+			],
+			"properties": {
+				"surgery-date": {
+					"type": "string",
+					"format": "date"
+				},
+				"dischargeInstruction": {
+					"type": "string"
+				},
+				"followups": {
+					"type": "array",
+					"items": {
+						"type": "string",
+						"format": "uuid"
+					}
+				}
+			},
+			"required": [
+				"surgery-date",
+				"dischargeInstruction",
+				"followups"
+			],
+			"unevaluatedProperties": false
+		},
+		"radiology-treatment": {
+			"allOf": [
+				{
+					"$ref": "#/$defs/base"
+				}
+			],
+			"properties": {
+				"treatmentDateList": {
+					"type": "array",
+					"items": {
+						"type": "string",
+						"format": "date"
+					}
+				},
+				"followups": {
+					"type": "array",
+					"items": {
+						"type": "string",
+						"format": "uuid"
+					}
+				}
+			},
+			"required": [
+				"treatmentDateList",
+				"followups"
+			],
+			"unevaluatedProperties": false
+		},
+		"physiotherapy-treatment": {
+			"allOf": [
+				{
+					"$ref": "#/$defs/base"
+				}
+			],
+			"properties": {
+				"treatmentDateList": {
+					"type": "array",
+					"items": {
+						"type": "string",
+						"format": "date"
+					}
+				}
+			},
+			"required": [
+				"treatmentDateList"
+			],
+			"unevaluatedProperties": false
+		}
+	}
+}

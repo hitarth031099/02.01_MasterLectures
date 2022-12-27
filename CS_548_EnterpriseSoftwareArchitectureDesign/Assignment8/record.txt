@@ -1,0 +1,27 @@
+# init database in ./postgres
+docker container stop cs548db
+docker container rm cs548db
+docker image rm cs548/database
+docker build -t cs548/database ./postgres
+docker run -d --name cs548db --network cs548-network -p 5432:5432 -v pathto-host-data-dir:/var/lib/postgresql/data -e POSTGRES_PASSWORD=XXXXXX -e PGDATA=/var/lib/postgresql/data/pgdata -e DATABASE_PASSWORD=YYYYYY cs548/database
+
+# init domain in ./clinic-domain
+docker container stop clinic-domain
+docker container rm clinic-domain
+docker image rm cs548/clinic-domain
+docker build -t cs548/clinic-domain ./clinic-domain
+docker run -d --name clinic-domain --network cs548-network -p 5050:8080 -e DATABASE_PASSWORD=YYYYYY cs548/clinic-domain
+
+# init webapp in ./clinic-webapp
+docker container stop clinic-webapp 
+docker container rm clinic-webapp 
+docker image rm cs548/clinic-webapp
+docker build -t cs548/clinic-webapp ./clinic-webapp
+docker run -d --name clinic-webapp --network cs548-network -p 8080:8080 -p 8181:8181 cs548/clinic-webapp
+
+# init rest in ./clinic-rest
+docker container stop clinic-rest 
+docker container rm clinic-rest 
+docker image rm cs548/clinic-rest
+docker build -t cs548/clinic-rest ./clinic-rest
+docker run -d --name clinic-rest --network cs548-network -p 9090:8080 -p 9191:8181 cs548/clinic-rest

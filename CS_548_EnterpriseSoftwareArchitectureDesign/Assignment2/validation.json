@@ -1,0 +1,12 @@
+{
+	"type-tag": "SURGERY",
+	"id": "3aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+	"patient-id": "0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+	"provider-id": "1aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc",
+	"diagnosis": "diagonosis",
+	"surgery-date": "2000-01-01",
+	"dischargeInstruction": "discharge Instruction",
+	"followups": [
+		
+	]
+}

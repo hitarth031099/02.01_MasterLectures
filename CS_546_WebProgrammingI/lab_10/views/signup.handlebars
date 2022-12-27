@@ -1,0 +1,28 @@
+<header>
+    <h1 class='title'>Lab10 Signup</h1>
+</header>
+
+<form action="/signup" method="POST" id="signup-form">
+    <label id="usernameLabel">
+        Username:
+        <input type="text" name="username" id="usernameInput" value="{{username}}" />
+    </label>
+
+    <label id="passwordLabel">
+        Password:
+        <input type="password" name="password" id="passwordInput" />
+    </label>
+    <button type="submit">Signup</button>
+
+
+    {{#if hasError}}
+    <div id="errorDiv" class="error">
+        {{#each errors}}
+            <p>{{this}}</p>
+        {{/each}}
+    </div>
+    {{/if}}
+
+</form>
+
+<a href="/">Already have an account? Click here to log-in</a><br>

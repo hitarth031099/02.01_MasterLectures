@@ -1,0 +1,75 @@
+DROP DATABASE cs548 WITH (FORCE);
+create database cs548 with owner cs548user;
+
+java -jar ./Assignment-Code/clinic-rest-client/target/clinic-rest-client-1.0.0-jar-with-dependencies.jar --server http://localhost:8080/api/
+
+list
+load ./upload.json
+list
+save ./save.json
+list
+
+upload
+
+addpatient
+patient by add
+01/01/2100
+list
+
+addprovider
+npi2
+provider by add
+list
+
+addtreatment
+D
+0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc
+0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc
+diagonosis2
+drugs2
+10
+01/01/2100
+01/10/2100
+2
+no
+list
+
+addtreatment
+S
+0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc
+0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc
+diagonosis2
+01/01/2100
+Surgery Discharge Instruction
+no
+list
+
+addtreatment
+R
+0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc
+0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc
+diagonosis2
+01/01/2100 01/02/2100 01/03/2100 01/04/2100 01/05/2100
+no
+list
+
+addtreatment
+P
+0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc
+0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc
+diagonosis2
+01/01/2100 01/02/2100 01/03/2100 01/04/2100 01/05/2100
+D
+0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc
+0aaabbbb-aaaa-aaaa-aaaa-aaaabbbbcccc
+diagonosis2
+drugs2
+10
+01/01/2100
+01/10/2100
+2
+no
+no
+list
+
+upload

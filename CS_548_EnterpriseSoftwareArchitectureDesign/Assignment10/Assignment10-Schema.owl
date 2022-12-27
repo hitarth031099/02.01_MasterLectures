@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:clinic="http://www.cs.stevens.edu/cs548#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+
+  <rdf:Description rdf:about="http://www.cs.stevens.edu/cs548#Joe">
+    <rdf:type rdf:resource="http://www.cs.stevens.edu/cs548#Provider"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.cs.stevens.edu/cs548#Joe">
+    <rdf:type rdf:resource="http://www.cs.stevens.edu/cs548#Surgeons"/>
+  </rdf:Description>
+
+
+    <rdf:Description rdf:about="http://www.cs.stevens.edu/cs548#Peter">
+      <rdf:type rdf:resource="http://www.cs.stevens.edu/cs548#Patient"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.cs.stevens.edu/cs548#Li">
+      <rdf:type rdf:resource="http://www.cs.stevens.edu/cs548#Patient"/>
+    </rdf:Description>
+
+   <rdf:Description rdf:about="http://www.cs.stevens.edu/cs548#/Peter">
+     <rdf:type rdf:resource="http://www.cs.stevens.edu/cs548#RadiologyPatient"/>
+   </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.cs.stevens.edu/cs548#RadiologyPatient">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:equivalentClass rdf:nodeID="ae233rG33M66"/>
+    <rdfs:subClassOf rdf:resource="http://www.cs.stevens.edu/cs548#Patient"/>
+  </rdf:Description>
+
+
+   <rdf:Description rdf:about="http://www.cs.stevens.edu/cs548#/Li">
+     <rdf:type rdf:resource="http://www.cs.stevens.edu/cs548#DrugTreatmentPatient"/>
+   </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.cs.stevens.edu/cs548#DrugTreatmentPatient">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:equivalentClass rdf:nodeID="ae233rG33M66"/>
+    <rdfs:subClassOf rdf:resource="http://www.cs.stevens.edu/cs548#Patient"/>
+  </rdf:Description>
+
+
+  <rdf:Description rdf:about="http://www.cs.stevens.edu/cs548#Surgeons">
+    <rdf:type rdf:resource="http://www.cs.stevens.edu/cs548#Provider"/>
+  </rdf:Description>
+
+   <rdf:Description rdf:about="http://www.cs.stevens.edu/cs548#Radiologists">
+     <rdf:type rdf:resource="http://www.cs.stevens.edu/cs548#Provider"/>
+   </rdf:Description>
+
+     <rdf:Description rdf:about="http://www.cs.stevens.edu/cs548#Internists">
+       <rdf:type rdf:resource="http://www.cs.stevens.edu/cs548#Provider"/>
+     </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.cs.stevens.edu/cs548#Surgery">
+    <rdfs:form rdf:resource="http://www.cs.stevens.edu/cs548#Treatment"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.cs.stevens.edu/cs548#Radiology">
+    <rdfs:form rdf:resource="http://www.cs.stevens.edu/cs548#Treatment"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.cs.stevens.edu/cs548#DrugTreatment">
+    <rdfs:form rdf:resource="http://www.cs.stevens.edu/cs548#Treatment"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.cs.stevens.edu/cs548#ProvidedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://www.cs.stevens.edu/cs548#Provider"/>
+    <rdfs:domain rdf:resource="http://www.cs.stevens.edu/cs548#Treatment"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.cs.stevens.edu/cs548#ReceivedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://www.cs.stevens.edu/cs548#Patient"/>
+    <rdfs:domain rdf:resource="http://www.cs.stevens.edu/cs548#Treatment"/>
+  </rdf:Description>
+
+
+    <rdf:Description rdf:about="http://www.cs.stevens.edu/cs548#RadiologistProvided">
+      <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+      <owl:equivalentClass rdf:nodeID="ae233rG33M66"/>
+      <rdfs:form rdf:resource="http://www.cs.stevens.edu/cs548#Treatment"/>
+    </rdf:Description>
+      <rdf:Description rdf:nodeID="ae233rG33M66">
+        <owl:HasValue rdf:resource="http://www.cs.stevens.edu/cs548#Radiologists"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+        <owl:OnProperty rdf:resource="http://www.cs.stevens.edu/cs548#ProvidedBy"/>
+      </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.cs.stevens.edu/cs548#InverseOfReceivedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://www.cs.stevens.edu/cs548#ReceivedBy"/>
+  </rdf:Description>
+    <rdf:Description rdf:about="http://www.cs.stevens.edu/cs548#RadiologistProvided">
+      <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+      <owl:equivalentClass rdf:nodeID="ae233rG33M66"/>
+      <rdfs:form rdf:resource="http://www.cs.stevens.edu/cs548#Treatment"/>
+    </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.cs.stevens.edu/cs548#Hanna">
+    <rdf:type rdf:resource="http://www.cs.stevens.edu/cs548#Internist"/>
+  </rdf:Description>
+</rdf:RDF>

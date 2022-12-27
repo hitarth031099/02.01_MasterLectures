@@ -1,0 +1,19 @@
+{{#if haserror}}
+    <p class = "error">{{error}}</p>
+
+    {{else}}
+    <main>
+        <div>
+            <h1>{{title}}</h1>
+            <img alt = "{{title}}" src="{{image}}">
+            <p>{{desciption}}</p>
+            <h2>Comics</h2>
+            <ul>
+                {{#each comics}}
+                <li>{{name}}</li>
+                {{/each}}
+            </ul>
+        </div>
+    </main>
+{{/if}}
+
