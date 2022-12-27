@@ -1,1 +1,1 @@
-This repo contains all lectures for Stevens Institute of Technology, hope this will help you.
+This repo contains all lectures I learned in Stevens Institute of Technology, hope this will help you.
