@@ -1,0 +1,288 @@
+---
+title: "FE515_2022A_Lecture_2"
+author: "Cheng Lu"
+output: pdf_document
+---
+
+Learning objectives:
+  1. Data Frame
+  2. Import CSV file
+  3. Missing Values
+  4. User defined functions
+  5. Vectorized Operation*
+  6. Apply family
+
+
+# 1. Data Frame
+```{r}
+# two vectors
+gender <- c("boy", "girl", 'boy', 'girl')
+ages <- c(11, 12, 10, 13)
+
+# check data type
+typeof(gender)
+typeof(ages)
+
+# create a dataframe
+df <- data.frame(gender, ages)
+df
+
+# a special list
+typeof(df)
+class(df)
+
+# data frames can store different type of objects in each colum
+typeof(df$ages)
+typeof(df$gender)
+
+# strings as factors
+df <- data.frame(gender, ages, stringsAsFactors = T)
+df
+df$gender # factors
+```
+
+## 1.1 factor*
+
+Factor is used to categorize the data and store it as levels.
+They can store both strings and integers.
+they are useful in the columns which have a limited number of unique values. 
+Like "Male, "Female" and True, False
+
+```{r factor}
+# encode vector as factor
+data <- c("East","West","East","North","South","North","East","West","West","West","East","North")
+print(data)
+print(is.factor(data))
+
+# Apply the factor function.
+factor_data <- factor(data)
+print(is.factor(factor_data))
+print(factor_data)
+
+# Change element values
+factor_data <- factor(data, labels = c(1, 2, 3, 4))
+print(factor_data)
+```
+
+
+# 2. Import CSV
+
+```{r}
+# read csv file
+read.csv("google.csv")
+GOOG <- read.csv(file = "google.csv", header = T, row.names = 1)
+
+# current working directory
+getwd()
+
+# set working directory
+path <- "/Users/cheng/Google Drive/PhD/Teaching/FE 515 R/2022 fall/code"
+setwd(path)
+
+# first several rows of GOOG
+head(GOOG) 
+
+# column names
+names(GOOG)
+
+# get open price
+GOOG$GOOG.Open
+
+# get adjusted close price
+GOOG$Adj.Close
+
+# GOOG is a data frame
+class(GOOG) 
+typeof(GOOG)
+```
+
+# 3. Missing Values
+```{r}
+# NA
+# Not available
+head(GOOG)
+
+# NaN
+# Not a number
+x <- c(-1,0,1)
+x/0
+
+
+# identify NA and NaN
+# nan is a special case of NA
+is.na(c(1,NA,NaN))
+is.nan(c(1,NA,NaN))
+
+# working with NA
+x <- c(1, 2, 3, NA, NA, 6, NA, 8)
+x
+x.na <- is.na(x) 
+
+# method 1
+x[x.na]
+!x.na
+x[!x.na]
+
+# method 2
+?na.omit
+y <- na.omit(x)
+as.numeric(y)
+```
+
+
+# 4. User defined functions
+
+see slides for syntax
+
+function without argument
+
+```{r}
+myfunc1 <- function(){
+  a <- c(1,2,3)
+  a.square.root <- sqrt(a)
+  return(a.square.root)
+}
+
+result <- myfunc1()
+print(result)
+myfunc1()# error: unused argument
+```
+
+function with arguments
+
+```{r}
+myfunc2 <- function(arg1, arg2){
+  a <- arg1 * arg2
+  return(a)
+}
+
+myfunc2(2)
+
+result <- myfunc2(c,c) # call the new function
+print(result)
+myfunc2(c)# Error in myfunc2() : argument "arg1" is missing, with no default
+```
+
+function with default arguments
+
+```{r}
+get.circle.area <- function(radius = 1, pi = 3.14){ 
+  a <- pi * radius ^ 2
+  return(a)
+}
+
+get.circle.area(radius = 6)
+get.circle.area(3, 3)
+get.circle.area()
+get.circle.area(5)# first argument is replaced by 5
+```
+
+Functions can use global variables
+
+global variables
+local variables
+
+```{r}
+var <- "Hello World!"
+
+print.sth <- function(){
+ print(var)
+  var <<- "Hello R World!" # how about "<<-" rather than "<-" ?
+ print(var)
+}
+
+print.sth()
+var
+```
+
+# 5. Vectorized Operation*
+```{r}
+x <- 1:4
+y <- 6:9
+
+# want to do x + y
+# method 1: using for loop
+result <- c()
+for (i in 1:4) {
+  result[i] <- x[i] + y[i] 
+  }
+result
+
+# method 2: vectorized operation
+result <- x + y
+result
+```
+
+Another example
+
+```{r}
+x <- 1:4
+x > 2
+```
+
+Apply vectorized operation to functions defined by user
+
+```{r}
+# user defined functions 
+mySquare <- function(x) { 
+  return (x^2)
+}
+
+# vector as example
+x <- 1:4
+y <- 6:9
+
+# vectorized operation
+mySquare(x)
+mySquare(y)
+```
+
+# 6. Apply Family
+
+
+## 6.1 apply
+
+apply(x,margin,function): Returns a vector or array or list of values 
+obtained by applying a function to margins of an array or matrix. 
+Margin is the name of the dataset used.
+1 indicates rows, 2 indicates columns, 3 indicates matrix
+
+```{r}
+# create an example
+M <- matrix(c(1:9), byrow = T, nrow = 3)
+print(M)
+
+# apply
+result <- apply(X = M, MARGIN = 1, FUN = sum) # get sum of elements for matrix 
+print(result)
+```
+
+## 6.2 lapply
+
+'lapply' works with list (takes list as input and return a list)
+
+```{r}
+# take matrix as input return list
+lapply(M, sum)
+
+# takes list as input and return a list
+x <- list(a = 1:10, beta = exp(-3:3), logic = c(TRUE,FALSE,FALSE,TRUE))
+print(x)
+lapply(x, mean)
+```
+
+## 6.3 sapply
+
+'sapply' is a simple version (wrapper) of 'lapply' (work with list and return vector)
+
+```{r}
+# takes list as input and return a vector
+sapply(x, mean)
+
+# take matrix as input return vector
+col.mean <- sapply(M, mean)
+class(col.mean)
+```
+
+
+

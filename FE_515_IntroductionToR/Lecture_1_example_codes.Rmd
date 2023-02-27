@@ -1,0 +1,432 @@
+---
+title: "FE515_Lecture_1"
+author: "Cheng Lu"
+date: "9/11/2022"
+output: pdf_document
+---
+
+Learning objectives:
+  1. Atomic Class
+  2. Explicit Coercion
+  3. Vector
+  4. Matrix
+  5. List 
+  6. Subsetting 
+  7. Operator
+  8. Loop
+  
+# 1. Atomic Class
+
+First thing
+
+```{r}
+# say hello to R!
+
+```
+
+
+```{r}
+# 1. numeric 
+a <- 1
+b <- 2
+c <-  a + b
+print(c)
+mode(c)
+
+# 2. integer
+a <- 41L
+print(a)
+typeof(a)
+
+# 3. logical
+a <- TRUE
+b <- FALSE
+print(a)
+mode(a)
+
+# 4. character
+a <- "Hello world!"
+print(a)
+mode(a)
+
+# 5. complex number
+a <- 3 + 4i
+b <- 2 + 2i
+c <- a - b
+print(c)
+mode(c)
+```
+
+# 2. Explicit Coercion (transformation)
+
+```{r}
+x <- 
+
+# Convert an object to numeric
+as.numeric(x)
+
+# Convert an object to logical
+as.logical(x)
+
+# Convert an object to character
+as.character(x)
+```
+
+# 3. Vector
+
+$$
+x = \left(\begin{array}{c} 
+1 \\
+2 \\
+3 
+\end{array}\right)
+$$ 
+
+Creating Vectors
+
+```{r}
+x <- c(4, 5, 6) # numeric
+
+x <- c(TRUE, FALSE) # logical
+x <- c(T, F) # logical
+x <- c('a', 'b', 'c') # character
+x <- 1:100 # integer
+x <- c(1+0i, 3+5i) # complex
+```
+
+Other ways to create vectors
+
+```{r}
+x <- seq(10, 20, by = 2)
+x
+
+y <- rep(x = c(1, 2, 3), 2) # this "x" is different from the former x
+y
+
+z <- c(x, 0, y)
+z
+
+a <- 1:length(x)+1 # ’:’ has higher precedence than ’+’
+a
+```
+
+vector calculation
+
+```{r}
+x <- 1:5
+
+# plus
+2*x+1
+
+# minus
+x - 5
+
+# multiply
+x * 3
+
+# divide
+x / 3
+
+# power
+x^2
+
+# modulo
+5 %% 3
+x %% 3
+
+# inner product
+y <- rep(1, 5)
+x%*%y
+1*1 + 2*1 + 3*1 + 4*1 + 5*1
+```
+
+# 4. Matrix
+
+$$
+A = \left(\begin{array}{ccc} 
+1 & 2 & 3\\
+4 & 5 & 6\\
+7 & 8 & 9
+\end{array}\right)
+$$ 
+
+Creating matrix
+
+```{r}
+x <- 1:9
+A <- matrix(data=x, nrow=3, ncol=3, byrow=T)
+
+nrow(A)
+ncol(A)
+t(A)
+```
+
+Other ways to create matrix
+
+```{r}
+x <- 1:3
+y <- 4:6
+rbind(x, y)
+cbind(x, y)
+```
+
+Matrix Operations*
+
+```{r}
+# transpose of A
+t(A)
+
+# determinant of A
+det(A) 
+
+# eigenvalues of A
+eigen(A)$values
+
+# eigenvectors of A
+eigen(A)$vectors 
+
+# element-wise multiplication
+A * B 
+
+# matrix multiplication
+A %*% B 
+
+# inverse of matrix A
+solve(A) 
+
+# solve linear equation Ax = b
+solve(A, b) 
+```
+
+Other Operations for Vector or Matrix*
+
+```{r}
+# summation of all elements in A
+sum(A)
+
+# product of all elements in A
+prod(A)
+
+# maximum element in A
+max(A)
+
+# minimum element in A
+min(A)
+
+# exponential of each element in A
+exp(A)
+
+# logarithm of each element in A
+log(A)
+
+# absolute value of each element in A
+abs(A)
+```
+
+# 5. List
+
+```{r}
+l <- list("John", 12345, "Male")
+l
+
+l <- list(name = "John", ID = 12345, gender = "Male")
+l$name
+```
+
+# 6. Subsetting (indexing)
+
+```{r}
+# vector
+x <- 1:10
+x[3]
+x[c(3,7)]
+x[-2]
+x[-c(2:5)]
+
+# matrix
+m <- matrix(x, nrow = 2, byrow = T)
+m
+m[2,2]
+m[2, c(1,3)]
+m[,c(3,4)]
+m[,-c(2:4)]
+
+# list
+y <- c('a', 'b', 'c')
+l <- list(numbers = x, chars = y)
+l$numbers[3]
+
+
+l[[1]][3]
+l[[1]]
+l$chars[c(1,3,4)]
+```
+
+Assign Values
+
+```{r}
+a <- x[c(2:5)]
+a
+
+m[,4:5] <- 0
+m
+
+l$numbers[-c(2,3,4)] <- 0
+l$numbers
+l$chars
+```
+
+
+# 7. Operator
+
+## 7.1 Arithmetic Operations
+
+example 1:
+
+$$
+d_{1}=\frac{\ln \frac{S_{0}}{K}+\left(r+\frac{1}{2} \sigma^{2}\right) T_{1}}{\sigma \sqrt{T_{1}}}
+$$
+```{r}
+S0 <- 100
+K <- 100
+T1 <- 1
+sigma <- 0.2
+r <- 0.05
+
+d1 <- (log(S0/K)+(r+0.5*sigma^2)*T1)/(sigma*sqrt(T1))
+d1
+```
+
+example 2:
+
+$$
+\frac{1}{\sqrt{2 \pi}} e^{-\frac{x^{2}}{2}}
+$$
+```{r}
+x <- 0
+1/sqrt(2*pi)*exp(-x^2/2)
+
+x <- -3:3
+1/sqrt(2*pi)*exp(-x^2/2)
+```
+
+## 7.2 Logical Operations
+
+```{r}
+a <- pi # a = 3.1415926...
+a > 3
+
+# equal
+y <- 1:7
+y
+y == 3
+
+# not equal
+y != 3
+
+# and
+a > 3 & a < 4
+
+# or
+a > 3 | a < 4
+```
+
+# 8. if else statement
+
+```{r}
+x <- T
+
+if (x){
+  "x is true"
+} else {
+  "x is false"
+}
+```
+
+another example
+
+```{r}
+x <- c(1, 2, 3)
+
+print(x)
+
+if(2 %in% x) {
+   print("2 is found")
+} else {
+   print("2 is not found")
+}
+```
+
+
+# 9. Loop
+
+repeat loop
+
+```{r}
+a <- c("Hello")
+num <- 1
+
+repeat {
+  print(a)
+  num = num + 1
+  if(num > 5){ break } # When the break is inside a loop, the loop is immediately terminated, and...
+  # goes to the next statement following the loop
+}
+```
+
+while loop
+
+```{r}
+i <- 1
+while(i <= 100){ # infinite loop, press 'stop' to stop printing
+  print(i)
+  i <- i + 1
+}
+```
+
+for loop
+
+```{r}
+for (i in 1:5) {
+  print(i)
+}
+
+
+sums <- 0
+for (i in 1:100) {
+  sums <- sums + i
+}
+sums
+```
+
+nested for loop*
+
+$$
+A = \left(\begin{array}{ccc} 
+1 & 2 & 3\\
+4 & 5 & 6\\
+7 & 8 & 9
+\end{array}\right)
+$$ 
+
+
+```{r}
+A2 <- matrix(NA, nrow = 3, ncol = 4) # NA matrix
+A1 <- matrix(1:12, nrow = 3, byrow = T)
+
+for (i in 1:3) {# i is row index
+  for (j in 1:4) {# j is col index
+    A2[i, j] <- A1[i, j] * 10
+  }
+}
+
+A2
+```
+
+
+
+
+
+
+
+

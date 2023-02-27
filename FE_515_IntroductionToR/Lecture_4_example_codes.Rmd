@@ -1,0 +1,172 @@
+---
+title: "FE515_2022A_Lecture_4"
+author: "Cheng Lu"
+output: pdf_document
+---
+Learning objectives:
+  1. quantmod package
+  2. Historical Prices
+  3. Quoted Prices
+  4. Option prices
+  5. Output file
+
+# 1. quantmod package
+
+download and import package
+```{r}
+#install.packages("quantmod")
+library(quantmod)
+```
+
+download historical stock price
+```{r}
+getSymbols(Symbols = "MSFT")
+MSFT <- data.frame(MSFT)
+```
+
+overview of data
+```{r}
+head(MSFT, 3)
+```
+
+another example
+```{r}
+ticker.list <- c("SPY","AAPL")
+data.env <- new.env()
+getSymbols(Symbols = ticker.list, 
+           from = "2001-01-01", 
+           to = "2001-01-31",
+           auto.assign = T,
+           env = data.env
+           )
+
+head(data.env$AAPL) # show first few observations
+tail(data.env$AAPL) # show last few observations
+
+# The default source is "yahoo", which is the only source now
+```
+
+# 2. Visualization
+
+plot stock price series
+```{r}
+chartSeries(MSFT)
+```
+
+subsetting
+```{r}
+chartSeries(MSFT, subset='2007-01::2007-03')
+```
+
+change color(Candlestick Charts)
+```{r}
+chartSeries(AAPL,theme=chartTheme('white'))
+```
+
+technical indicators
+```{r}
+#no volume
+chartSeries(MSFT,TA=NULL) 
+
+#add volume and Bollinger Bands from TTR
+chartSeries(MSFT,TA=c(addVo(),addBBands()), subset='2007-01::2007-03')
+addMACD()
+```
+
+# 3. Quoted Prices
+
+current quote price
+```{r}
+tail(MSFT)
+getQuote("MSFT")
+```
+
+# 4. Option prices*
+
+download option price
+
+Option is a contract that a investor has right to buy or sell the underlying asset at specific time (expiration date or maturity) with specific price (strike price)
+```{r}
+AAPL.option <- getOptionChain("AAPL")
+
+# a named list
+mode(AAPL.option)
+
+# two elements
+names(AAPL.option)# use names() to check variables of lists
+
+# data type of each element
+is.data.frame(AAPL.option)
+is.data.frame(AAPL.option$calls)
+```
+
+understand option data
+
+- The first observation is a call option that a investor has right buy 100 share of “AAPL” on “year-month-day” with price $##.## (Strike)
+- The most recent traded (last quoted) price for the contract is $##.## (Last)
+- The highest price a buyer willing to pay (bid price) for the option is $##.## (Bid)
+- The lowest price a seller willing to sell (ask price) for the option is $##.## (Ask)
+- The price will change during trading day when investors trade the option
+
+```{r}
+head(AAPL.option$calls)
+```
+
+change expiration date
+```{r}
+# set expiration date
+AAPL.option1 <- getOptionChain("AAPL", Exp = "2022-10-14")
+names(AAPL.option1)
+
+# multiple expiration date
+AAPL.options <- getOptionChain("AAPL", c("2022-10-07","2022-10-14"))
+names(AAPL.options) # expired between "2022-07-01" and "2022-07-15"
+names(AAPL.options$Oct.07.2022)
+```
+
+more expiration dates
+```{r}
+# all options expired in 2022 and 2023
+AAPL.options2 <- getOptionChain("AAPL", "2022/2023")
+names(AAPL.options2) 
+
+# all options available
+AAPL.options.all <- getOptionChain("AAPL",NULL)
+names(AAPL.options.all)
+
+# strike price of call options expired on "2022-10-07"
+AAPL.options.all$Oct.07.2022$calls$Strike
+```
+
+calculate option price
+```{r}
+names(AAPL.options.all$Oct.07.2022$calls)
+AAPL.options.all$Oct.07.2022$calls$Price <- 0.5*(AAPL.options.all$Oct.07.2022$calls$Bid
+                                              + AAPL.options.all$Oct.07.2022$calls$Ask)
+names(AAPL.options.all$Oct.07.2022$calls)
+```
+
+**more details about option price calculations on slides**
+
+# 5. Output file*
+
+output as a csv file
+```{r}
+file.path <- "data2022_10_03Exp2022_10_07calls.csv"
+write.csv(AAPL.options.all$Oct.07.2022$calls, file.path)
+```
+
+
+output as a Rdata file
+```{r}
+file.path <- "data2022_10_03Exp2022_10_07calls.Rdata"
+x <- AAPL.options.all$Oct.07.2022$calls
+save(x, file = file.path)
+```
+
+output as a txt file
+```{r}
+file.path <- "data2022_10_03Exp2022_10_07calls.txt"
+write.table(AAPL.options.all$Oct.07.2022$calls, file = file.path)
+```
+

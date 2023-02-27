@@ -1,0 +1,222 @@
+---
+title: "FE515_2022A_Lecture_3"
+author: "Cheng Lu"
+output: pdf_document
+---
+
+Learning objectives:
+  1.Date and Time
+    1.1 Date Object
+    1.2 Date and Time Objects
+  2. Visualization
+    2.1 X-Y Plot
+    2.2 Scatter Plot
+    2.3 Bar Plot
+    2.4 Box Plot
+
+# 1. Date and Time
+
+## 1.1 Date Object
+
+as.Date() function convert character to objects of class ”Date” representing calendar dates.
+
+```{r}
+myDate <- as.Date("2022-06-07")
+class(myDate)
+mode(myDate)
+
+# internally it is number of days since Jan 01, 1970
+as.numeric(myDate)
+myDates <- as.Date(c("1970-01-01", "1970-01-02"))
+as.numeric(myDates)
+```
+
+as.Date() can only recognize some standard time type.
+
+```{r}
+# standard input
+as.Date("1970/01/01")
+
+# non-standard input
+as.Date("01/01/1970") 
+
+# set up date format when we generate dates
+as.Date("02/24/2015", format = "%m/%d/%Y")
+as.Date("15,Feb-24", format = "%y,%b-%d")
+as.Date("February24 2015", format = "%B%d %Y")
+```
+
+format() function convert `Date` object to character.
+
+```{r}
+# convert system date to character
+date.1 <- Sys.Date()
+class(date.1)
+
+date.1.convert <- format(Sys.Date()) 
+date.1.convert
+class(date.1.convert)
+
+# specify conversion format
+myDate2 <- format(Sys.Date(), "%Y/%m/%d")
+myDate2
+
+?as.Date
+```
+
+Other useful functions for ”Date” objects*
+
+```{r}
+myDate <- as.Date("1970-01-01")
+
+# get date property
+months(myDate)
+quarters(myDate)
+weekdays(myDate)
+
+# date sequence
+myDate + 1
+seq(from = myDate, to = myDate + 31, by = "day")
+seq(myDate, myDate + 31, by = "week")
+```
+
+## 1.2 Date and Time Objects
+
+The POSIXct and POSIXlt classes allow for `dates` and `times` with control for `time zones`
+
+- The POSIXct (POSIX standards of calendar time) class stores date/time values as the `number of seconds` since January 1, 1970
+- The POSIXlt (POSIX standards of local time)class stores them as a list with elements for second, minute, hour, day, month, and year, among others. 
+- Unless you need the list nature of the POSIXlt class, the POSIXct class is the usual choice for storing dates in R
+
+```{r}
+myDateTime1 <- as.POSIXct("01,01,2014 10:20:20", format = "%d,%m,%Y %H:%M:%S")
+myDateTime2 <- as.POSIXlt("01,01,2014 10:20:20", format = "%d,%m,%Y %H:%M:%S")
+myDateTime3 <- as.POSIXlt("01,02,2014 10:21:20", format = "%d,%m,%Y %H:%M:%S")
+
+class(myDateTime1)
+class(myDateTime2)
+
+mode(myDateTime1)
+mode(myDateTime2)
+```
+
+strptime() and strftime()
+
+```{r}
+# convert string to date object 
+# it's the core part of as.POSIXlt()
+dt1 <- strptime("2013.12/23 01:00:34", "%Y.%m/%d %H:%M:%S")
+dt2 <- strptime("2013.12/23 01:02:37", "%Y.%m/%d %H:%M:%S")
+
+dt1
+class(dt1)
+
+# convert date object to string
+dt1 <- strftime(dt1, "%Y.%m/%d %H:%M:%S")
+```
+
+operation on date and time object
+
+```{r}
+# get date property
+dt1$sec # other elements: min, hour, mday, wday, yday, mon, year
+
+# difference in date object 
+dt2 - dt1
+
+myDateTime1 - myDateTime3
+myDateTime2 - myDateTime3
+
+difftime(dt2, dt1, units = "secs")
+```
+
+# 2. Visualization
+
+## 2.1 X-Y Plot
+
+plot() function is the most basic graphic function in R.
+It doesn’t need any package to start.
+Lines() function add line segments to the plot.
+Points() function add points to the plot.
+
+```{r}
+x <- seq(0, 5, by = 0.5)
+y <- sin(x)
+y2 <- cos(x)
+
+{
+  plot(x, y, 
+     xlim = c(-1,6), 
+     ylim = c(-1.5, 1.5),
+     main = "Title", 
+     xlab = "x label", 
+     ylab = "y label", 
+     col = rgb(0,1,0,0.5))
+
+# add one addtional line
+lines(x, y2, type = "c", col = "red")
+}
+
+```
+
+main: title of the plot
+xlab,ylab: lable for x or y axis
+xlim,ylim: value range on x or y axis
+lwd: line width
+lty: type of line
+pch: type of point
+col: color for line or point
+
+## 2.2 Scatter plot
+
+Scatter Plot of Miles per gallon against weight (weight in x-axis and Miles per gallon in y-axis
+
+```{r}
+plot(mtcars$wt, mtcars$mpg, 
+     main = "Scatter Plot",
+     xlab = "Weight", 
+     ylab = "Miles per gallon")
+
+```
+
+
+## 2.3 Bar plot
+
+### 2.3.1 discrete data
+
+Barplot of frequency against number of cylinders
+
+```{r}
+?mtcars
+table(mtcars$cyl)
+barplot(table(mtcars$cyl),xlab = "Number of cylinders", ylab = "Frequency")
+```
+
+### 2.3.2 continuous data*
+
+Use cut() function divide data into intervals, 
+then use table() function to generate tables,
+then use barplot() to plot.
+
+```{r}
+cut(mtcars$wt, breaks = 1:6) # also use "breaks = 6" to get 6 equal lenght intervals
+
+table(cut(mtcars$wt, breaks = 1:6))
+
+barplot(table(cut(mtcars$wt, breaks = 1:6)),xlab = "weight", ylab = "Frequency")
+```
+
+## 2.4 Box Plot
+
+fivenum() finds the minimum, first quartile, median, third quartile, maximum. And boxplot()
+summarize these numbers in a plot.
+
+```{r}
+fivenum(mtcars$hp)
+# setup 2 figures in 1 row and 2 column which filled by rows
+
+par(mfrow = c(1, 2)) # how about mfcol?
+boxplot(mtcars$mpg, xlab = "Mile per gallon")
+boxplot(mtcars$hp, xlab = "Gross horsepower")
+```
+
