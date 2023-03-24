@@ -1,0 +1,239 @@
+---
+title: "FE515_2022A_Lecture_7"
+author: "Cheng Lu"
+output: pdf_document
+---
+Learning objectives:
+  1. Simple Linear Regression
+  2. Multiple Regression
+  3. Stepwise Regression
+  
+# 1. Simple Linear Regression
+
+Generate sample from true model
+
+$$
+\begin{align}
+\text { True model: } y&=\alpha+\beta x+\epsilon\\
+&=3+4 x+\epsilon
+\end{align}
+$$
+
+```{r}
+set.seed(1)
+alpha <- 3
+beta <- 4
+
+x <- rnorm(100, mean = 3)
+epsilon <- rnorm(100)
+y <- alpha + beta * x + epsilon # model: y = 3 + 4x + epsilon
+plot(y ~ x) # scatter plot of the observations
+```
+
+Fit linear model using sample data
+
+$$
+\begin{align}
+\text {Prediction: } \hat{y}&=\hat{\alpha}+\hat{\beta} x\\
+&= 2.965 + 3.999  x
+\end{align}
+$$
+
+```{r}
+lm.model <- lm(y ~ x) # linear model y = alpha + beta*x + epsilon
+plot(y ~ x)
+abline(lm.model, col = "red") # add a red regression line for prediction
+```
+
+More information of linear regression model
+
+```{r}
+summary(lm.model)
+```
+
+Real data as example
+
+```{r}
+# download data
+library(quantmod)
+getSymbols("CSCO")
+getSymbols("DIA")
+csco <- data.frame(CSCO)
+dia <- data.frame(DIA)
+
+# get adjusted close price
+csco.price <- csco$CSCO.Adjusted
+dia.price <- dia$DIA.Adjusted
+
+# get returns
+csco.rtn <- diff(log(csco.price))
+dia.rtn <- diff(log(dia.price))
+
+# fit linear regression model
+plot(csco.rtn ~ dia.rtn) # scatter plot of csco.rtn against dia.rtn
+lm2 <- lm(csco.rtn ~ dia.rtn) # model:csco.rtn = alpha + beta*dia.rtn + epsilon
+abline(lm2, col = "red") # add regression line
+
+summary(lm2)
+```
+
+# 2. Multiple Regression
+
+$$
+\begin{equation}
+\text { voplus }=\alpha+\beta_{1} * \text { vominus }+\beta_{2} * \text { oc }+\beta_{3} * \operatorname{trap}+\epsilon
+\end{equation}
+$$
+
+Variables:
+- VO+: a measure of bone formation
+- VO-: a measure of bone resorption
+- OC: a biomarker of bone formation
+- TRAP: a biomarker of bone resorption
+
+```{r}
+bone <- read.csv("biomark.csv")
+bone.model <- lm(voplus ~ vominus + oc + trap, data = bone)
+summary(bone.model)
+```
+
+$$
+\begin{equation}
+\text { voplus }=-243.4877+0.9746 * \text { vominus }+8.2349 * \text { oc }+6.6071 * \text { trap }
+\end{equation}
+$$
+
+## 2.1 Different types of linear models
+
+### 2.1.1 linear model with single explanory variable
+
+Model:
+
+$$
+\begin{equation}
+\text {yield }=\alpha+\beta * \text { cluster }+\epsilon
+\end{equation}
+$$
+
+```{r}
+crops <- read.csv("grape crops.csv", header=T)
+yield <- crops$yield
+cluster <- crops$cluster.count
+plot(yield ~ cluster)
+```
+
+Fitted model:
+
+$$
+\begin{equation}
+\hat{\text { yield }}=-1.02790+0.05138 * \text { cluster }
+\end{equation}
+$$
+
+```{r}
+lm.r <- lm(yield ~ cluster)# model:yield = alpha + beta*cluster + epsilon
+plot(yield ~ cluster)
+abline(lm.r, col='red')
+summary(lm.r)
+```
+
+## 2.1.2 linear model without intercept
+
+model:
+
+$$
+\text {yield }= \beta * \text { cluster }+\epsilon
+
+$$
+
+```{r}
+newlm.r <- lm(yield ~ -1 + cluster)# model:yield = beta*cluster + epsilon
+summary(newlm.r)
+```
+
+fitted model
+
+$$
+\hat{\text { yield }}= 0.041956  * \text { cluster }
+$$
+
+compare with regular model
+
+```{r}
+plot(yield ~ cluster)
+abline(lm.r, col = 'red')
+abline(newlm.r, col = 'blue')
+```
+
+### 2.1.3 linear model with higher order term
+
+model:
+
+$$
+\begin{equation}
+\text { yield }=\alpha+\beta_{1} * \text { cluster }+\beta_{2} * \text { cluster }^{2}+\epsilon
+\end{equation}
+$$
+
+```{r}
+lm.q <- lm(yield ~ cluster + I(cluster^2))#yield = alpha + beta1*cluster + beta2*cluster^2
+
+summary(lm.q)
+```
+
+fitted model:
+
+$$
+\begin{equation}
+\hat{\text { yield }}=-11.21+0.2552 * \text { cluster }-0.0009971 * \text { cluster }{ }^{2}
+\end{equation}
+$$
+
+```{r}
+# sort the data
+tab <- data.frame(cluster, fitted(lm.q), yield)
+order.cluster <- order(cluster)
+head(tab[order.cluster,])
+tab <- tab[order.cluster,]
+
+# plot 
+plot(yield ~ cluster)
+lines(tab$cluster, tab$fitted.lm.q., type = "b", col='red')
+legend("topleft", 
+       legend = c("yield", "fitted & reg line"),
+       fill = c("black", "red"))
+
+```
+
+
+# 3. Stepwise Regression
+
+Sometimes we may not sure about what variables should be used in the multiple linear
+regression. In such cases, we can use stepwise regression to determine whether to add or
+delete variables from the model.
+
+```{r}
+bone <- read.csv("biomark.csv")
+
+full.model <- lm(voplus ~ vominus + oc + trap, data = bone)# full model
+null.model <- lm(voplus ~ 1, data = bone)# model with no factor
+full.model.formula <- voplus ~ vominus + oc + trap# scope for searching
+```
+
+## 3.1 Forward Selection
+
+Forward selection: Adding variables from model with no explanatory variable
+
+```{r}
+step(object = null.model, scope = full.model.formula, direction = "forward")
+```
+
+## 3.2 Backward Selection
+
+Backward selection: Deleting variables from model with all explanatory variables
+
+```{r}
+step(object = full.model, scope = full.model.formula, direction = "backward")
+```
+
+

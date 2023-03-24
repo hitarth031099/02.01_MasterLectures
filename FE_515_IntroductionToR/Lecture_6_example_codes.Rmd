@@ -1,0 +1,137 @@
+---
+title: "FE515_2022A_Lecture_6"
+author: "Cheng Lu"
+output: pdf_document
+---
+Learning objectives:
+  1. Periodic Return
+  2. Moments and Sample Moments
+    2.1 Mean and Sample Mean
+    2.2 Variance and Sample Variance
+    2.3 Moments about the Origin and Central Moments
+    2.4 Standardized Moments
+    2.5 Skewness
+    2.6 Kurtosis
+    2.7 Other Moments and Sample Moments
+
+# 1. Periodic Return
+
+(Calculation equation and defination in slides)
+
+```{r}
+aapl <- read.csv("AAPL.csv", row.names = 1)
+head(aapl)
+```
+
+calculate log return
+
+```{r}
+# adjusted price
+aapl.price <- aapl$AAPL.Adjusted # P1,P2,...
+
+# log value
+aapl.log.price <- log(aapl.price) # ln(P1),ln(P2),...
+
+# log return
+aapl.log.return <- diff(aapl.log.price) # ln(P2)-ln(P1),ln(P3)-ln(P2)...
+
+# convert to simple return
+aapl.simple.return <- exp(aapl.log.return) - 1 # (P2/P1)-1,(P3/P2)-1,...
+```
+
+distribution of log return
+
+```{r}
+# distribution of raw price
+hist(aapl$AAPL.Adjusted, 40)
+
+# distribution of log return
+hist(aapl.log.return, 40)
+```
+
+built-in function for log return
+
+```{r}
+library(quantmod)
+msft <- getSymbols("MSFT", auto.assign = F)
+msft.monthly.return <- periodReturn(msft, period = "monthly")
+msft.annual.return <- periodReturn(msft, period = "yearly")
+msft.all.return <- allReturns(msft)
+msft.all.return
+```
+
+subplots of periodic return
+
+```{r}
+par(mfrow = c(1,2))
+plot(msft.monthly.return)
+plot(msft.annual.return)
+```
+# 2. 2. Moments and Sample Moments
+
+(See slides for defination and calculation equation.)
+    
+## 2.1 Mean and Sample Mean
+
+```{r}
+x <- rnorm(100000, mean = 0, sd = 5)
+
+# sample mean of x
+(x.sample.mean <- mean(x)) 
+```
+
+## 2.2 Variance and Sample Variance
+
+```{r}
+# unadjusted sample variance of x
+(x.sample.variance <- mean((x-x.sample.mean)^2)) 
+
+# adjusted sample variance of x
+n <- length(x)
+(x.sample.variance.adjusted <- n/(n-1)*x.sample.variance) 
+
+# built-in function for adjusted sample variance only
+var(x)
+
+# standard deviation
+sd(x) ^ 2
+```
+
+## 2.3 Moments about the Origin and Central Moments
+
+```{r}
+# 3rd sample moment about the origin
+(m3.prime <- mean(x^3))
+
+# 4th sample moment about the origin
+(m4.prime <- mean(x^4))
+
+# 3rd sample central moment
+(m3 <- mean((x-mean(x))^3))
+```
+
+## 2.5 Skewness
+
+```{r}
+library(moments)
+skewness(x)
+??skewness
+```
+
+## 2.6 Kurtosis
+    
+```{r}
+# kurtosis
+kurtosis(x) - 3
+
+?kurtosis
+# excess kurtosis
+PerformanceAnalytics::kurtosis(x)
+```
+    
+## 2.7 Other Moments and Sample Moments
+
+```{r}
+cov(rnorm(100), rnorm(100))
+```
+

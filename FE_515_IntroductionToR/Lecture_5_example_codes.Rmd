@@ -1,0 +1,286 @@
+---
+title: "FE515_2022A_Lecture_5"
+author: "Cheng Lu"
+output: pdf_document
+---
+Learning Objectives:
+  1. Coin Filps
+  2. Normal Distribution
+  3. Generate Random Number
+
+# 1. Coin Filps
+
+sample() function take samples of the specified size from the elements of x using either with
+or without replacement.
+
+```{r}
+# take samples from population with replacement
+sample(x=c(1,2,3),size = 1, replace = T)
+
+# take samples from population without replacement
+sample(x=c(1,2,3),size = 2,replace = F)
+```
+
+Coin flips example
+
+```{r}
+no.heads <- 0
+result.vec <- NULL # vector contains all probabilities
+
+tmp <- sample(x = c(1, 0), size = 1, replace = T, prob = c(0.5, 0.5))
+
+# add tmp to number of head
+no.heads <- no.heads + tmp
+result.vec <- c(result.vec, no.heads/1)
+```
+
+
+```{r}
+no.heads <- 0
+result.vec <- NULL # vector contains all probabilities
+
+for (flips in 1:1000){
+# x = c(1, 0), 1 means head, 0 means tail
+tmp <- sample(x = c(1, 0), size = 1, replace = T, prob = c(0.5, 0.5))
+
+# add tmp to number of head
+no.heads <- no.heads + tmp
+result.vec <- c(result.vec, no.heads/flips)
+}
+
+no.heads
+result.vec
+plot(result.vec)
+```
+
+Second implementation
+
+```{r}
+tmp <- sample(x = c(0,1), size = 1000, replace = T, prob = c(0.5,0.5))
+no.heads <- cumsum(tmp)
+result.vec <- no.heads/1:1000
+plot(result.vec)
+```
+
+Visualization
+
+```{r}
+plot(1:1000, result.vec, type="l", main="Coin Flips", xlab='flip time', ylab='probability')
+```
+
+A founction of `face up` probability
+
+```{r}
+coinFlip <- function(head.prob) {
+no.heads <- 0
+result.vec <- NULL
+for (flips in 1:1000){
+  tmp <- sample(x=c(1, 0), size=1, replace=T,prob=c(head.prob, 1 - head.prob))
+  no.heads <- no.heads + tmp
+  result.vec <- c(result.vec, no.heads/flips)
+}
+plot(1:1000, result.vec, type="l", ylim = c(0, 1))
+}
+```
+
+Change `face up` probability
+
+```{r}
+coinFlip(0.5)
+coinFlip(0.7)
+coinFlip(0.9)
+coinFlip(1)
+```
+
+# 2. Normal Distribution
+
+sample from  normal distribution
+
+$$
+X \sim N(\mu, \sigma)
+$$
+
+```{r}
+x <- rnorm(n = 10000, mean = 0, sd = 1)
+hist(x) # histogram
+hist(x, nclass = 40, main = "mu = 0, sigma = 1")
+```
+
+Change variance
+
+```{r}
+x <- rnorm(n = 10000, mean = 0, sd = 5)
+hist(x, nclass = 40, main = "mu = 0, sigma = 5")
+```
+
+Control randomness
+
+```{r}
+set.seed(888888)
+rnorm(5)
+```
+
+## 2.1 Probability density function (PDF) of normal distribution
+
+$$
+f(x)=\frac{1}{\sqrt{2 \pi} \sigma} e^{-\frac{(x-\mu)^{2}}{2 \sigma^{2}}}
+$$
+
+```{r}
+dnorm(x = 0)
+```
+
+## 2.2 Cumulative distribution function (CDF) of normal distribution
+
+$$
+F(x)=P(X \leq x)=\int_{-\infty}^{x} f(t) d t
+$$
+
+```{r}
+pnorm(q = 0) # F(0) = P(X <= 0) = 0.5
+```
+
+## 2.3 Quantile function of normal distribution
+
+$$
+x=F^{-1}(p)
+$$
+
+```{r}
+qnorm(p = 0.5)
+```
+
+## 2.4 Other distribution*
+
+Poisson distribution
+
+$$
+f(k ; \lambda)=\operatorname{Pr}(X=k)=\frac{\lambda^{k} e^{-\lambda}}{k !}
+$$
+```{r}
+x <- rpois(1000, lambda = 2)
+hist(x, nclass = 40)
+```
+
+Exponential distribution
+
+$$
+f(x ; \lambda)= \begin{cases}\lambda e^{-\lambda x} & x \geq 0 \\ 0 & x<0\end{cases}
+$$
+
+```{r}
+x <- rexp(1000)
+hist(x, nclass = 40)
+```
+
+Student's t-distribution
+
+```{r}
+set.seed(1)
+x <- rt(1000, df = 10)
+hist(x, nclass = 40)
+```
+
+# 3. Generate Random Number
+
+$$
+X_{n+1}=\left(a * X_{n}+b\right) \bmod m
+$$
+ - $m$ is modulus
+ - $a$ is multiplier
+ - $b$ is increment
+ - $0 \leq X_{0}<m$ is seed
+ - Park and Miller suggests $m=2^{31}-1, a=7^{5}, b=0$.
+
+```{r}
+# hyper-parameter
+seed <- 1 # let the seed be 1
+n <- 5 # quantity of random numbers
+m <- 2 ^ 31 - 1
+a <- 7 ^ 5
+b <- 0
+x <- rep(NA, n)
+
+# initial value
+x[1] <- (a * seed + b) %% m
+
+# random number sequence
+for(i in 1:(n-1)){
+x[i + 1] <- (a * x[i] + b) %% m
+}
+x
+
+seed <- x[n] # change the seed
+x/m
+```
+
+Wrap up everthing into a function
+
+```{r}
+# generate random number from uniform distribution
+seed <- 1 # let the seed be 1 in global environment
+
+rnd <- function(n){
+m <- 2 ^ 31 - 1
+a <- 7 ^ 5
+b <- 0
+x <- rep(NA, n)
+x[1] <- (a * seed + b) %% m
+for(i in 1:(n-1)){
+x[i + 1] <- (a * x[i] + b) %% m
+}
+seed <<- x[n] # change the seed in global environment
+return(x/m)
+}
+```
+
+Test the function
+
+```{r}
+rnd(5) # the first few numbers are usually bad, we can discard them
+rnd(5)
+
+# use the same seed to replicate the results
+seed <- 1
+rnd(5) # same number for seed = 1
+
+# change the seed
+seed <- 100 
+rnd(5)
+
+# use the current system time as seed
+seed <- as.numeric(Sys.time())
+rnd(5)
+```
+
+Visualize the resulting distribution
+
+```{r}
+U <- rnd(10000) # 10000 uniform r.v.
+hist(U)
+```
+
+```{r}
+# qnorm() is the quantile function (inverse CDF) of normal distribution
+X <- qnorm(U) # X follows normal distribution
+hist(X, nclass = 40) # histogram of normal distribution
+hist(rnorm(10000), 40) # equivalent to the above statement
+hist(qexp(rnd(10000), rate = 1), nclass = 40) # exponential distribution
+```
+
+## 3.1 Example*
+
+Calculate the value of pi (see slides for details)
+
+```{r}
+N <- 10000
+x <- rnd(N)
+y <- rnd(N)
+
+n.red.bool <- x^2 + y^2 <= 1
+n.red.num <- sum(n.red.bool) # vectorized calculation
+
+area.quarter.circle <- n.red.num / N
+(Pi <- 4 * area.quarter.circle) # force output
+```
+
