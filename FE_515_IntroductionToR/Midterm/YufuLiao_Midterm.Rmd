@@ -5,6 +5,8 @@ date: "03/22/2023"
 output:
   html_document:
     df_print: paged
+  word_document: default
+  pdf_document: default
 ---
 
 # Question 1: (50 points)
@@ -14,142 +16,190 @@ output:
 Download daily equity data of JPM and WFC (2012-01-01 to 2023-01-01)
 
 ```{r}
-jpm <- read.csv("JPM.csv")
-jpm$X <- as.Date(jpm$X, origin = "2023/01/01")
-jpm[1:10,]
+#install.packages('quantmod')
+library(quantmod)
+
+
+getSymbols(Symbols = "JPM", from = "2012-01-01", to = '2023-01-01')
+JPM <- data.frame(JPM)
+head(JPM)
+
+getSymbols(Symbols = "WFC", from = "2012-01-01", to = '2023-01-01')
+WFC <- data.frame(WFC)
+head(WFC)
 ```
 
 ## 1.2
 
-Plot the adjusted close price against the date object (i.e. date object as x-axis and close price as y-axis) in red line (require no points). Set the title as JPM, the label for x-axis as Date and the label for y-axis as Adjusted Close Price.
+Calculate both the daily log return and weekly log return for each stock.
 
 ```{r}
-plot(jpm$X, jpm$JPM.Adjusted,
-     main = "JPM",
-     xlab = "Date",
-     type = "l",
-     ylab = "Adjusted Close Price",
-     col = "red"
-)
+
+JPM.log.daily.return <- diff(log(JPM$JPM.Adjusted))
+JPM.log.weekly.return <- periodReturn(JPM, type = 'log', period = 'weekly')
+
+WFC.log.daily.return <- diff(log(WFC$WFC.Adjusted))
+WFC.log.weekly.return <- periodReturn(WFC, type = 'log', period = 'weekly')
+
 ```
 
 ## 1.3 
 
-Create a scatter plot of close price against open price (i.e. open prices as x-axis, and close prices as y-axis). Set the x label as ”Open Price” and y label as ”Close Price”.
+Visualize the distribution of these log returns using hist() function. Use par() function to put the four histogram together into one single graph, where each histogram is an individual subplot.
 
 ```{r}
-plot(jpm$JPM.Open, jpm$JPM.Close,
-     xlab = "Open Price",
-     ylab = "Close Price"
-)
+par(mfrow = c(2, 2))
+hist(JPM.log.daily.return)
+hist(JPM.log.weekly.return)
+hist(WFC.log.daily.return)
+hist(WFC.log.weekly.return)
 ```
 
 ## 1.4 
 
-Use cut() function to divide adjusted close price into 4 intervals. Generate a barplot for the frequencies of these intervals.
+Calculate the first four moments, i.e. mean, variance, skewness and kurtosis, for each stock. Store the calculate result in a data frame and report the result in a table.
 
 ```{r}
-cut_close <- cut(jpm$JPM.Adjusted, 4)
-barplot(table(cut_close), xlab = "Adjusted Close Price", ylab = "Frequency")
+
+library('moments')
+
+jpm_moments <- c(mean(JPM.log.daily.return), var(JPM.log.daily.return), moments::skewness(JPM.log.daily.return), moments::kurtosis(JPM.log.daily.return))
+
+# Calculate the first four moments for WFC daily log returns
+wfc_moments <- c(mean(WFC.log.daily.return), var(WFC.log.daily.return), moments::skewness(WFC.log.daily.return), moments::kurtosis(WFC.log.daily.return))
+
+# Combine the results into a data frame
+moments_df <- data.frame(Statistic = c("Mean", "Variance", "Skewness", "Kurtosis"), JPM = jpm_moments, WFC = wfc_moments)
+
+# Print the data frame
+print(moments_df)
+
 ```
 
 ## 1.5
 
-Generate a boxplot of volume against the 4 intervals of adjusted close prices.
+Draw a scatter plot of JPM daily return against WFC daily return. (i.e. WFC return on x-axis and JPM return on y-axis)
 
 ```{r}
-boxplot(table(cut_close), ylab = "Frequency")
+
+returns_df <- data.frame(JPM = JPM.log.daily.return, WFC = WFC.log.daily.return)
+
+plot(JPM ~ WFC, data = returns_df, xlab = "WFC Daily Log Return", ylab = "JPM Daily Log Return",
+     main = "Scatter Plot of JPM Daily Return vs WFC Daily Return")
+
 ```
 
 ## 1.6
 
-Use par() function to create a picture of 4 subplots. Gather the 4 figures from 1.2 - 1.5 into ONE single picture. Please arrange the 4 subplots into a 2 by 2 frame, i.e. a frame consists of 2 columns and 2 rows. (Hint. `par(mfrow = c(1,3))` will create a picture of three subplots. In the picture, the subplots are arranged into a 1 by 3 frame.)
+Build a simple linear regression model using the WFC daily return as explanatory variable and the JPM daily return as response variable. Report the fitted model using summary( ) function.
 
 ```{r}
-par(mfrow = c(2, 2))
-plot(jpm$X, jpm$JPM.Adjusted,
-     main = "JPM",
-     xlab = "Date",
-     type = "l",
-     ylab = "Adjusted Close Price",
-     col = "red"
-)
-plot(jpm$JPM.Open, jpm$JPM.Close,
-     xlab = "Open Price",
-     ylab = "Close Price"
-)
-barplot(table(cut_close), xlab = "Adjusted Close Price", ylab = "Frequency")
-boxplot(table(cut_close), ylab = "Frequency")
+
+model <- lm(JPM ~ WFC, data = returns_df)
+
+summary(model)
+
+```
+
+## 1.7
+Draw a regression line on the scatter plot using the fitted model above. Make sure use a different color to draw the regression line.
+
+```{r}
+
+plot(JPM ~ WFC, data = returns_df, xlab = "WFC Daily Log Return", ylab = "JPM Daily Log Return",
+     main = "Scatter Plot of JPM Daily Return vs WFC Daily Return")
+
+abline(model, col = "red")
+
 ```
 
 # Question 2
 
-Estimate the volume of the unit sphere (which is just 4π/3) by simulation.
+## 2.1
+
+Without using packages, create a function of 2 variables “x” and “adjusted” that calculates the sample skewness of “x” using the formulas on Lecture 6 page 20 and page 21. When ”adjusted” = TRUE, it returns the adjusted skewness of “x”, and FALSE returns the unadjusted one.
 
 ```{r}
-seed <- 1
-rnd <- function(n){
-  m <- 2 ^ 31 - 1
-  a <- 7 ^ 5
-  b <- 0
-  
-  x <- rep(NA, n)
-  x[1] <- (a * seed + b) %% m
-  
-  for(i in 1:(n - 1)){
-    x[i + 1] <- (a * x[i] + b) %% m
+
+fun <- function(x, adjusted) {
+
+  if(length(x) <= 2) 
+    stop("please give more than 3 elements to calculate skewness")
+
+  m3 <- sum((x - mean(x))^3) / length(x)
+  m2 <- sum((x - mean(x))^2) / length(x) 
+  result <- m3 / (m2^(3/2))
+  if(adjusted) {
+    result <- result * sqrt((length(x) * (length(x) - 1))) / (length(x) - 2)
   }
-  seed <<- x[n]
-  
-  return(x / m)
+  return(result)
 }
 
-num.total <- 100000
-x <- rnd(num.total)
-y <- rnd(num.total)
-z <- rnd(num.total)
-
-num.inner <- sum(x ^ 2 + y ^ 2 + z ^ 2 <= 1)
-volume.eighth <- num.inner / num.total
-(volume.sphere <- 8 * volume.eighth)
 ```
 
-# Question 3
+## 2.2
 
-## 3.1
-
-Implement a Linear Congruential Generator (LCG)
-
+Without using packages, create a function of 2 variables “x” and ”adjusted” that calculates the sample kurtosis of “x” using the formulas on Lecture 6 page 20 and page 23. When “adjusted” = TRUE, it returns the adjusted kurtosis of “x”, and FALSE returns the unadjusted one.
 ```{r}
-LCG <- function(n) {
-  m <- 244944
-  a <- 1597
-  b <- 51749
-  
-  x <- rep(NaN, n)
-  x[1] <- (a * 1 + b) %% m
-  
-  for(i in 1:(n - 1)) {
-    x[i + 1] <- (a * x[i] + b) %% m
+
+fun2 <- function(x, adjusted) {
+  n <- length(x)
+  if(n <= 3) {
+    stop("please give more than 4 elements to calculate kurtosis")
   }
-  
-  return(x / m)
+  m4 <- sum((x - mean(x))^4) / n
+  m2 <- sum((x - mean(x))^2) / n
+  kurtosis <- (m4 / m2^2)
+  if(adjusted) {
+    kurtosis <- ((n-1)  * ( (n+1) * kurtosis - 3 * (n-1) ) / ((n-2) * (n-3))) + 3
+  }
+  return(kurtosis)
 }
+
+#fun2(c(1,4,9, 11), TRUE)
+#fun2(c(1,4,9, 11), FALSE)
 ```
 
-## 3.2
+## 2.3
 
-Use the LCG in the previous problem, generate 10000 random numbers from chi-square distribution with 10 degrees of freedom (i.e. `df = 10`), and assign to a variable. (Hint.: `X = qnorm(LCG(10000))` will generate a sample of 10000 numbers X which follows normal distribution. For chi-square case, please consider another function `qchisq()`.)
+Download historical price for ticker ”SPY” for the whole 2012 and 2013 years with quantmod package, use its adjusted close price to calculate daily log return (Note the adjusted close price is different from the “adjusted” for sample moments).
 
 ```{r}
-X <- qchisq(LCG(10000), df = 10)
-head(X)
+
+getSymbols(Symbols = "SPY", from = "2012-01-01", to = '2014-01-01')
+SPY <- data.frame(SPY)
+head(SPY)
+
+SPY.log.daily.return <- diff(log(SPY$SPY.Adjusted))
+
 ```
 
-## 3.3
+## 2.4
 
-Visualize the resulting sample from 3.2 using a histogram with 40 bins.
+Calculate the adjusted and unadjusted skewness for the daily log return in 2.3 using the function you defined. (both numbers should be close to -0.15)
 
-```{r}
-hist(X, nclass = 40)
+
+```{R}
+
+adj_skewness <- fun(SPY.log.daily.return, TRUE)
+adj_skewness
+
+unadj_skewness <-fun(SPY.log.daily.return, FALSE)
+unadj_skewness
+
+```
+
+
+## 2.5
+
+Calculate the adjusted and unadjusted kurtosis for the daily log return in 2.3 using the function you defined. (both numbers should be close to 4.1)
+
+```{R}
+
+adj_kurtosis <- fun2(SPY.log.daily.return, TRUE)
+adj_kurtosis
+
+unadj_kurtosis <-fun2(SPY.log.daily.return, FALSE)
+unadj_kurtosis
+
 ```
