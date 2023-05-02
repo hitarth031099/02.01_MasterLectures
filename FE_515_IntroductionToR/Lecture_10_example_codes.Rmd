@@ -1,0 +1,205 @@
+---
+title: "FE515_2022A_Lecture_10"
+author: "Cheng Lu"
+output: pdf_document
+---
+Learning objectives:
+  1. Monte-Carlo Simulation
+  2. Improve Efficiency for MC Simulation
+
+# 1. Monte-Carlo Simulation
+
+Euler discretization for stock price
+
+$$
+\begin{aligned}
+S_{i+1} &=S_{i}+r S_{i} h+\sigma S_{i}\left(W_{i+1}^{Q}-W_{i}^{Q}\right) \\
+&=S_{i}+r S_{i} h+\sigma S_{i} \sqrt{h} Z_{i},\;\; i=0, \ldots, n-1\\
+\text{where}&\\
+&\sqrt{h} Z_{i}=W_{i+1}^{Q}-W_{i}^{Q} \sim N(0, h)\\
+&Z_{i} \sim N(0,1)
+\end{aligned}
+$$
+
+implementation of Euler discretization
+
+```{r}
+set.seed(2)
+# hyper-parameter
+S0 <- 100
+K <- 100
+T1 <- 1
+sigma <- 0.2
+r <- 0.05
+n <- 252 # number of steps
+h <- T1/n # one day time difference
+h
+S <- c() # same as "S <- NULL" 
+Z <- c()
+S[1] <- S0 # start at S[1], since S[0] not available in R
+
+# stock price at each time step
+for (i in 1:n) {
+  Z[i] <- rnorm(1)
+  S[i+1] <- S[i] + r*S[i]*h + sigma*S[i]*Z[i]*sqrt(h)
+}
+
+# visualization
+t <- seq(from = 0, to = T1, by = h)
+plot(t, S, type = "l")
+```
+
+Theoritical expression for stock price
+
+$$
+\begin{gathered}
+S\left(t_{i}\right)=S_{0} \exp \left(\left(r-\frac{1}{2} \sigma^{2}\right) t_{i}+\sigma W\left(t_{i}\right)\right) \\
+W\left(t_{i}\right)=W_{i}=\sum_{j=0}^{i-1}\left(W_{j+1}-W_{j}\right)=\sum_{j=0}^{i-1} \sqrt{h} Z_{j}
+\end{gathered}
+$$
+
+implementation of theoritical expression
+
+```{r}
+W <- c(0, cumsum(sqrt(h)*Z))
+S.explicit <- S0*exp((r - 0.5*sigma^2)*t + sigma*W)
+plot(t, S.explicit, col = "red", type = 'l')
+```
+
+compare theoritical expression with Euler discretization
+
+```{r}
+# Euler discretization
+S[n+1]
+
+# theoritical expression
+S.explicit[n+1]
+```
+
+Monte-Carlo Simulation for option price
+
+```{r}
+m <- 10000
+S.mat <- NULL
+
+# simulate for m possible stock price evolutionary path
+for(j in 1:m){
+  for (i in 1:n) {
+    Z[i] <- rnorm(1)
+    S[i+1] <- S[i] + r*S[i]*h + sigma*S[i]*Z[i]*sqrt(h)
+  }
+  S.mat <- cbind(S.mat,S)
+}
+
+# visualization
+plot(t,S.mat[,1], type = "l", main = "The First Path")
+plot(t,S.mat[,2], type = "l", main = "The Second Path")
+matplot(t, S.mat[,1:100], type = "l", main = "The First 100 Paths")
+
+# calculate option price
+ST <- S.mat[n+1,] # S(T) for all paths as a vector
+exp(-r*T1)*mean(pmax(ST - 100, 0)) # call option price from MC simulation
+bs.call(S0, 100, T1, sigma, r)# call option price from BS formula # from lecture 9
+```
+
+# 2. Improve Efficiency for MC Simulation
+
+CPU time of running MC
+
+```{r}
+MC <- function(){
+  m <- 10000
+  S.mat <- NULL
+  
+  for (j in 1:m) {
+    S[1] <- S0
+    for(i in 1:n){
+      Z[i] <- rnorm(1)
+      S[i+1] <- S[i] + r*S[i]*h + sigma*S[i]*Z[i]*sqrt(h)
+    }
+    
+    S.mat <- cbind(S.mat, S)
+  }
+
+  print(exp(-r*T1)*mean(pmax(S.mat[n+1,] - 100, 0)))
+}
+
+system.time(MC())
+```
+
+replace `for` loop with `replicate()` function
+
+```{r}
+MC1 <- function(){# use replicate
+  m <- 10000
+  one.path <- function(){
+    S[1] <- S0
+    
+    for(i in 1:n){
+      Z[i] <- rnorm(1)
+      S[i+1] <- S[i] + r*S[i]*h + sigma*S[i]*Z[i]*sqrt(h)
+    }
+    return(S)
+  }
+
+  S.mat <- replicate(m, one.path())
+  print(exp(-r*T1)*mean(pmax(S.mat[n+1,] - 100, 0)))
+}
+
+system.time(MC1())
+```
+
+More efficient when we generate random number together
+
+```{r}
+MC2 <- function(){
+  m <- 10000
+  one.path <- function(){
+    S[1] <- S0
+    Z <- rnorm(n) # take rnorm out
+    for(i in 1:n){
+      S[i+1] <- S[i] + r*S[i]*h + sigma*S[i]*Z[i]*sqrt(h)
+    }
+    return(S)
+  }
+
+  S.mat <- replicate(m, one.path())
+  print(exp(-r*T1)*mean(pmax(S.mat[n+1,] - 100, 0)))
+}
+
+system.time(MC2())
+```
+
+More efficient if we update the target matrix directly
+
+```{r}
+MC3 <- function(){# initialize S and Z as matrices and update matrix
+  m <- 10000
+  S.mat <- matrix(0, nrow = n+1, ncol = m)
+  Z <- matrix(rnorm(n*m), nrow = n)
+  S.mat[1,] <- S0
+  
+  for (i in 1:n) {
+    S.mat[i+1,] <- S.mat[i,] + r*S.mat[i,]*h + sigma*S.mat[i,]*Z[i,]*sqrt(h)
+  }
+  
+  print(exp(-r*T1)*mean(pmax(S.mat[n+1,] - 100, 0)))
+}
+
+system.time(MC3())
+```
+
+The option payoff (S(T ) − K )+ only depends on the final price S(T)
+
+```{r}
+MC4 <- function(m){
+  S.vec <- rep(S0, m)
+  Z <- matrix(rnorm(n*m), nrow = n)
+  for (i in 1:n) {
+    S.vec <- S.vec + r*S.vec*h + sigma*S.vec*Z[i,]*sqrt(h)
+  }
+  print(exp(-r*T1)*mean(pmax(S.vec - 100, 0)))
+}
+system.time(MC4(10000))
+```
+

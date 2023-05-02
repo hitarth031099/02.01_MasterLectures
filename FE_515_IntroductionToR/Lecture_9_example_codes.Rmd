@@ -1,0 +1,220 @@
+---
+title: "FE515_2022A_Lecture_9"
+author: "Cheng Lu"
+output: pdf_document
+---
+Learning objectives:
+  1. Black-Scholes Model
+  2. Implied Volatility
+    2.1 Implied Volatility for Market Data
+
+# 1. Black-Scholes Model
+
+(see slides for details)
+
+the call option price c at time 0 
+
+$$
+\begin{align}
+c\left(S_{0}, K, T, \sigma, r\right)&=e^{-r T} E^{Q}\left[(S(T)-K)_{+}\right]\\
+ &=S_{0} N\left(d_{1}\right)-e^{-r T} K N\left(d_{2}\right)\\
+where\\
+d_{1}&=\frac{\ln \frac{S_{0}}{K}+\left(r+\frac{1}{2} \sigma^{2}\right) T}{\sigma \sqrt{T}}\\
+d_{2}&=\frac{\ln \frac{S_{0}}{K}+\left(r-\frac{1}{2} \sigma^{2}\right) T}{\sigma \sqrt{T}}\\
+ &=d_{1}-\sigma \sqrt{T}
+\end{align}
+$$
+
+```{r}
+# Hyper-parameter
+S0 <- 100 # spot price
+K <- 100 # strike price
+T1 <- 1 # maturity # if we let T <- 1, "T" would not be "TRUE" anymore
+sigma <- 0.2 # volatility
+r <- 0.05 # risk free rate
+
+# BS formula
+d1 <- (log(S0/K) + (r+0.5*sigma^2)*T1)/(sigma*sqrt(T1))
+d2 <- d1 - sigma*sqrt(T1)
+(c <- S0*pnorm(d1) - exp(-r*T1)*K*pnorm(d2))
+
+```
+
+Wrap into a function
+
+```{r}
+bs.call <- function(S0, K, T1, sigma, r){
+d1 <- (log(S0/K) + (r+0.5*sigma^2)*T1)/(sigma*sqrt(T1))
+d2 <- d1 - sigma*sqrt(T1)
+S0*pnorm(d1) - exp(-r*T1)*K*pnorm(d2)
+# return(S0*pnorm(d1) - exp(-r*T1)*K*pnorm(d2))
+}
+```
+
+Test the function
+
+```{r}
+# case 1
+bs.call(S0, K, T1, sigma, r) # bs.call(S0, K, T1, r, sigma) doesn’t work
+
+# case 2
+bs.call(100, 100, 1, r = 0.05, sigma = 0.2)
+
+# case 3
+bs.call(100, 100, 1, 0.2, 0.05)
+```
+
+# 2. Implied Volatility
+
+We can use the root finding methods (e.g. bisection method in L8) to find $\sigma$
+
+$$
+c\left(S_{0}, K, T, \sigma, r\right)=P \Leftrightarrow c\left(S_{0}, K, T, \sigma, r\right)-P=0
+$$
+
+bisection method to find sigma
+
+```{r}
+# form the equation
+price.diff <- function(sigma) bs.call(S0, K, T1, sigma, r) - 10
+
+# bisection method
+bisection.new(price.diff, 0, 1)
+```
+
+newton's method to find sigma
+
+$$
+\begin{align}
+\text { Vega }&=\frac{\partial c}{\partial \sigma}=\sqrt{T} S_{0} N^{\prime}\left(d_{1}\right)\\
+d_{1}&=\frac{\ln \frac{S_{0}}{K}+\left(r+\frac{1}{2} \sigma^{2}\right) T}{\sigma \sqrt{T}}
+\end{align}
+$$
+
+```{r}
+# derived function
+Vega <- function(S0, K, T1, sigma, r){
+d1 <- (log(S0/K) + (r+0.5*sigma^2)*T1)/(sigma*sqrt(T1))
+sqrt(T1)*S0*dnorm(d1)
+}
+dprice.diff <- function(sigma) Vega(S0,K,T1,sigma,r)
+
+# newton's method
+Newton_Raphson(price.diff,dprice.diff,0.25)
+```
+
+Wrap up everything into a single function
+
+```{r}
+# integration
+implied.vol.call <- function(S0, K, T1, r, price, method="bisection"){
+  
+  price.diff <- function(sigma)bs.call(S0, K, T1, sigma, r) - price
+  
+  if(method == "bisection"){
+    return(bisection.new(price.diff, 0.01, 5))
+  }else if(method == "Newton-Raphson"){
+    dprice.diff <- function(sigma)Vega(S0, K, T1, sigma, r)
+    return(Newton_Raphson(price.diff, dprice.diff, 0.25))
+  }
+}
+
+# test cases
+implied.vol.call(S0,K,T1,r,10)
+
+implied.vol.call(S0,K,T1,r,10,"Newton-Raphson")
+
+```
+
+## 2.1 Implied Volatility for Market Data
+
+get market data
+
+```{r}
+library(quantmod)
+
+# underlying asset price S_0
+(SPY.S0 <- getQuote("SPY")$Last)
+
+# risk free rate
+# FRED | FAMA FRENCH DATA
+r <- 0.07 * 0.01
+```
+
+get option data
+
+```{r}
+SPY.option <- getOptionChain("SPY")
+head(SPY.option$calls)# nearest maturity option
+```
+
+determine parameters value
+
+```{r}
+# strike price
+(SPY.K1 <- SPY.option$calls$Strike[1])
+
+# option price
+(SPY.Price1 <- 0.5*(SPY.option$calls$Bid[1] + SPY.option$calls$Ask[1]))
+
+# time to maturity
+(T1 <- as.numeric(as.Date("2022-07-27") - Sys.Date())/252)
+```
+
+calculate implied volatility
+
+```{r}
+implied.vol.call(SPY.S0,SPY.K1,T1,r,SPY.Price1)
+```
+
+modify bisection method for all option contract
+
+```{r}
+bisection.new <- function(f, a, b, tol = 0.001, N.max = 100){
+  # assign value
+  f.a <- f(a)
+  f.b <- f(b)
+  
+  # initial check
+  if(is.na(f.a*f.b) || f.a*f.b > 0){# only modified this part
+    return(NA)
+  }else if(f.a == 0){
+    return(a)
+  }else if(f.b == 0){
+    return(b)
+  }
+  
+  # the same searching process
+  for(n in 1:N.max){
+    c <- (a+b)/2
+    f.c <- f(c) # call function 'f' once each iteration
+    if(f.c == 0 || abs(b - a) < tol){ # check absolute value
+      break
+    }
+    if(f.a*f.c < 0){
+      b <- c
+      f.b <- f.c
+    }else{
+      a <- c
+      f.a <- f.c
+    }
+  }
+  
+  return(c) # return a value rather than print it out
+}
+```
+
+implied volatility for all contracts (volatility smile)
+
+```{r}
+SPY.call.strike <- SPY.option$calls$Strike
+SPY.call.price <- 0.5*(SPY.option$calls$Bid+SPY.option$calls$Ask)
+sigma.call <- NULL
+for (i in 1:nrow(SPY.option$calls)){
+sigma.call[i] <- implied.vol.call(SPY.S0,SPY.call.strike[i],
+T1, r, SPY.call.price[i])
+}
+plot(SPY.call.strike, sigma.call, type = "l")
+```
+
+

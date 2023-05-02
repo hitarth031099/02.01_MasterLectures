@@ -1,0 +1,266 @@
+---
+title: "FE515_2022A_Lecture_11"
+author: "Cheng Lu"
+output: pdf_document
+---
+
+Learning objectives:
+  1. General Optimization
+    1.1 one dimensional boxed constraint: optimize()
+    1.2 multi dimensional without/with constraint: optim()
+    1.3 multi dimensional linear inequality constraint: constrOptim()
+  2. Linear Programming
+  3. Quadratic Programming
+  4. Change Problems into Standard Form
+
+# 1. General Optimization
+
+## 1.1 one dimensional boxed constraint: optimize()
+
+objective function: example
+
+$$
+\min _{x \in[0,1]} f(x)=(x-a)^{2}
+$$
+
+```{r}
+f <- function(x) (x - 1/3)^2 # objective function when a = 1/3
+optimize(f, c(0,1))
+
+f <- function(x, a) (x - a)^2 # objective function with parameters
+optimize(f, c(0, 1), tol = 0.0000000000001, a = 1/3) # set parameters
+
+# validate
+curve(f, -2*pi, 2*pi, xname = "x")
+```
+
+## 1.2 multi dimensional without/with constraint: optim()
+
+Rosenbrock Banana function
+
+$$
+\begin{equation}
+\begin{gathered}
+f\left(x_{1}, x_{2}\right)=100 *\left(x_{2}-x_{1}^{2}\right)^{2}+\left(1-x_{1}\right)^{2} \\
+\left.g\left(x_{1}, x_{2}\right)=\nabla f\left(x_{1}, x_{2}\right)=\left[-400 * x_{1} *\left(x_{2}-x_{1}^{2}\right)\right)-2 *\left(1-x_{1}\right), 200 *\left(x_{2}-x_{1}^{2}\right)\right]
+\end{gathered}
+\end{equation}
+$$
+
+
+```{r}
+# Rosenbrock Banana function
+f <- function(x) 100*(x[2]-x[1]^2)^2 + (1-x[1])^2
+optim(c(-1.2,1), f) # without gradient
+```
+
+If we use gradient g, we need to specify the method as “BFGS”, “CG” or “L-BFGS-B"
+
+```{r}
+# gradient
+g <- function(x) c(-400*x[1]*(x[2]-x[1]^2)-2*(1-x[1]), 200*(x[2]-x[1]^2))
+optim(c(-1.2,1), f, g, method = "L-BFGS-B")
+```
+
+If we add box constraint, we need to specify the lower bound and upper bound, and specify the method being L-BFGS-B.
+
+```{r}
+optim(c(-1.2,1), f, lower=c(-2,0), upper=c(2,2), method="L-BFGS-B")
+?optim 
+```
+
+## 1.3 multi dimensional linear inequality constraint: constrOptim()
+
+$$
+\begin{equation}
+\begin{gathered}
+\min _{x} f(x)=0.5 x_{1}^{2}+0.5 x_{2}^{2}+0.5 x_{3}^{2}-5 x_{2} \\
+\text { subject to: }-4 x_{1}-3 x_{2} \geq-8 \\
+2 x_{1}+x_{2} \geq 2 \\
+-2 x_{2}+x_{3} \geq 0
+\end{gathered}
+\end{equation}
+$$
+
+```{r}
+# objective function
+f <- function(x) 0.5*x[1]^2 + 0.5*x[2]^2 + 0.5*x[3]^2 - 5*x[2]
+# f <- function(x)0.5*x%*%diag(3)%*%x - c(0,5,0)%*%x # matrix form
+
+# constraint
+U <- matrix(c(-4,-3,0,2,1,0,0,-2,1), 3, 3, byrow =TRUE)
+c <- c(-8,2,0)
+
+# solve the problem
+constrOptim(c(2,-1,-1), f , grad = NULL, ui = U, ci = c)
+```
+
+# 2. Linear Programming
+
+$$
+\begin{equation}
+\begin{gathered}
+\max _{x \in \mathbb{R}^{3}} f(x)=x_{1}+9 x_{2}+x_{3} \\
+\text { subject to: } x_{1}+2 x_{2}+3 x_{3} \leq 9 \\
+3 x_{1}+2 x_{2}+2 x_{3} \leq 15
+\end{gathered}
+\end{equation}
+$$
+
+
+```{r}
+#install.packages("lpSolve")
+library(lpSolve)
+
+# objective function
+f.obj <- c(1, 9, 1) 
+
+# constraint
+f.con <- matrix (c(1, 2, 3, 3, 2, 2), nrow=2, byrow=TRUE) # constraint matrix A
+f.rhs <- c(9, 15) # right hand side of the constraint b
+f.dir <- c("<=", "<=") # constraint directions
+
+# slove the problem
+x <- lp ("max", f.obj, f.con, f.dir, f.rhs)
+x
+
+lp ("max", f.obj, f.con, f.dir, f.rhs)$objval # optimal objective value
+
+lp ("max", f.obj, f.con, f.dir, f.rhs)$solution # optimal solution
+
+# restrict x2 and x3 be integer
+lp ("max", f.obj, f.con, f.dir, f.rhs, int.vec = c(2, 3))$solution
+```
+
+# 3. Quadratic Programming
+
+$$
+\begin{equation}
+\begin{gathered}
+\min _{x} f(x)=\frac{1}{2} x^{T} D x-d^{T} x\\
+\text{subject to}: A^{T} x \geq b
+\end{gathered}
+\end{equation}
+$$
+
+example problem
+
+$$
+\begin{equation}
+\begin{gathered}
+\min _{x} f(x)=0.5 x_{1}^{2}+0.5 x_{2}^{2}+0.5 x_{3}^{2}-5 x_{2} \\
+\text { subject to: }-4 x_{1}-3 x_{2} \geq-8 \\
+2 x_{1}+x_{2} \geq 2 \\
+-2 x_{2}+x_{3} \geq 0
+\end{gathered}
+\end{equation}
+$$
+
+problem statement
+
+$$
+\begin{equation}
+D=\left[\begin{array}{lll}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{array}\right] ; d=\left[\begin{array}{l}
+0 \\
+5 \\
+0
+\end{array}\right] ; A^{T}=\left[\begin{array}{ccc}
+-4 & -3 & 0 \\
+2 & 1 & 0 \\
+0 & -2 & 1
+\end{array}\right] ; A=\left[\begin{array}{ccc}
+-4 & 2 & 0 \\
+-3 & 1 & -2 \\
+0 & 0 & 1
+\end{array}\right] ; b=\left[\begin{array}{c}
+-8 \\
+2 \\
+0
+\end{array}\right]
+\end{equation}
+$$
+
+```{r}
+#install.packages("quadprog")
+library(quadprog)
+
+# problem statement
+D <- matrix(c(1,0,0,0,1,0,0,0,1),3,3) # or D <- diag(1, nrow = 3)
+d <- c(0,5,0)
+A <- matrix(c(-4,-3,0,2,1,0,0,-2,1),3,3) # by column
+b <- c(-8,2,0)
+
+# solve the QP
+solve.QP(D, d, A, b)
+
+solve.QP(D, d, A, b)$solution
+
+solve.QP(D, d, A, b)$value
+```
+
+# 4. Change Problems into Standard Form
+
+original problem
+
+$$
+\begin{gather*}
+    \max_x f(x) = -0.5x_1^2 - 0.5x_2^2 - 0.5x_3^2 + 4x_2\\
+    \text{subject to: }4x_1 + 3x_2 = 8\\
+    2x_2 - x_3 \leq 0\\
+    2x_1 + x_2 = 2
+\end{gather*}
+$$
+
+standard form
+
+$$
+\begin{gather*}
+    -\min_x \{-f(x) = 0.5x_1^2 + 0.5x_2^2 + 0.5x_3^2 - 4x_2\}\\
+    \text{subject to: }4x_1 + 3x_2 = 8\\
+    2x_1 + x_2 = 2\\
+    -2x_2 + x_3 \geq 0
+\end{gather*}
+$$
+
+problem statement (matrix form)
+
+$$
+\begin{equation*}
+    D = \begin{bmatrix}
+    1 & 0 & 0\\
+    0 & 1 & 0\\
+    0 & 0 & 1
+    \end{bmatrix}; d = \begin{bmatrix}
+    0\\
+    4\\
+    0
+    \end{bmatrix}; A = \begin{bmatrix}
+    4 & 2 & 0\\
+    3 & 1 & -2\\
+    0 & 0 & 1
+    \end{bmatrix}; b = \begin{bmatrix}
+    8\\
+    2\\
+    0
+    \end{bmatrix}; \textbf{meq = 2}
+\end{equation*}
+$$
+```{r}
+# problem statement
+D <- diag(c(1,1,1))
+d <- c(0,4,0)
+A <- matrix(c(4,3,0,2,1,0,0,-2,1),3,3)
+b <- c(8,2,0)
+
+# solve the problem
+solve.QP(D, d, A, b, meq = 2)$solution # optimal solution x
+
+solve.QP(D, d, A, b, meq = 2)$value # minimum value of -f(x)
+
+-solve.QP(D, d, A, b, meq = 2)$value # maximum value of f(x)
+```
+

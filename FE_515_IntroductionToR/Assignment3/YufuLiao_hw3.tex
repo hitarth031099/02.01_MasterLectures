@@ -1,0 +1,316 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={FE515 2022A Assignment 3},
+  pdfauthor={Yufu Liao},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{FE515 2022A Assignment 3}
+\author{Yufu Liao}
+\date{04/21/2023}
+
+\begin{document}
+\maketitle
+
+\hypertarget{question-1-50-points}{%
+\section{Question 1: (50 points)}\label{question-1-50-points}}
+
+\hypertarget{section}{%
+\subsection{1.1}\label{section}}
+
+Download option prices of ticker \^{}VIX for all expiration dates and
+name it VIX.options
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(quantmod)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'quantmod' was built under R version 4.2.3
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: xts
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'xts' was built under R version 4.2.3
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: zoo
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'zoo' was built under R version 4.2.3
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'zoo'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     as.Date, as.Date.numeric
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: TTR
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'TTR' was built under R version 4.2.3
+\end{verbatim}
+
+\begin{verbatim}
+## Registered S3 method overwritten by 'quantmod':
+##   method            from
+##   as.zoo.data.frame zoo
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(xts)}
+
+\NormalTok{VIX.options }\OtherTok{\textless{}{-}} \FunctionTok{getOptionChain}\NormalTok{(}\StringTok{"\^{}VIX"}\NormalTok{, }\ConstantTok{NULL}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{section-1}{%
+\subsection{1.2}\label{section-1}}
+
+Download the current price (last quote price) for \^{}VIX
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(VIX.current.price }\OtherTok{\textless{}{-}} \FunctionTok{getQuote}\NormalTok{(}\StringTok{"\^{}VIX"}\NormalTok{)}\SpecialCharTok{$}\NormalTok{Last)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 16.76
+\end{verbatim}
+
+\hypertarget{section-2}{%
+\subsection{1.3}\label{section-2}}
+
+For calls and puts of VIX.options at each expiration calculate the
+average of Bid and Ask. Create a new column named `Price' to contain the
+result.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\FunctionTok{length}\NormalTok{(VIX.options)) \{}
+\NormalTok{  VIX.options[[i]]}\SpecialCharTok{$}\NormalTok{calls}\SpecialCharTok{$}\NormalTok{Price }\OtherTok{\textless{}{-}}\NormalTok{ (VIX.options[[i]]}\SpecialCharTok{$}\NormalTok{calls}\SpecialCharTok{$}\NormalTok{Bid }\SpecialCharTok{+}\NormalTok{ VIX.options[[i]]}\SpecialCharTok{$}\NormalTok{calls}\SpecialCharTok{$}\NormalTok{Ask) }\SpecialCharTok{*} \FloatTok{0.5}
+\NormalTok{  VIX.options[[i]]}\SpecialCharTok{$}\NormalTok{puts}\SpecialCharTok{$}\NormalTok{Price }\OtherTok{\textless{}{-}}\NormalTok{ (VIX.options[[i]]}\SpecialCharTok{$}\NormalTok{puts}\SpecialCharTok{$}\NormalTok{Bid }\SpecialCharTok{+}\NormalTok{ VIX.options[[i]]}\SpecialCharTok{$}\NormalTok{puts}\SpecialCharTok{$}\NormalTok{Ask) }\SpecialCharTok{*} \FloatTok{0.5}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{section-3}{%
+\subsection{1.4}\label{section-3}}
+
+For calls and puts of VIX.options at each expiration, add a column of
+InTheMoney, which takes value TRUE when it is in-the-money, and FALSE
+otherwise. Compare it to ITM column to check your results. (Hint. A call
+option is in-the-money when its strike is less than the current price of
+underlying. A put option is in-the-money if its strike is greater than
+the current price of underlying. And the current price of underlying is
+the last quote price from 1.2)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\FunctionTok{length}\NormalTok{(VIX.options)) \{}
+\NormalTok{  VIX.options[[i]]}\SpecialCharTok{$}\NormalTok{calls}\SpecialCharTok{$}\NormalTok{InTheMoney }\OtherTok{\textless{}{-}} \FunctionTok{ifelse}\NormalTok{(VIX.options[[i]]}\SpecialCharTok{$}\NormalTok{calls}\SpecialCharTok{$}\NormalTok{Strike }\SpecialCharTok{\textless{}}\NormalTok{ VIX.current.price, }\ConstantTok{TRUE}\NormalTok{, }\ConstantTok{FALSE}\NormalTok{)}
+\NormalTok{  VIX.options[[i]]}\SpecialCharTok{$}\NormalTok{puts}\SpecialCharTok{$}\NormalTok{InTheMoney }\OtherTok{\textless{}{-}} \FunctionTok{ifelse}\NormalTok{(VIX.options[[i]]}\SpecialCharTok{$}\NormalTok{puts}\SpecialCharTok{$}\NormalTok{Strike }\SpecialCharTok{\textless{}}\NormalTok{ VIX.current.price, }\ConstantTok{TRUE}\NormalTok{, }\ConstantTok{FALSE}\NormalTok{)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{section-4}{%
+\subsection{1.5}\label{section-4}}
+
+For calls and puts of VIX at each expiration, delete all the fields
+except Strike, Bid, Ask, Price, and In-The-Money, and save them in .csv
+files with the format ``VIXdata2021-09- 26Exp2021-10-08puts.csv'', here
+2021-09-26 should be replaced by the date you download the data, and
+2021-10-08 should be replaced by the date of expiration.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ex }\OtherTok{\textless{}{-}} \FunctionTok{names}\NormalTok{(VIX.options)}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\FunctionTok{length}\NormalTok{(VIX.options)) \{}
+\NormalTok{  VIX.options[[i]]}\SpecialCharTok{$}\NormalTok{calls }\OtherTok{\textless{}{-}}\NormalTok{ VIX.options[[i]]}\SpecialCharTok{$}\NormalTok{calls[}\FunctionTok{c}\NormalTok{(}\StringTok{"Strike"}\NormalTok{, }\StringTok{"Bid"}\NormalTok{, }\StringTok{"Ask"}\NormalTok{, }\StringTok{"Price"}\NormalTok{, }\StringTok{"InTheMoney"}\NormalTok{)]}
+\NormalTok{  VIX.options[[i]]}\SpecialCharTok{$}\NormalTok{puts }\OtherTok{\textless{}{-}}\NormalTok{ VIX.options[[i]]}\SpecialCharTok{$}\NormalTok{puts[}\FunctionTok{c}\NormalTok{(}\StringTok{"Strike"}\NormalTok{, }\StringTok{"Bid"}\NormalTok{, }\StringTok{"Ask"}\NormalTok{, }\StringTok{"Price"}\NormalTok{, }\StringTok{"InTheMoney"}\NormalTok{)]}
+  \FunctionTok{write.csv}\NormalTok{(VIX.options[[i]]}\SpecialCharTok{$}\NormalTok{puts, }\AttributeTok{file =} \FunctionTok{paste}\NormalTok{(}\StringTok{"VIXdata"}\NormalTok{, }\FunctionTok{Sys.Date}\NormalTok{(), }\StringTok{"Exp"}\NormalTok{, ex[i], }\StringTok{"puts.csv"}\NormalTok{, }\AttributeTok{sep =} \StringTok{""}\NormalTok{))}
+\NormalTok{\}}
+\NormalTok{ex}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "Apr.26.2023" "May.03.2023" "May.10.2023" "May.17.2023" "May.24.2023"
+##  [6] "Jun.21.2023" "Jul.19.2023" "Aug.16.2023" "Sep.20.2023" "Oct.18.2023"
+## [11] "Nov.15.2023" "Dec.20.2023"
+\end{verbatim}
+
+\hypertarget{question-2}{%
+\section{Question 2}\label{question-2}}
+
+\hypertarget{section-5}{%
+\subsection{2.1}\label{section-5}}
+
+Using Monte-Carlo Simulation to estimate the put option price using S0 =
+100, K = 100, T = 1, σ = 0.2, r = 0.05, you can use number of steps n =
+252 and number of paths m = 10000
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{S0 }\OtherTok{\textless{}{-}} \DecValTok{100}
+\NormalTok{K }\OtherTok{\textless{}{-}} \DecValTok{100}
+\NormalTok{T1 }\OtherTok{\textless{}{-}} \DecValTok{1}
+\NormalTok{sigma }\OtherTok{\textless{}{-}} \FloatTok{0.2}
+\NormalTok{r }\OtherTok{\textless{}{-}} \FloatTok{0.05}
+\NormalTok{func.mc }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(S0, K, T1, sigma, r) \{}
+\NormalTok{  n }\OtherTok{=} \DecValTok{252}
+\NormalTok{  m }\OtherTok{=} \DecValTok{10000}
+\NormalTok{  h }\OtherTok{\textless{}{-}}\NormalTok{ T1 }\SpecialCharTok{/}\NormalTok{ n}
+\NormalTok{  S.vec }\OtherTok{\textless{}{-}} \FunctionTok{rep}\NormalTok{(S0, m)}
+\NormalTok{  Z }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{rnorm}\NormalTok{(n }\SpecialCharTok{*}\NormalTok{ m), }\AttributeTok{nrow =}\NormalTok{ n)}
+  \ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{n) \{}
+\NormalTok{  S.vec }\OtherTok{\textless{}{-}}\NormalTok{ S.vec }\SpecialCharTok{+}\NormalTok{ r }\SpecialCharTok{*}\NormalTok{ S.vec }\SpecialCharTok{*}\NormalTok{ h }\SpecialCharTok{+}\NormalTok{ sigma }\SpecialCharTok{*}\NormalTok{ S.vec }\SpecialCharTok{*}\NormalTok{ Z[i,] }\SpecialCharTok{*} \FunctionTok{sqrt}\NormalTok{(h)}
+\NormalTok{  \}}
+  \FunctionTok{return}\NormalTok{(}\FunctionTok{exp}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{r }\SpecialCharTok{*}\NormalTok{ T1) }\SpecialCharTok{*} \FunctionTok{mean}\NormalTok{(}\FunctionTok{pmax}\NormalTok{(}\DecValTok{100} \SpecialCharTok{{-}}\NormalTok{ S.vec, }\DecValTok{0}\NormalTok{)))}
+\NormalTok{\}}
+
+\FunctionTok{func.mc}\NormalTok{(S0, K, T1, sigma, r)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5.67446
+\end{verbatim}
+
+\hypertarget{section-6}{%
+\subsection{2.2}\label{section-6}}
+
+Implement Black-Scholes formula for pricing the put option
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{func.bs }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(S0, K, T1, sigma, r) \{}
+\NormalTok{  d1 }\OtherTok{\textless{}{-}}\NormalTok{ (}\FunctionTok{log}\NormalTok{(S0 }\SpecialCharTok{/}\NormalTok{ K) }\SpecialCharTok{+}\NormalTok{ (r }\SpecialCharTok{+} \FloatTok{0.5} \SpecialCharTok{*}\NormalTok{ sigma }\SpecialCharTok{\^{}} \DecValTok{2}\NormalTok{) }\SpecialCharTok{*}\NormalTok{ T1) }\SpecialCharTok{/}\NormalTok{ (sigma }\SpecialCharTok{*} \FunctionTok{sqrt}\NormalTok{(T1))}
+\NormalTok{  d2 }\OtherTok{\textless{}{-}}\NormalTok{ d1 }\SpecialCharTok{{-}}\NormalTok{ sigma }\SpecialCharTok{*} \FunctionTok{sqrt}\NormalTok{(T1)}
+  \FunctionTok{return}\NormalTok{ (}\SpecialCharTok{{-}}\NormalTok{S0 }\SpecialCharTok{*} \FunctionTok{pnorm}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{d1) }\SpecialCharTok{+} \FunctionTok{exp}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{r }\SpecialCharTok{*}\NormalTok{ T1) }\SpecialCharTok{*}\NormalTok{ K }\SpecialCharTok{*} \FunctionTok{pnorm}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{d2))}
+\NormalTok{\}}
+\FunctionTok{func.bs}\NormalTok{(S0, K, T1, sigma, r)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5.573526
+\end{verbatim}
+
+\end{document}
