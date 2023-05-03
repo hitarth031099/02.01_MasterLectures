@@ -1,0 +1,157 @@
+---
+title: "FE515 2022A Final Exam"
+author: "Yufu Liao"
+date: "05/02/2023"
+output:
+  html_document:
+    df_print: paged
+  word_document: default
+  pdf_document: default
+---
+
+# Question 1: (50 points)
+
+## 1.1 
+
+Download the historical prices for the ticker ”SPY” from 2019-01-01 until now.
+
+```{r}
+#install.packages('quantmod')
+library(quantmod)
+
+getSymbols(Symbols = "SPY", from = "2019-01-01", to = '2023-05-02')
+SPY <- data.frame(SPY)
+head(SPY)
+
+```
+
+## 1.2
+
+Calculate the daily log returns for SPY using the adjusted close prices.
+
+```{r}
+
+SPY.daily.log.return <- diff(log(SPY$SPY.Adjusted))
+
+head(SPY.daily.log.return)
+
+```
+
+## 1.3 
+
+Plot the daily log returns in red line.
+
+```{r}
+
+plot(SPY.daily.log.return, type = "l", col = "red", main = "SPY Daily Log Returns")
+
+```
+
+
+# Question 2
+
+## 2.1
+
+Calculate the skewness and kurtosis of the SPY daily log return from Question 1, for both adjusted and unadjusted ones. (See page 21 and 23 of L6 and the corresponding HW problems)
+
+```{r}
+
+library('moments')
+
+SPY.daily.log.unadjusted_return <- diff(log(SPY$SPY.Close))
+
+SPY.adjusted <- c(moments::skewness(SPY.daily.log.return), moments::kurtosis(SPY.daily.log.return)) 
+SPY.unadjusted <- c(moments::skewness(SPY.daily.log.unadjusted_return), moments::kurtosis(SPY.daily.log.unadjusted_return)) 
+
+SPY.adjusted
+SPY.unadjusted 
+
+```
+
+## 2.2
+
+Report the results in 2.1 using a 2×2 table (either data frame or matrix) such that: The column names are ”SPY.skewness” and ”SPY.kurtosis”. And the row names are ”Unadjusted” and ”Adjusted”.
+
+```{r}
+table <- data.frame(
+  "SPY.skewness" = c(SPY.adjusted[1], SPY.unadjusted[1]),
+  "SPY.kurtosis" = c(SPY.adjusted[2], SPY.unadjusted[2]),
+  row.names = c("Adjusted", "Unadjusted")
+)
+table
+
+```
+
+# Question 3
+
+## 3.1    
+
+Download options prices for ticker ”SPY” for all expiration dates.
+
+```{r}
+
+SPY.options.all <- getOptionChain("SPY", NULL)
+
+length(SPY.options.all)
+
+```
+
+## 3.2
+
+For calls and puts of each expiration date, add a column of ”Price”, which is the average of “Bid” and “Ask”.
+
+
+```{R}
+
+for(i in 1:length(SPY.options.all)){
+  
+  SPY.options.all[[i]]$calls$Price <-  rowMeans(SPY.options.all[[i]]$calls[, c('Bid', 'Ask')]) 
+  SPY.options.all[[i]]$puts$Price <-  rowMeans(SPY.options.all[[i]]$puts[, c('Bid', 'Ask')]) 
+}
+
+```
+
+
+## 3.3
+
+For calls and puts of each expiration date, add a column of “ImpliedVol”, which is the implied volatility of the corresponding options calculated from root finding methods. (Method is not limited, but you may need to handle the problem when price difference has the same sign on the end of interval)
+
+```{R}
+
+
+
+
+```
+
+
+## 3.4
+
+Choose 3 expiration date for put options, plot volatility smiles (Strike in x-axis and ImpliedVol in y-axis, similar to call smiles on page 22 of L9).
+
+```{R}
+
+plot(NA, xlim = c(300,500), ylim = c(0,0.4), xlab = "Strike", ylab = "ImpliedVol") 
+
+lines(SPY.options.all[[14]]$calls$Strike, SPY.options.all[[14]]$puts$impliedVol,col = "red")
+lines(SPY.options.all[[19]]$calls$Strike, SPY.options.all[[19]]$puts$impliedVol,col = "green")
+lines(SPY.options.all[[21]]$calls$Strike, SPY.options.all[[21]]$puts$impliedVol,col = "blue")
+
+SPY.expiration <- names(SPY.options.all)
+legend("bottomleft", SPY.expiration[c(14,19,21)], fill = c("red","green","blue"))
+
+```
+
+
+## 3.5
+
+Keep fields “Strike”,“Bid”,“Ask”, “Price”, and “ImpliedVol” and save the calls and puts of each expiration date in .csv file. Submit one of the .csv file also.
+
+```{R}
+
+for(i in 1:length(SPY.options.all)){
+  
+  output <-  SPY.options.all[[i]]$calls[, c('Strike', 'Bid', 'Ask', 'Price', 'ImpliedVol')]
+  
+}
+
+```
