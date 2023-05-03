@@ -115,11 +115,81 @@ for(i in 1:length(SPY.options.all)){
 ## 3.3
 
 For calls and puts of each expiration date, add a column of “ImpliedVol”, which is the implied volatility of the corresponding options calculated from root finding methods. (Method is not limited, but you may need to handle the problem when price difference has the same sign on the end of interval)
-
 ```{R}
 
+bisection.new <- function(f, a, b, tol = 0.001, N.max = 100){
+  # assign value
+  f.a <- f(a)
+  f.b <- f(b)
+  
+  # initial check
+  if(is.na(f.a*f.b) || f.a*f.b > 0){# only modified this part
+    return(NA)
+  }else if(f.a == 0){
+    return(a)
+  }else if(f.b == 0){
+    return(b)
+  }
+  
+  # the same searching process
+  for(n in 1:N.max){
+    c <- (a+b)/2
+    f.c <- f(c) # call function 'f' once each iteration
+    if(f.c == 0 || abs(b - a) < tol){ # check absolute value
+      break
+    }
+    if(f.a*f.c < 0){
+      b <- c
+      f.b <- f.c
+    }else{
+      a <- c
+      f.a <- f.c
+    }
+  }
+  
+  return(c) # return a value rather than print it out
+}
+
+bs.call <- function(S0, K, T1, sigma, r){
+  d1 <- (log(S0/K) + (r+0.5*sigma^2)*T1)/(sigma*sqrt(T1))
+  d2 <- d1 - sigma*sqrt(T1)
+  S0*pnorm(d1) - exp(-r*T1)*K*pnorm(d2)
+  return(S0*pnorm(d1) - exp(-r*T1)*K*pnorm(d2))
+}
+
+# bs.call(100, 100, 1, r = 0.05, sigma = 0.2)
 
 
+implied.vol.call <- function(S0, K, T1, r, price){
+  price.diff <- function(sigma) bs.call(S0, K, T1, sigma, r) - price
+  
+  return(bisection.new(price.diff, 0.01, 5))
+  
+}
+
+#implied.vol.call(S0,K,T1,r,10)
+
+```
+
+```{R}
+SPY.S0 <- getQuote("SPY")$Last
+r <- 0.07 * 0.01
+SPY.expiration <- names(SPY.options.all)
+T.vec <- (as.Date(SPY.expiration,"%b.%d.%Y")-Sys.Date())/365
+T.vec <- as.numeric(T.vec)
+
+for(i in 1:length(SPY.options.all)){
+
+  for(j in 1:nrow(SPY.options.all[[i]]$calls)){
+    SPY.options.all[[i]]$calls$impliedVol[j] <-implied.vol.call(SPY.S0, SPY.options.all[[i]]$calls$Strike[j], T.vec[i], r, SPY.options.all[[i]]$calls$Price[j])
+  }
+  SPY.options.all[[i]]$calls <- SPY.options.all[[i]]$calls[c("Bid", "Ask", "Strike","Price","impliedVol")]
+  
+  for(j in 1:nrow(SPY.options.all[[i]]$puts)){
+    SPY.options.all[[i]]$puts$impliedVol[j] <-implied.vol.call(SPY.S0, SPY.options.all[[i]]$puts$Strike[j], T.vec[i], r, SPY.options.all[[i]]$puts$Price[j])
+  }
+  SPY.options.all[[i]]$puts <- SPY.options.all[[i]]$puts[c("Bid", "Ask", "Strike","Price","impliedVol")]
+}
 
 ```
 
@@ -130,14 +200,16 @@ Choose 3 expiration date for put options, plot volatility smiles (Strike in x-ax
 
 ```{R}
 
-plot(NA, xlim = c(300,500), ylim = c(0,0.4), xlab = "Strike", ylab = "ImpliedVol") 
 
-lines(SPY.options.all[[14]]$calls$Strike, SPY.options.all[[14]]$puts$impliedVol,col = "red")
-lines(SPY.options.all[[19]]$calls$Strike, SPY.options.all[[19]]$puts$impliedVol,col = "green")
-lines(SPY.options.all[[21]]$calls$Strike, SPY.options.all[[21]]$puts$impliedVol,col = "blue")
+plot(NA, xlim = c(370,700), ylim = c(0,5), xlab = "Strike", ylab = "ImpliedVol") 
+
+
+lines(SPY.options.all[[14]]$puts$Strike, SPY.options.all[[14]]$puts$impliedVol,col = "red")
+lines(SPY.options.all[[19]]$puts$Strike, SPY.options.all[[19]]$puts$impliedVol,col = "green")
+lines(SPY.options.all[[21]]$puts$Strike, SPY.options.all[[21]]$puts$impliedVol,col = "blue")
 
 SPY.expiration <- names(SPY.options.all)
-legend("bottomleft", SPY.expiration[c(14,19,21)], fill = c("red","green","blue"))
+legend("topright", SPY.expiration[c(14,19,21)], fill = c("red","green","blue"))
 
 ```
 
@@ -149,9 +221,11 @@ Keep fields “Strike”,“Bid”,“Ask”, “Price”, and “ImpliedVol” 
 ```{R}
 
 for(i in 1:length(SPY.options.all)){
-  
-  output <-  SPY.options.all[[i]]$calls[, c('Strike', 'Bid', 'Ask', 'Price', 'ImpliedVol')]
-  
+
+  write.csv(SPY.options.all[[i]]$calls, file = paste("SPY_opotion", i, "calls.csv", sep = ""))
+  write.csv(SPY.options.all[[i]]$puts, file = paste("SPY_opotion", i, "puts.csv", sep = ""))
+
 }
+
 
 ```
