@@ -172,7 +172,8 @@ implied.vol.call <- function(S0, K, T1, r, price){
 ```
 
 ```{R}
-SPY.S0 <- getQuote("SPY")$Last
+#SPY.S0 <- getQuote("SPY")$Last
+SPY.S0 <- 408.02
 r <- 0.07 * 0.01
 SPY.expiration <- names(SPY.options.all)
 T.vec <- (as.Date(SPY.expiration,"%b.%d.%Y")-Sys.Date())/365
